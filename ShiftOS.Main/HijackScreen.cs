@@ -51,9 +51,9 @@ namespace ShiftOS.Main
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            if (Directory.Exists("C:\\ShiftOS"))
+            if (Directory.Exists("C:\\ShiftOS-Rewind"))
             {
-                if (File.ReadAllText("C:/ShiftOS/Shiftum42/HDAccess.sft") == actualshiftversion)
+                if (File.ReadAllText("C:/ShiftOS-Rewind/Shiftum42/HDAccess.sft") == actualshiftversion)
                 {
                     //ShiftOSDesktop.Show();
                     conversationtimer.Start();
@@ -69,9 +69,9 @@ namespace ShiftOS.Main
                     }
                     else
                     {
-                        oldversion = System.IO.File.ReadAllText("C:/ShiftOS/Shiftum42/HDAccess.sft");
+                        oldversion = System.IO.File.ReadAllText("C:/ShiftOS-Rewind/Shiftum42/HDAccess.sft");
                         upgraded = true;
-                        System.IO.Directory.Delete("C:/ShiftOS/", true);
+                        System.IO.Directory.Delete("C:/ShiftOS-Rewind/", true);
                         backgroundWorker1.RunWorkerAsync();
                         conversationtimer.Start();
                         hackeffecttimer.Start();
@@ -253,14 +253,14 @@ namespace ShiftOS.Main
                         case 1:
                         case 2:
                             textgeninput.Text = textgeninput.Text + "C:/Home";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Home")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Home");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Home")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Home");
                             break;
                         case 3:
                         case 4:
                             textgeninput.Text = textgeninput.Text + "C:/Home/Documents";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Home/Documents")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Home/Documents");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Home/Documents")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Home/Documents");
                             break;
                         case 5:
                         case 6:
@@ -268,35 +268,35 @@ namespace ShiftOS.Main
                         case 8:
                         case 9:
                             textgeninput.Text = textgeninput.Text + "C:/Home/Documents/ShiftOSInfo.txt";
-                            fs = File.Create("C:/ShiftOS/Home/Documents/ShiftOSInfo.txt");
+                            fs = File.Create("C:/ShiftOS-Rewind/Home/Documents/ShiftOSInfo.txt");
                             fs.Close();
                             break;
                         case 10:
                         case 11:
                         case 12:
                             textgeninput.Text = textgeninput.Text + "C:/Home/Music";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Home/Music")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Home/Music");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Home/Music")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Home/Music");
                             break;
                         case 13:
                         case 14:
                         case 15:
                             textgeninput.Text = textgeninput.Text + "C:/Home/Pictures";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Home/Pictures")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Home/Pictures");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Home/Pictures")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Home/Pictures");
                             break;
                         case 16:
                         case 17:
                         case 18:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Shiftum42")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Shiftum42");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Shiftum42")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Shiftum42");
                             break;
                         case 19:
                         case 20:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Drivers";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Shiftum42/Drivers")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Shiftum42/Drivers");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Shiftum42/Drivers")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Shiftum42/Drivers");
                             break;
                         case 21:
                         case 22:
@@ -306,7 +306,7 @@ namespace ShiftOS.Main
                         case 26:
                         case 27:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Drivers/HDD.dri";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/HDD.dri");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/Drivers/HDD.dri");
                             fs.Close();
                             break;
                         case 28:
@@ -318,7 +318,7 @@ namespace ShiftOS.Main
                         case 34:
                         case 35:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Drivers/Keyboard.dri";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Keyboard.dri");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/Drivers/Keyboard.dri");
                             fs.Close();
                             break;
                         case 36:
@@ -331,7 +331,7 @@ namespace ShiftOS.Main
                         case 43:
                         case 44:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Drivers/Monitor.dri";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Monitor.dri");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/Drivers/Monitor.dri");
                             fs.Close();
                             break;
                         case 45:
@@ -343,7 +343,7 @@ namespace ShiftOS.Main
                         case 51:
                         case 52:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Drivers/Mouse.dri";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Mouse.dri");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/Drivers/Mouse.dri");
                             fs.Close();
                             break;
                         case 53:
@@ -355,7 +355,7 @@ namespace ShiftOS.Main
                         case 59:
                         case 60:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Drivers/Printer.dri";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Printer.dri");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/Drivers/Printer.dri");
                             fs.Close();
                             break;
                         case 61:
@@ -367,8 +367,8 @@ namespace ShiftOS.Main
                         case 67:
                         case 68:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Languages/";
-                            if ((!System.IO.Directory.Exists("C:/ShiftOS/Shiftum42/Languages/")))
-                                System.IO.Directory.CreateDirectory("C:/ShiftOS/Shiftum42/Languages/");
+                            if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/Shiftum42/Languages/")))
+                                System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/Shiftum42/Languages/");
                             break;
                         case 69:
                         case 70:
@@ -379,7 +379,7 @@ namespace ShiftOS.Main
                         case 75:
                         case 76:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/Languages/English.lang";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/Languages/English.lang");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/Languages/English.lang");
                             fs.Close();
                             break;
                         case 77:
@@ -391,9 +391,9 @@ namespace ShiftOS.Main
                         case 83:
                         case 84:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/HDAccess.sft";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/HDAccess.sft");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/HDAccess.sft");
                             fs.Close();
-                            System.IO.StreamWriter objWriter = new System.IO.StreamWriter("C:/ShiftOS/Shiftum42/HDAccess.sft", false);
+                            System.IO.StreamWriter objWriter = new System.IO.StreamWriter("C:/ShiftOS-Rewind/Shiftum42/HDAccess.sft", false);
                             objWriter.Write(actualshiftversion);
                             objWriter.Close();
                             break;
@@ -403,7 +403,7 @@ namespace ShiftOS.Main
                         case 88:
                         case 89:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/ShiftGUI.sft";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/ShiftGUI.sft");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/ShiftGUI.sft");
                             fs.Close();
                             break;
                         case 90:
@@ -411,7 +411,7 @@ namespace ShiftOS.Main
                         case 92:
                         case 93:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/SKernal.sft";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/SKernal.sft");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/SKernal.sft");
                             fs.Close();
                             break;
                         case 94:
@@ -419,7 +419,7 @@ namespace ShiftOS.Main
                         case 96:
                         case 97:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/SRead.sft";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/SRead.sft");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/SRead.sft");
                             fs.Close();
                             break;
                         case 98:
@@ -427,7 +427,7 @@ namespace ShiftOS.Main
                         case 100:
                         case 101:
                             textgeninput.Text = textgeninput.Text + "C:/Shiftum42/SWrite.sft";
-                            fs = File.Create("C:/ShiftOS/Shiftum42/SWrite.sft");
+                            fs = File.Create("C:/ShiftOS-Rewind/Shiftum42/SWrite.sft");
                             fs.Close();
                             break;
                     }
@@ -442,15 +442,15 @@ namespace ShiftOS.Main
                 case 232:
                     textgeninput.Text = rtext + "100%" + Environment.NewLine + Environment.NewLine + "ShiftOS Installation Complete!";
                     PlaySound(Properties.Resources.typesound);
-                    if ((!System.IO.Directory.Exists("C:/ShiftOS/SoftwareData/")))
-                        System.IO.Directory.CreateDirectory("C:/ShiftOS/SoftwareData/");
-                    if ((!System.IO.Directory.Exists("C:/ShiftOS/SoftwareData/KnowledgeInput")))
-                        System.IO.Directory.CreateDirectory("C:/ShiftOS/SoftwareData/KnowledgeInput");
-                    fs = File.Create("C:/ShiftOS/SoftwareData/KnowledgeInput/Animals.lst");
+                    if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/SoftwareData/")))
+                        System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/SoftwareData/");
+                    if ((!System.IO.Directory.Exists("C:/ShiftOS-Rewind/SoftwareData/KnowledgeInput")))
+                        System.IO.Directory.CreateDirectory("C:/ShiftOS-Rewind/SoftwareData/KnowledgeInput");
+                    fs = File.Create("C:/ShiftOS-Rewind/SoftwareData/KnowledgeInput/Animals.lst");
                     fs.Close();
-                    fs = File.Create("C:/ShiftOS/SoftwareData/KnowledgeInput/Fruits.lst");
+                    fs = File.Create("C:/ShiftOS-Rewind/SoftwareData/KnowledgeInput/Fruits.lst");
                     fs.Close();
-                    fs = File.Create("C:/ShiftOS/SoftwareData/KnowledgeInput/Countries.lst");
+                    fs = File.Create("C:/ShiftOS-Rewind/SoftwareData/KnowledgeInput/Countries.lst");
                     fs.Close();
                     break;
                 case 234:
