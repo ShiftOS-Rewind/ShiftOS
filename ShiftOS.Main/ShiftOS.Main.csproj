@@ -44,16 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewHijack.cs">
+    <Compile Include="HijackScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewHijack.Designer.cs">
-      <DependentUpon>NewHijack.cs</DependentUpon>
+    <Compile Include="HijackScreen.Designer.cs">
+      <DependentUpon>HijackScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NewHijack.resx">
-      <DependentUpon>NewHijack.cs</DependentUpon>
+    <EmbeddedResource Include="HijackScreen.resx">
+      <DependentUpon>HijackScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

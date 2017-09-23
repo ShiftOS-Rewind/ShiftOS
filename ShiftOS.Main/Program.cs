@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HijackScreen
+namespace ShiftOS.Main
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace HijackScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new newHijack());
+            Application.Run(new HijackScreen());
         }
     }
 }
