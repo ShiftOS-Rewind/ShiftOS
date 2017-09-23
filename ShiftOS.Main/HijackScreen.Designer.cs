@@ -1,6 +1,6 @@
-﻿namespace HijackScreen
+﻿namespace ShiftOS.Main
 {
-    partial class Form1
+    partial class HijackScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.conversationtimer = new System.Windows.Forms.Timer(this.components);
+            this.hackeffecttimer = new System.Windows.Forms.Timer(this.components);
             this.lblHijack = new System.Windows.Forms.Label();
-            this.conversationTimer = new System.Windows.Forms.Timer(this.components);
-            this.textGen = new System.Windows.Forms.Timer(this.components);
+            this.textgen = new System.Windows.Forms.Timer(this.components);
             this.lblhackwords = new System.Windows.Forms.Label();
-            this.tmrHackFX = new System.Windows.Forms.Timer(this.components);
-            this.BackgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
+            // 
+            // conversationtimer
+            // 
+            this.conversationtimer.Tick += new System.EventHandler(this.conversationtimer_Tick);
+            // 
+            // hackeffecttimer
+            // 
+            this.hackeffecttimer.Interval = 50;
+            this.hackeffecttimer.Tick += new System.EventHandler(this.hackeffecttimer_Tick);
             // 
             // lblHijack
             // 
             this.lblHijack.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHijack.AutoSize = true;
             this.lblHijack.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHijack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHijack.Location = new System.Drawing.Point(151, 173);
+            this.lblHijack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblHijack.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHijack.Location = new System.Drawing.Point(143, 193);
             this.lblHijack.Name = "lblHijack";
             this.lblHijack.Size = new System.Drawing.Size(18, 25);
-            this.lblHijack.TabIndex = 2;
+            this.lblHijack.TabIndex = 0;
             this.lblHijack.Text = "\\";
             // 
-            // conversationTimer
+            // textgen
             // 
-            this.conversationTimer.Tick += new System.EventHandler(this.conversationTimer_Tick);
-            // 
-            // textGen
-            // 
-            this.textGen.Interval = 20;
-            this.textGen.Tick += new System.EventHandler(this.textGen_Tick);
+            this.textgen.Interval = 20;
+            this.textgen.Tick += new System.EventHandler(this.textgen_Tick);
             // 
             // lblhackwords
             // 
@@ -67,25 +73,21 @@
             this.lblhackwords.Location = new System.Drawing.Point(0, 0);
             this.lblhackwords.Name = "lblhackwords";
             this.lblhackwords.Size = new System.Drawing.Size(127, 18);
-            this.lblhackwords.TabIndex = 3;
-            this.lblhackwords.Text = "Encrypting MBR...";
+            this.lblhackwords.TabIndex = 1;
+            this.lblhackwords.Text = "Hijack in progress";
             // 
-            // tmrHackFX
-            // 
-            this.tmrHackFX.Interval = 50;
-            // 
-            // Form1
+            // HijackScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(653, 457);
-            this.Controls.Add(this.lblHijack);
+            this.ClientSize = new System.Drawing.Size(636, 418);
             this.Controls.Add(this.lblhackwords);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.lblHijack);
+            this.Name = "HijackScreen";
+            this.Text = "ShiftOS";
             this.TransparencyKey = System.Drawing.Color.White;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.HijackScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,12 +95,11 @@
 
         #endregion
 
-        internal System.Windows.Forms.Label lblHijack;
-        internal System.Windows.Forms.Timer conversationTimer;
-        internal System.Windows.Forms.Timer textGen;
-        internal System.Windows.Forms.Label lblhackwords;
-        internal System.Windows.Forms.Timer tmrHackFX;
-        internal System.ComponentModel.BackgroundWorker BackgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Timer conversationtimer;
+        private System.Windows.Forms.Timer hackeffecttimer;
+        private System.Windows.Forms.Label lblHijack;
+        private System.Windows.Forms.Timer textgen;
+        private System.Windows.Forms.Label lblhackwords;
     }
 }
-
