@@ -238,6 +238,7 @@ namespace ShiftOS.Main
                 case 129:
                     rtext = "";
                     percentcount = 0;
+                    TextType("Installing ShiftOS Beta 0.0.1 - ");
                     conversationtimer.Interval = 200;
                     break;
                 case 130: // TODO: to 230
