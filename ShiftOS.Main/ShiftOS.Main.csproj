@@ -52,6 +52,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftDemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftDemo.Designer.cs">
+      <DependentUpon>ShiftDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HijackScreen.resx">
       <DependentUpon>HijackScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,6 +77,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShiftDemo.resx">
+      <DependentUpon>ShiftDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1069,6 +1087,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\appscapeinfoorcwritetext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShiftOS.Engine\ShiftOS.Engine.csproj">
+      <Project>{604eb1d7-998f-4a52-90a6-67f3dc3203d2}</Project>
+      <Name>ShiftOS.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

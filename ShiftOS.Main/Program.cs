@@ -16,7 +16,7 @@ namespace ShiftOS.Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HijackScreen());
+            Application.Run(new TestForm());
         }
     }
 }
