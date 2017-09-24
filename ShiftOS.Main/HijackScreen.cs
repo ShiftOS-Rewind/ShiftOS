@@ -230,7 +230,7 @@ namespace ShiftOS.Main
                     break;
                 case 127:
                     rtext = rtext + "100%";
-                    conversationtimer.Interval = 1000;
+                    conversationtimer.Interval = 1000; 
                     break;
                 case 128:
                     TextType(Environment.NewLine + "Format Complete");
