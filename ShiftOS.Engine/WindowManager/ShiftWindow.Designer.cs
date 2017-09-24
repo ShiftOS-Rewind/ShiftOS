@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.program = new System.Windows.Forms.Panel();
+            this.programContent = new System.Windows.Forms.Panel();
             this.bottomleftcorner = new System.Windows.Forms.Panel();
             this.toprightcorner = new System.Windows.Forms.Panel();
             this.bottomrightcorner = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.closebutton = new System.Windows.Forms.PictureBox();
             this.right = new System.Windows.Forms.Panel();
             this.left = new System.Windows.Forms.Panel();
-            this.programContent = new System.Windows.Forms.Panel();
             this.program.SuspendLayout();
             this.top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.programIcon)).BeginInit();
@@ -68,6 +68,14 @@
             this.program.Name = "program";
             this.program.Size = new System.Drawing.Size(284, 261);
             this.program.TabIndex = 11;
+            // 
+            // programContent
+            // 
+            this.programContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.programContent.Location = new System.Drawing.Point(4, 30);
+            this.programContent.Name = "programContent";
+            this.programContent.Size = new System.Drawing.Size(276, 227);
+            this.programContent.TabIndex = 11;
             // 
             // bottomleftcorner
             // 
@@ -130,6 +138,7 @@
             this.top.Name = "top";
             this.top.Size = new System.Drawing.Size(276, 30);
             this.top.TabIndex = 0;
+            this.top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Programtopbar_drag);
             // 
             // programIcon
             // 
@@ -166,13 +175,14 @@
             // 
             this.Title.AutoSize = true;
             this.Title.BackColor = System.Drawing.Color.Transparent;
-            this.Title.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.White;
             this.Title.Location = new System.Drawing.Point(25, 8);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(106, 14);
+            this.Title.Size = new System.Drawing.Size(98, 13);
             this.Title.TabIndex = 3;
             this.Title.Text = "Application Title";
+            this.Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Programtopbar_drag);
             // 
             // closebutton
             // 
@@ -183,6 +193,7 @@
             this.closebutton.Size = new System.Drawing.Size(21, 21);
             this.closebutton.TabIndex = 4;
             this.closebutton.TabStop = false;
+            this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
             // 
             // right
             // 
@@ -202,14 +213,6 @@
             this.left.Name = "left";
             this.left.Size = new System.Drawing.Size(4, 261);
             this.left.TabIndex = 1;
-            // 
-            // programContent
-            // 
-            this.programContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.programContent.Location = new System.Drawing.Point(4, 30);
-            this.programContent.Name = "programContent";
-            this.programContent.Size = new System.Drawing.Size(276, 227);
-            this.programContent.TabIndex = 11;
             // 
             // ShiftWindow
             // 
