@@ -7,7 +7,6 @@ namespace ShiftOS.Main
     public partial class TestForm : Form
     {
         public ShiftWM shiftWM = new ShiftWM();
-        public ShiftDemo demo = new ShiftDemo();
 
         public TestForm()
         {
@@ -16,8 +15,9 @@ namespace ShiftOS.Main
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            ShiftDemo demo = new ShiftDemo();
             demo.label1.Text = textBox2.Text;
-            shiftWM.Init(demo, textBox1.Text);
+            shiftWM.Init(demo, textBox1.Text, null);
         }
     }
 }
