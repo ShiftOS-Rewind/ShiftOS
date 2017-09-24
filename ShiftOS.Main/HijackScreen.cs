@@ -170,7 +170,7 @@ namespace ShiftOS.Main
                     TextType("Congratulations, you have been involuntarily selected to be an Alpha Tester for ShiftOS." + Environment.NewLine + Environment.NewLine);
                     break;
                 case 4:
-                    TextType("At this current point in time I do not wish to reveal my identity or future intentions." + Environment.NewLine + Environment.NewLine);
+                    TextType("At this current point in time I do not wish to reveal my identity or future intentions. You can call me DevX" + Environment.NewLine + Environment.NewLine);
                     break;
                 case 5:
                     TextType("I just need to use you and your computer as an external test bed to evolve my experimental operating system." + Environment.NewLine + Environment.NewLine);
