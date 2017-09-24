@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using static ShiftOS.Engine.WindowManager.InfoboxTemplate;
 
 namespace ShiftOS.Engine.WindowManager
 {
@@ -29,6 +30,13 @@ namespace ShiftOS.Engine.WindowManager
             content.Dock = DockStyle.Fill;
             app.Show();
             return app;
+        }
+        public InfoboxTemplate StartInfoboxSession(string title, string body, buttonType type)
+        {
+            InfoboxTemplate info = new InfoboxTemplate(type);
+            info.label1.Text = body;
+            Init(info, title, Properties.Resources.iconInfoBox_fw, true, false);
+            return info;
         }
     }
 }

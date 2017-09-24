@@ -18,6 +18,7 @@ namespace ShiftOS.Main
             ShiftDemo demo = new ShiftDemo();
             demo.label1.Text = textBox2.Text;
             shiftWM.Init(demo, textBox1.Text, null);
+            shiftWM.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.buttonType.OK);
         }
     }
 }

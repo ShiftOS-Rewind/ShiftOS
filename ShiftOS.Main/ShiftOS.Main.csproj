@@ -58,6 +58,12 @@
     <Compile Include="ShiftOS\Apps\ShiftDemo.Designer.cs">
       <DependentUpon>ShiftDemo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShiftOS\Apps\Shifter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftOS\Apps\Shifter.Designer.cs">
+      <DependentUpon>Shifter.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftOS\Apps\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="ShiftOS\Apps\ShiftDemo.resx">
       <DependentUpon>ShiftDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS\Apps\Shifter.resx">
+      <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

@@ -63,9 +63,38 @@ namespace ShiftOS.Engine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconInfoBox_fw {
+            get {
+                object obj = ResourceManager.GetObject("iconInfoBox_fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream infobox {
+            get {
+                return ResourceManager.GetStream("infobox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nullIcon {
             get {
                 object obj = ResourceManager.GetObject("nullIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Symbolinfo {
+            get {
+                object obj = ResourceManager.GetObject("Symbolinfo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
