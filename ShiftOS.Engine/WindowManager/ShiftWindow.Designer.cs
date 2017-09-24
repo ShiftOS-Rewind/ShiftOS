@@ -234,21 +234,20 @@
         }
 
         #endregion
-
-        internal System.Windows.Forms.Panel program;
-        internal System.Windows.Forms.Panel bottomleftcorner;
-        internal System.Windows.Forms.Panel toprightcorner;
-        internal System.Windows.Forms.Panel bottomrightcorner;
-        internal System.Windows.Forms.Panel topleftcorner;
-        internal System.Windows.Forms.Panel bottom;
-        internal System.Windows.Forms.Panel top;
         public System.Windows.Forms.PictureBox programIcon;
-        internal System.Windows.Forms.PictureBox maximizebutton;
-        internal System.Windows.Forms.PictureBox minimizebutton;
-        internal System.Windows.Forms.Label Title;
-        internal System.Windows.Forms.PictureBox closebutton;
-        internal System.Windows.Forms.Panel right;
-        internal System.Windows.Forms.Panel left;
         public System.Windows.Forms.Panel programContent;
+        public System.Windows.Forms.Panel program;
+        public System.Windows.Forms.Panel bottomleftcorner;
+        public System.Windows.Forms.Panel toprightcorner;
+        public System.Windows.Forms.Panel bottomrightcorner;
+        public System.Windows.Forms.Panel topleftcorner;
+        public System.Windows.Forms.Panel bottom;
+        public System.Windows.Forms.Panel top;
+        public System.Windows.Forms.PictureBox maximizebutton;
+        public System.Windows.Forms.PictureBox minimizebutton;
+        public System.Windows.Forms.Label Title;
+        public System.Windows.Forms.PictureBox closebutton;
+        public System.Windows.Forms.Panel right;
+        public System.Windows.Forms.Panel left;
     }
 }

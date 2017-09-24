@@ -48,6 +48,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="WindowManager\InfoboxTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowManager\InfoboxTemplate.Designer.cs">
+      <DependentUpon>InfoboxTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowManager\ShiftWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,12 +67,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="WindowManager\InfoboxTemplate.resx">
+      <DependentUpon>InfoboxTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WindowManager\ShiftWindow.resx">
       <DependentUpon>ShiftWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nullIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbolinfo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infobox.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconInfoBox.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
