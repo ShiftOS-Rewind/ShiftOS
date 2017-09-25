@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ShiftOS.Engine.WindowManager;
+using ShiftOS.Main.ShiftOS.Apps;
 
 namespace ShiftOS.Main
 {
@@ -19,6 +20,11 @@ namespace ShiftOS.Main
             demo.label1.Text = textBox2.Text;
             shiftWM.Init(demo, textBox1.Text, null);
             shiftWM.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.buttonType.OK);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            shiftWM.Init(new Shifter(), "Shifter", Properties.Resources.iconShifter);
         }
     }
 }
