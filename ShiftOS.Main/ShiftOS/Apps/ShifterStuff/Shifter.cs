@@ -13,6 +13,8 @@ namespace ShiftOS.Main.ShiftOS.Apps
 {
     public partial class Shifter : UserControl
     {
+        public int colorType; //This is a check to see what option was chosen.
+        ShiftWM wm = new ShiftWM();
         public Shifter()
         {
             InitializeComponent();
@@ -20,12 +22,8 @@ namespace ShiftOS.Main.ShiftOS.Apps
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ColorDialog cD = new ColorDialog();
-            if (cD.ShowDialog() == DialogResult.OK)
-            {
-                ShiftWindow sw = new ShiftWindow();
-                sw.top.BackColor = cD.Color;
-            }
+            colorType = 1;
+            wm.Init(new SelectColor(), "Select a color", Properties.Resources.iconColourPicker_fw);
         }
     }
 }

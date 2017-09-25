@@ -155,21 +155,25 @@
             // 
             this.maximizebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.maximizebutton.BackColor = System.Drawing.Color.Black;
-            this.maximizebutton.Location = new System.Drawing.Point(228, 5);
+            this.maximizebutton.Location = new System.Drawing.Point(231, 4);
             this.maximizebutton.Name = "maximizebutton";
             this.maximizebutton.Size = new System.Drawing.Size(21, 21);
             this.maximizebutton.TabIndex = 6;
             this.maximizebutton.TabStop = false;
+            this.maximizebutton.MouseEnter += new System.EventHandler(this.maximizebutton_MouseEnter);
+            this.maximizebutton.MouseLeave += new System.EventHandler(this.maximizebutton_MouseLeave);
             // 
             // minimizebutton
             // 
             this.minimizebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.minimizebutton.BackColor = System.Drawing.Color.Black;
-            this.minimizebutton.Location = new System.Drawing.Point(205, 5);
+            this.minimizebutton.Location = new System.Drawing.Point(208, 4);
             this.minimizebutton.Name = "minimizebutton";
             this.minimizebutton.Size = new System.Drawing.Size(21, 21);
             this.minimizebutton.TabIndex = 5;
             this.minimizebutton.TabStop = false;
+            this.minimizebutton.MouseEnter += new System.EventHandler(this.minimizebutton_MouseEnter);
+            this.minimizebutton.MouseLeave += new System.EventHandler(this.minimizebutton_MouseLeave);
             // 
             // Title
             // 
@@ -188,12 +192,14 @@
             // 
             this.closebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.closebutton.BackColor = System.Drawing.Color.Black;
-            this.closebutton.Location = new System.Drawing.Point(251, 5);
+            this.closebutton.Location = new System.Drawing.Point(254, 4);
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(21, 21);
             this.closebutton.TabIndex = 4;
             this.closebutton.TabStop = false;
             this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
+            this.closebutton.MouseEnter += new System.EventHandler(this.closebutton_MouseEnter);
+            this.closebutton.MouseLeave += new System.EventHandler(this.closebutton_MouseLeave);
             // 
             // right
             // 
