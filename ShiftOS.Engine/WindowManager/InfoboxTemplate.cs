@@ -20,12 +20,13 @@ namespace ShiftOS.Engine.WindowManager
         public InfoboxTemplate(buttonType type)
         {
             InitializeComponent();
+            
             switch (type)
             {
                 case buttonType.OK:
                     btnOpt1.Text = "OK";
                     btnOpt2.Hide();
-                    btnOpt1.Location = new Point(122, 134);
+                    btnOpt1.Location = new Point(109, 134);
                     buttonChoice = 1;
                     break;
                 case buttonType.OKCancel:
@@ -85,6 +86,12 @@ namespace ShiftOS.Engine.WindowManager
         private void InfoboxTemplate_Load(object sender, EventArgs e)
         {
             Play();
+        }
+
+        private void changeSize_Tick(object sender, EventArgs e)
+        {
+            this.Height += label1.Height;
+            this.Width += label1.Width;
         }
     }
 }

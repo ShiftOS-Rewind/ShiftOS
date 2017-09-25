@@ -24,7 +24,6 @@ namespace ShiftOS.Main
 
         private void button2_Click(object sender, EventArgs e)
         {
-            shiftWM.Init(new Shifter(), "Shifter", Properties.Resources.iconShifter);
-        }
+            shiftWM.Init(new Shifter(), "Shifter", Properties.Resources.iconShifter);       }
     }
 }

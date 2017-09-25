@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.changeSize = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,18 +77,21 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // changeSize
+            // 
+            this.changeSize.Interval = 1;
+            this.changeSize.Tick += new System.EventHandler(this.changeSize_Tick);
+            // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Console", 9.25F);
-            this.label1.Location = new System.Drawing.Point(106, 57);
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.label1.Font = new System.Drawing.Font("Lucida Console", 9F);
+            this.label1.Location = new System.Drawing.Point(111, 61);
+            this.label1.Multiline = true;
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(219, 57);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Generic Body";
             // 
             // InfoboxTemplate
             // 
@@ -110,6 +115,7 @@
         public System.Windows.Forms.Button btnOpt1;
         public System.Windows.Forms.Button btnOpt2;
         public System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer changeSize;
+        public System.Windows.Forms.TextBox label1;
     }
 }

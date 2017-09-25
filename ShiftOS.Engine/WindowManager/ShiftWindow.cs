@@ -69,5 +69,35 @@ namespace ShiftOS.Engine.WindowManager
         {
             minimizebutton.BackColor = Color.Black;
         }
+
+        private void closebutton_MouseDown(object sender, MouseEventArgs e)
+        {
+            closebutton.BackColor = Color.Black;
+        }
+
+        private void maximizebutton_MouseDown(object sender, MouseEventArgs e)
+        {
+            maximizebutton.BackColor = Color.Black;
+        }
+
+        private void minimizebutton_MouseDown(object sender, MouseEventArgs e)
+        {
+            minimizebutton.BackColor = Color.Black;
+        }
+
+        private void minimizebutton_MouseUp(object sender, MouseEventArgs e)
+        {
+            minimizebutton.BackColor = Color.Gray;
+        }
+
+        private void maximizebutton_MouseUp(object sender, MouseEventArgs e)
+        {
+            maximizebutton.BackColor = Color.Gray;
+        }
+
+        private void closebutton_MouseUp(object sender, MouseEventArgs e)
+        {
+            closebutton.BackColor = Color.Gray;
+        }
     }
 }

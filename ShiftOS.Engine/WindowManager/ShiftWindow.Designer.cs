@@ -155,25 +155,29 @@
             // 
             this.maximizebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.maximizebutton.BackColor = System.Drawing.Color.Black;
-            this.maximizebutton.Location = new System.Drawing.Point(231, 4);
+            this.maximizebutton.Location = new System.Drawing.Point(230, 4);
             this.maximizebutton.Name = "maximizebutton";
             this.maximizebutton.Size = new System.Drawing.Size(21, 21);
             this.maximizebutton.TabIndex = 6;
             this.maximizebutton.TabStop = false;
+            this.maximizebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseDown);
             this.maximizebutton.MouseEnter += new System.EventHandler(this.maximizebutton_MouseEnter);
             this.maximizebutton.MouseLeave += new System.EventHandler(this.maximizebutton_MouseLeave);
+            this.maximizebutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseUp);
             // 
             // minimizebutton
             // 
             this.minimizebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.minimizebutton.BackColor = System.Drawing.Color.Black;
-            this.minimizebutton.Location = new System.Drawing.Point(208, 4);
+            this.minimizebutton.Location = new System.Drawing.Point(207, 4);
             this.minimizebutton.Name = "minimizebutton";
             this.minimizebutton.Size = new System.Drawing.Size(21, 21);
             this.minimizebutton.TabIndex = 5;
             this.minimizebutton.TabStop = false;
+            this.minimizebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseDown);
             this.minimizebutton.MouseEnter += new System.EventHandler(this.minimizebutton_MouseEnter);
             this.minimizebutton.MouseLeave += new System.EventHandler(this.minimizebutton_MouseLeave);
+            this.minimizebutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseUp);
             // 
             // Title
             // 
@@ -192,14 +196,16 @@
             // 
             this.closebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.closebutton.BackColor = System.Drawing.Color.Black;
-            this.closebutton.Location = new System.Drawing.Point(254, 4);
+            this.closebutton.Location = new System.Drawing.Point(253, 4);
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(21, 21);
             this.closebutton.TabIndex = 4;
             this.closebutton.TabStop = false;
             this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
+            this.closebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseDown);
             this.closebutton.MouseEnter += new System.EventHandler(this.closebutton_MouseEnter);
             this.closebutton.MouseLeave += new System.EventHandler(this.closebutton_MouseLeave);
+            this.closebutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseUp);
             // 
             // right
             // 

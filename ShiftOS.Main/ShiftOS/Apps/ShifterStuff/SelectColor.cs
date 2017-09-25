@@ -32,9 +32,9 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 colorType2 = Convert.ToInt32(textBox2.Text);
                 colorType3 = Convert.ToInt32(textBox3.Text);
             }
-            catch
+            catch(Exception ex)
             {
-                shiftWM.StartInfoboxSession("Error!", "Cannot parse a string.", InfoboxTemplate.buttonType.OK);
+                shiftWM.StartInfoboxSession("Error!", "Failed to parse integer. Error:\n" + ex, InfoboxTemplate.buttonType.OK);
             }
             
             if (colorType1 > 255 || colorType2 > 255 || colorType3 > 255)
@@ -52,7 +52,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 }
                 catch (Exception ex)
                 {
-                    shiftWM.StartInfoboxSession("Error!", "An exception occured while setting the color! Exception: \n" + ex, InfoboxTemplate.buttonType.OK);
+                    shiftWM.StartInfoboxSession("Error!", "An error occured while setting the color.", InfoboxTemplate.buttonType.OK);
                 }
             }
         }
