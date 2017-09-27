@@ -52,11 +52,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftOS\Apps\ShifterStuff\SelectColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftOS\Apps\ShifterStuff\SelectColor.Designer.cs">
+      <DependentUpon>SelectColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftOS\Apps\ShiftDemo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ShiftOS\Apps\ShiftDemo.Designer.cs">
       <DependentUpon>ShiftDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS\Apps\ShifterStuff\Shifter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftOS\Apps\ShifterStuff\Shifter.Designer.cs">
+      <DependentUpon>Shifter.cs</DependentUpon>
     </Compile>
     <Compile Include="ShiftOS\Apps\TestForm.cs">
       <SubType>Form</SubType>
@@ -77,8 +89,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShiftOS\Apps\ShifterStuff\SelectColor.resx">
+      <DependentUpon>SelectColor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\ShiftDemo.resx">
       <DependentUpon>ShiftDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS\Apps\ShifterStuff\Shifter.resx">
+      <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
