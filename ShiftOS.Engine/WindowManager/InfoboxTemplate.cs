@@ -11,6 +11,12 @@ namespace ShiftOS.Engine.WindowManager
         Stream _str;
         private int _buttonChoice;
 	    private int _buttonSelected;
+        private int _leftDistance;
+        private int _rightDistance;
+        private int _textWidth;
+        private int _textHeight;
+        private int _topDistance;
+        private int _bottomDistance;
         public InfoboxTemplate(ButtonType type)
         {
             InitializeComponent();
@@ -84,8 +90,18 @@ namespace ShiftOS.Engine.WindowManager
 
 	    private void changeSize_Tick(object sender, EventArgs e)
         {
-            this.Height += label1.Height;
-            this.Width += label1.Width;
+            ChangeSize();
+        }
+        private void ChangeSize()
+        {
+            _textHeight = label1.Height;
+            _textWidth = label1.Width;
+            _topDistance = 55;
+            _bottomDistance = 121;
+            _rightDistance = 101;
+            _leftDistance = 55;
+            this.Height = _textHeight + _topDistance + _bottomDistance;
+            this.Width = _textWidth + _leftDistance + _rightDistance;
         }
     }
 }
