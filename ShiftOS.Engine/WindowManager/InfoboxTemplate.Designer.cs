@@ -33,7 +33,7 @@
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.changeSize = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,14 +84,13 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.label1.Font = new System.Drawing.Font("Lucida Console", 9F);
-            this.label1.Location = new System.Drawing.Point(111, 61);
-            this.label1.Multiline = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Console", 9.25F);
+            this.label1.Location = new System.Drawing.Point(105, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 57);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
             // 
             // InfoboxTemplate
             // 
@@ -116,6 +115,6 @@
         public System.Windows.Forms.Button btnOpt2;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer changeSize;
-        public System.Windows.Forms.TextBox label1;
+        public System.Windows.Forms.Label label1;
     }
 }
