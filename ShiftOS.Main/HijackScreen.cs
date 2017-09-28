@@ -167,19 +167,19 @@ namespace ShiftOS.Main
                     textgeninput = lblhackwords;
                     textgen.Interval = 10;
                     rtext = "";
-                    TextType("Congratulations, you have been involuntarily selected to be an Alpha Tester for ShiftOS." + Environment.NewLine + Environment.NewLine);
+                    TextType("Congratulations, " + Environment.UserName + "you have been involuntarily selected to be an Alpha Tester for ShiftOS!" + Environment.NewLine + Environment.NewLine);
                     break;
                 case 4:
-                    TextType("At this current point in time I do not wish to reveal my identity or future intentions." + Environment.NewLine + Environment.NewLine);
+                    TextType("At this time, I do not wish to reveal any of my intentions and idenity." + Environment.NewLine + Environment.NewLine);
                     break;
                 case 5:
                     TextType("I just need to use you and your computer as an external test bed to evolve my experimental operating system." + Environment.NewLine + Environment.NewLine);
                     break;
                 case 6:
-                    TextType("Right now ShiftOS is practically non-existent but I’ll work on coding it remotely as you use it." + Environment.NewLine + Environment.NewLine);
+                    TextType("I need to expand the name of ShiftOS, so I'll work on it, and you'll have the chance to use ShiftOS!" + Environment.NewLine + Environment.NewLine);
                     break;
                 case 7:
-                    TextType("Your hard drive will now be formatted in preparation for the installation of ShiftOS" + Environment.NewLine + Environment.NewLine);
+                    TextType("Your hard drive will now be formatted in preparation for the installation of ShiftOS." + Environment.NewLine + Environment.NewLine);
                     break;
                 case 8:
                     TextType("Starting Format.");
@@ -201,23 +201,23 @@ namespace ShiftOS.Main
                     rtext = "";
                     break;
                 case 20:
-                    TextType("Scanning Drive C:/");
+                    TextType("Scanning Drive C:\\...");
                     break;
                 case 21:
 
                     TextType(Environment.NewLine + Environment.NewLine + "Drive Label: " + cdrive.VolumeLabel);
                     break;
                 case 22:
-                    TextType(Environment.NewLine + "Total Drive Size: " + String.Format((cdrive.TotalSize / 1024 / 1024 / 1024).ToString(), "0.00") + " GigaBytes ");
+                    TextType(Environment.NewLine + "Total Drive Size: " + String.Format((cdrive.TotalSize / 1024 / 1024 / 1024).ToString(), "0.00") + "GB. ");
                     break;
                 case 23:
-                    TextType(Environment.NewLine + "Old File System: " + cdrive.DriveFormat + " ");
+                    TextType(Environment.NewLine + "Old File System: " + cdrive.DriveFormat + ". ");
                     break;
                 case 24:
-                    TextType(Environment.NewLine + "New File System: ShiftFS ");
+                    TextType(Environment.NewLine + "New File System: ShiftFS. ");
                     break;
                 case 25:
-                    TextType(Environment.NewLine + Environment.NewLine + "Formatting C:/ - ");
+                    TextType(Environment.NewLine + Environment.NewLine + "Formatting C:\\... - ");
                     conversationtimer.Interval = 100;
                     break;
                 case 26: // TODO: to 126
