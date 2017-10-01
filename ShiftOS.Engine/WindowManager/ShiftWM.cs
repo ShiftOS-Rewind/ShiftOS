@@ -18,7 +18,7 @@ namespace ShiftOS.Engine.WindowManager
 	    }
 
         /// <summary>
-        /// Shows a new Window based on a UserControl.
+        /// Shows a new ShiftWindow based on a UserControl.
         /// </summary>
         /// <param name="content">The UserControl to use</param>
         /// <param name="title">The program's title</param>

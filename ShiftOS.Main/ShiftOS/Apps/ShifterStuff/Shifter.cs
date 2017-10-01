@@ -18,5 +18,15 @@ namespace ShiftOS.Main.ShiftOS.Apps
             colorType = 1;
             ShiftWM.Init(new SelectColor(), "Select a color", Properties.Resources.iconColourPicker_fw.ToIcon());
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
