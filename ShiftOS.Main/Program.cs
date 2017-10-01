@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShiftOS.Main.ShiftOS;
 
 namespace ShiftOS.Main
 {
@@ -16,7 +15,10 @@ namespace ShiftOS.Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestForm());
+
+			Parallel.Invoke(
+				() => Application.Run(new TestForm()),
+				() => Application.Run(new Desktop()));
         }
     }
 }

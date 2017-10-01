@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShiftOS.Engine.WindowManager;
 
@@ -13,11 +7,10 @@ namespace ShiftOS.Main.ShiftOS.Apps
 {
     public partial class SelectColor : UserControl
     {
-        ShiftWM shiftWM = new ShiftWM();
-        Color finalColor;
-        int colorType1;
-        int colorType2;
-        int colorType3;
+        Color _finalColor;
+        int _colorType1;
+        int _colorType2;
+        int _colorType3;
         public SelectColor()
         {
             InitializeComponent();
@@ -28,31 +21,31 @@ namespace ShiftOS.Main.ShiftOS.Apps
         {
             try
             {
-                colorType1 = Convert.ToInt32(textBox1.Text);
-                colorType2 = Convert.ToInt32(textBox2.Text);
-                colorType3 = Convert.ToInt32(textBox3.Text);
+                _colorType1 = Convert.ToInt32(textBox1.Text);
+                _colorType2 = Convert.ToInt32(textBox2.Text);
+                _colorType3 = Convert.ToInt32(textBox3.Text);
             }
-            catch
+            catch(FormatException ex)
             {
-                shiftWM.StartInfoboxSession("Error!", "Cannot parse a string.", InfoboxTemplate.buttonType.OK);
+                ShiftWM.StartInfoboxSession("Error!", "Failed to parse integer. Error:\n" + ex, InfoboxTemplate.ButtonType.Ok);
             }
             
-            if (colorType1 > 255 || colorType2 > 255 || colorType3 > 255)
+            if (_colorType1 > 255 || _colorType2 > 255 || _colorType3 > 255)
             {
-                shiftWM.StartInfoboxSession("Error!", "A value cannot be greater than 255!", InfoboxTemplate.buttonType.OK);
+                ShiftWM.StartInfoboxSession("Error!", "A value cannot be greater than 255!", InfoboxTemplate.ButtonType.Ok);
             }
             else
             {
                 try
                 {
                     ShiftWindow sw = new ShiftWindow();
-                    finalColor = Color.FromArgb(colorType1, colorType2, colorType3);
-                    this.BackColor = finalColor;
-                    shiftWM.StartInfoboxSession("Success!", "Changed color to:\n" + colorType1.ToString() + ", " + colorType2.ToString() + ", " + colorType3.ToString() + ".", InfoboxTemplate.buttonType.OK);
+                    _finalColor = Color.FromArgb(_colorType1, _colorType2, _colorType3);
+                    BackColor = _finalColor;
+                    ShiftWM.StartInfoboxSession("Success!", "Changed color to:\n" + _colorType1.ToString() + ", " + _colorType2.ToString() + ", " + _colorType3.ToString() + ".", InfoboxTemplate.ButtonType.Ok);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    shiftWM.StartInfoboxSession("Error!", "An exception occured while setting the color! Exception: \n" + ex, InfoboxTemplate.buttonType.OK);
+                    ShiftWM.StartInfoboxSession("Error!", "An error occured while setting the color.", InfoboxTemplate.ButtonType.Ok);
                 }
             }
         }
