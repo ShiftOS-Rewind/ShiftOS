@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShiftOS.Engine.WindowManager;
+using ShiftOS.Main.ShiftOS.Apps;
+using ShiftOS.Main.Properties;
+using ShiftOS.Engine;
 
 namespace ShiftOS.Main.ShiftOS
 {
@@ -57,5 +60,10 @@ namespace ShiftOS.Main.ShiftOS
 
 		private void timer1_Tick(object sender, EventArgs e) => 
 			taskbarClock.Text = $"{DateTime.Now:t}";
-	}
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+            ShiftWM.Init(new Snakey(), "Snakey - WIP", Resources.iconSnakey.ToIcon(), false, true);
+        }
+    }
 }

@@ -92,5 +92,14 @@
   <ItemGroup>
     <None Include="Resources\iconInfoBox.fw.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbolWarning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbolQuestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbolError.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
