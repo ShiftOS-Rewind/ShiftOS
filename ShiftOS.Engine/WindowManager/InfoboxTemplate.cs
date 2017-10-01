@@ -11,7 +11,7 @@ namespace ShiftOS.Engine.WindowManager
         Stream _str;
         private int _buttonChoice;
 	    private int _buttonSelected;
-        public InfoboxTemplate(ButtonType type, ErrorIcon icon)
+        public InfoboxTemplate(ButtonType type)
         {
             InitializeComponent();
             
@@ -34,21 +34,6 @@ namespace ShiftOS.Engine.WindowManager
                     _buttonChoice = 3;
                     break;
             }
-            switch (icon)
-            {
-                case ErrorIcon.Critical:
-                    SetImage(Properties.Resources.symbolError);
-                    break;
-                case ErrorIcon.Error:
-                    SetImage(Properties.Resources.symbolWarning);
-                    break;
-                case ErrorIcon.Info:
-                    SetImage(Properties.Resources.symbolInfo);
-                    break;
-                case ErrorIcon.Question:
-                    SetImage(Properties.Resources.symbolQuestion);
-                    break;
-            }
         }
 
         public enum ButtonType
@@ -58,13 +43,6 @@ namespace ShiftOS.Engine.WindowManager
             Ok
         }
 
-        public enum ErrorIcon
-        {
-            Info,
-            Critical,
-            Error,
-            Question
-        }
         private void btnOpt1_Click(object sender, EventArgs e)
         {
             switch (btnOpt1.Text)
@@ -104,9 +82,10 @@ namespace ShiftOS.Engine.WindowManager
         private void InfoboxTemplate_Load(object sender, EventArgs e) 
 			=> Play();
 
-        private void SetImage(Image imageType)
+	    private void changeSize_Tick(object sender, EventArgs e)
         {
-            pictureBox1.Image = imageType;
+            this.Height += label1.Height;
+            this.Width += label1.Width;
         }
     }
 }

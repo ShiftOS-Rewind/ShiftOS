@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.conversationtimer = new System.Windows.Forms.Timer();
-            this.hackeffecttimer = new System.Windows.Forms.Timer();
+            this.conversationtimer = new System.Windows.Forms.Timer(this.components);
+            this.hackeffecttimer = new System.Windows.Forms.Timer(this.components);
             this.lblHijack = new System.Windows.Forms.Label();
-            this.textgen = new System.Windows.Forms.Timer();
+            this.textgen = new System.Windows.Forms.Timer(this.components);
             this.lblhackwords = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 

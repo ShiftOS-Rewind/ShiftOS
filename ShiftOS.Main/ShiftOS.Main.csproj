@@ -70,12 +70,6 @@
     <Compile Include="ShiftOS\Apps\ShifterStuff\Shifter.Designer.cs">
       <DependentUpon>Shifter.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftOS\Apps\Snakey.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ShiftOS\Apps\Snakey.Designer.cs">
-      <DependentUpon>Snakey.cs</DependentUpon>
-    </Compile>
     <Compile Include="ShiftOS\Apps\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +103,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\ShifterStuff\Shifter.resx">
       <DependentUpon>Shifter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShiftOS\Apps\Snakey.resx">
-      <DependentUpon>Snakey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

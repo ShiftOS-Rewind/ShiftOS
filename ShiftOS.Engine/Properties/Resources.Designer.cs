@@ -92,39 +92,9 @@ namespace ShiftOS.Engine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap symbolError {
+        internal static System.Drawing.Bitmap Symbolinfo {
             get {
-                object obj = ResourceManager.GetObject("symbolError", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap symbolInfo {
-            get {
-                object obj = ResourceManager.GetObject("symbolInfo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap symbolQuestion {
-            get {
-                object obj = ResourceManager.GetObject("symbolQuestion", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap symbolWarning {
-            get {
-                object obj = ResourceManager.GetObject("symbolWarning", resourceCulture);
+                object obj = ResourceManager.GetObject("Symbolinfo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

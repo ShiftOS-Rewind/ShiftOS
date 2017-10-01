@@ -27,12 +27,12 @@ namespace ShiftOS.Main.ShiftOS.Apps
             }
             catch(FormatException ex)
             {
-                ShiftWM.StartInfoboxSession("Error!", "Failed to parse integer. Error:\n" + ex, InfoboxTemplate.ButtonType.Ok, InfoboxTemplate.ErrorIcon.Critical);
+                ShiftWM.StartInfoboxSession("Error!", "Failed to parse integer. Error:\n" + ex, InfoboxTemplate.ButtonType.Ok);
             }
             
             if (_colorType1 > 255 || _colorType2 > 255 || _colorType3 > 255)
             {
-                ShiftWM.StartInfoboxSession("Error!", "A value cannot be greater than 255!", InfoboxTemplate.ButtonType.Ok, InfoboxTemplate.ErrorIcon.Critical);
+                ShiftWM.StartInfoboxSession("Error!", "A value cannot be greater than 255!", InfoboxTemplate.ButtonType.Ok);
             }
             else
             {
@@ -40,12 +40,12 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 {
                     ShiftWindow sw = new ShiftWindow();
                     _finalColor = Color.FromArgb(_colorType1, _colorType2, _colorType3);
-                    ShiftWM.SetTitleBarColor(_finalColor);
-                    ShiftWM.StartInfoboxSession("Success!", "Changed color to:\n" + _colorType1.ToString() + ", " + _colorType2.ToString() + ", " + _colorType3.ToString() + ".", InfoboxTemplate.ButtonType.Ok, InfoboxTemplate.ErrorIcon.Info);
+                    BackColor = _finalColor;
+                    ShiftWM.StartInfoboxSession("Success!", "Changed color to:\n" + _colorType1.ToString() + ", " + _colorType2.ToString() + ", " + _colorType3.ToString() + ".", InfoboxTemplate.ButtonType.Ok);
                 }
                 catch (Exception)
                 {
-                    ShiftWM.StartInfoboxSession("Error!", "An error occured while setting the color.", InfoboxTemplate.ButtonType.Ok, InfoboxTemplate.ErrorIcon.Critical);
+                    ShiftWM.StartInfoboxSession("Error!", "An error occured while setting the color.", InfoboxTemplate.ButtonType.Ok);
                 }
             }
         }
