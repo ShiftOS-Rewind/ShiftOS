@@ -17,7 +17,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
 
         }
 
-        private Color btnSetColor_Click(object sender, EventArgs e)
+        private Color setColor()
         {
             _colorType1 = Int32.Parse(redUpDown.Value.ToString());
             _colorType2 = Int32.Parse(greenUpDown.Value.ToString());
@@ -41,5 +41,10 @@ namespace ShiftOS.Main.ShiftOS.Apps
             }
             return _finalColor;
         }
+
+        private void btnSetColor_Click(object sender, EventArgs e)
+        {
+            setColor();
+        }
     }
-    }
+}
