@@ -50,40 +50,40 @@ namespace ShiftOS.Engine.WindowManager
 			=> this.Close();
 
 	    private void closebutton_MouseEnter(object sender, EventArgs e) 
-			=> closebutton.BackColor = Color.Gray;
+			=> btnClose.BackColor = Color.Gray;
 
 		private void closebutton_MouseLeave(object sender, EventArgs e) 
-			=> closebutton.BackColor = Color.Black;
+			=> btnClose.BackColor = Color.Black;
 
 		private void maximizebutton_MouseEnter(object sender, EventArgs e) 
-			=> maximizebutton.BackColor = Color.Gray;
+			=> btnMax.BackColor = Color.Gray;
 
 		private void maximizebutton_MouseLeave(object sender, EventArgs e) 
-			=> maximizebutton.BackColor = Color.Black;
+			=> btnMax.BackColor = Color.Black;
 
 		private void minimizebutton_MouseEnter(object sender, EventArgs e) 
-			=> minimizebutton.BackColor = Color.Gray;
+			=> btnMin.BackColor = Color.Gray;
 
 		private void minimizebutton_MouseLeave(object sender, EventArgs e) 
-			=> minimizebutton.BackColor = Color.Black;
+			=> btnMin.BackColor = Color.Black;
 
 		private void closebutton_MouseDown(object sender, MouseEventArgs e) 
-			=> closebutton.BackColor = Color.Black;
+			=> btnClose.BackColor = Color.Black;
 
 		private void maximizebutton_MouseDown(object sender, MouseEventArgs e) 
-			=> maximizebutton.BackColor = Color.Black;
+			=> btnMax.BackColor = Color.Black;
 
 		private void minimizebutton_MouseDown(object sender, MouseEventArgs e) 
-			=> minimizebutton.BackColor = Color.Black;
+			=> btnMin.BackColor = Color.Black;
 
 		private void minimizebutton_MouseUp(object sender, MouseEventArgs e) 
-			=> minimizebutton.BackColor = Color.Gray;
+			=> btnMin.BackColor = Color.Gray;
 
 		private void maximizebutton_MouseUp(object sender, MouseEventArgs e) 
-			=> maximizebutton.BackColor = Color.Gray;
+			=> btnMax.BackColor = Color.Gray;
 
 		private void closebutton_MouseUp(object sender, MouseEventArgs e) 
-			=> closebutton.BackColor = Color.Gray;
+			=> btnClose.BackColor = Color.Gray;
 	}
 
 	public interface IShiftWindowExtensions
