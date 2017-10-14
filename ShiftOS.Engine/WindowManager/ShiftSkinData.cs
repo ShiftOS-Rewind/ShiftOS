@@ -2,33 +2,19 @@
 
 namespace ShiftOS.Engine.WindowManager
 {
-    public class ShiftSkinData
+    public abstract class ShiftSkinData
     {
         // ColorData
-        public Color leftTopCornerColor { get; set; }
-        public Color titleBarColor { get; set; }
-        public Color rightTopCornerColor { get; set; }
-        public Color btnCloseColor { get; set; }
-        public Color btnMaxColor { get; set; }
-        public Color btnMinColor { get; set; }
-        public Color leftSideColor { get; set; }
-        public Color rightSideColor { get; set; }
-        public Color leftBottomCornerColor { get; set; }
-        public Color bottomSideColor { get; set; }
-        public Color rightBottomCornerColor { get; set; }
-        public Color borderColorColor { get; set; }
-
-        // SetBorderColor
-        public void setBorderColor(Color borderColor)
-        {
-            leftTopCornerColor = borderColor;
-            titleBarColor = borderColor;
-            rightTopCornerColor = borderColor;
-            leftSideColor = borderColor;
-            rightSideColor = borderColor;
-            leftBottomCornerColor = borderColor;
-            bottomSideColor = borderColor;
-            rightBottomCornerColor = borderColor;
-        }
+        public static Color leftTopCornerColor = Color.Empty;
+        public static Color titleBarColor = Color.Empty;
+        public static Color rightTopCornerColor = Color.Empty;
+        public static Color btnCloseColor = Color.Empty;
+        public static Color btnMaxColor = Color.Empty;
+        public static Color btnMinColor = Color.Empty;
+        public static Color leftSideColor = Color.Empty;
+        public static Color rightSideColor = Color.Empty;
+        public static Color leftBottomCornerColor = Color.Empty;
+        public static Color bottomSideColor = Color.Empty;
+        public static Color rightBottomCornerColor = Color.Empty;
     }
 }
