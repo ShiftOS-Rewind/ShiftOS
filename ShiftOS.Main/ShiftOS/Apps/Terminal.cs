@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShiftOS.Engine;
+using ShiftOS.Engine.Terminal;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
@@ -43,7 +45,8 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 //    termmain.Paste(DataFormats.GetFormat(DataFormats.Text));
                 e.Handled = true;
             } else if (e.KeyCode == Keys.Enter) {
-                Print(RunCommand(termmain.Text.Substring(TrackingPosition, termmain.Text.Length - TrackingPosition))); // The most horrific line in the entire application!
+                Print(TerminalBackend.RunCommand(termmain.Text.Substring(TrackingPosition, termmain.Text.Length - TrackingPosition))); // The most horrific line in the entire application!
+                e.Handled = true;
             }
         }
 
