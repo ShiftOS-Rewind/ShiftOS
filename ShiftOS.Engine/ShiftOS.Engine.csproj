@@ -52,6 +52,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Terminal\Commands\Hello.cs" />
+    <Compile Include="Terminal\TerminalBackend.cs" />
+    <Compile Include="Terminal\TerminalCommand.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="WindowManager\InfoboxTemplate.cs">
       <SubType>UserControl</SubType>
@@ -93,5 +96,6 @@
   <ItemGroup>
     <None Include="Resources\iconInfoBox.fw.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
