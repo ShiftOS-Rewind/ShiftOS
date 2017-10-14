@@ -15,7 +15,7 @@ namespace ShiftOS.Engine.Terminal.Commands
 
         public override string Run(params string[] parameters)
         {
-            return "Oh, HELLO," + parameters[0];
+            return "Oh, HELLO, " + String.Join(" ", parameters);
         }
     }
 }
