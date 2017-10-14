@@ -28,238 +28,222 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.program = new System.Windows.Forms.Panel();
-			this.programContent = new System.Windows.Forms.Panel();
-			this.bottomleftcorner = new System.Windows.Forms.Panel();
-			this.toprightcorner = new System.Windows.Forms.Panel();
-			this.bottomrightcorner = new System.Windows.Forms.Panel();
-			this.topleftcorner = new System.Windows.Forms.Panel();
-			this.bottom = new System.Windows.Forms.Panel();
-			this.top = new System.Windows.Forms.Panel();
-			this.programIcon = new System.Windows.Forms.PictureBox();
-			this.maximizebutton = new System.Windows.Forms.PictureBox();
-			this.minimizebutton = new System.Windows.Forms.PictureBox();
-			this.Title = new System.Windows.Forms.Label();
-			this.closebutton = new System.Windows.Forms.PictureBox();
-			this.right = new System.Windows.Forms.Panel();
-			this.left = new System.Windows.Forms.Panel();
-			this.program.SuspendLayout();
-			this.top.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.programIcon)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.maximizebutton)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.minimizebutton)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.closebutton)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// program
-			// 
-			this.program.BackColor = System.Drawing.Color.White;
-			this.program.Controls.Add(this.programContent);
-			this.program.Controls.Add(this.bottomleftcorner);
-			this.program.Controls.Add(this.toprightcorner);
-			this.program.Controls.Add(this.bottomrightcorner);
-			this.program.Controls.Add(this.topleftcorner);
-			this.program.Controls.Add(this.bottom);
-			this.program.Controls.Add(this.top);
-			this.program.Controls.Add(this.right);
-			this.program.Controls.Add(this.left);
-			this.program.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.program.Location = new System.Drawing.Point(0, 0);
-			this.program.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.program.Name = "program";
-			this.program.Size = new System.Drawing.Size(426, 402);
-			this.program.TabIndex = 11;
-			// 
-			// programContent
-			// 
-			this.programContent.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.programContent.Location = new System.Drawing.Point(6, 46);
-			this.programContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.programContent.Name = "programContent";
-			this.programContent.Size = new System.Drawing.Size(414, 350);
-			this.programContent.TabIndex = 11;
-			// 
-			// bottomleftcorner
-			// 
-			this.bottomleftcorner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.bottomleftcorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.bottomleftcorner.Location = new System.Drawing.Point(0, 395);
-			this.bottomleftcorner.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.bottomleftcorner.Name = "bottomleftcorner";
-			this.bottomleftcorner.Size = new System.Drawing.Size(8, 6);
-			this.bottomleftcorner.TabIndex = 10;
-			// 
-			// toprightcorner
-			// 
-			this.toprightcorner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.toprightcorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.toprightcorner.Location = new System.Drawing.Point(417, 0);
-			this.toprightcorner.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.toprightcorner.Name = "toprightcorner";
-			this.toprightcorner.Size = new System.Drawing.Size(9, 46);
-			this.toprightcorner.TabIndex = 9;
-			// 
-			// bottomrightcorner
-			// 
-			this.bottomrightcorner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.bottomrightcorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.bottomrightcorner.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-			this.bottomrightcorner.Location = new System.Drawing.Point(420, 395);
-			this.bottomrightcorner.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.bottomrightcorner.Name = "bottomrightcorner";
-			this.bottomrightcorner.Size = new System.Drawing.Size(6, 6);
-			this.bottomrightcorner.TabIndex = 4;
-			// 
-			// topleftcorner
-			// 
-			this.topleftcorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.topleftcorner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.topleftcorner.Location = new System.Drawing.Point(0, 0);
-			this.topleftcorner.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.topleftcorner.Name = "topleftcorner";
-			this.topleftcorner.Size = new System.Drawing.Size(10, 46);
-			this.topleftcorner.TabIndex = 8;
-			// 
-			// bottom
-			// 
-			this.bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.bottom.Cursor = System.Windows.Forms.Cursors.SizeNS;
-			this.bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.bottom.Location = new System.Drawing.Point(6, 396);
-			this.bottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.bottom.Name = "bottom";
-			this.bottom.Size = new System.Drawing.Size(414, 6);
-			this.bottom.TabIndex = 3;
-			// 
-			// top
-			// 
-			this.top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.top.Controls.Add(this.programIcon);
-			this.top.Controls.Add(this.maximizebutton);
-			this.top.Controls.Add(this.minimizebutton);
-			this.top.Controls.Add(this.Title);
-			this.top.Controls.Add(this.closebutton);
-			this.top.Dock = System.Windows.Forms.DockStyle.Top;
-			this.top.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.top.Location = new System.Drawing.Point(6, 0);
-			this.top.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.top.Name = "top";
-			this.top.Size = new System.Drawing.Size(414, 46);
-			this.top.TabIndex = 0;
-			this.top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Programtopbar_drag);
-			// 
-			// programIcon
-			// 
-			this.programIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.programIcon.ErrorImage = null;
-			this.programIcon.InitialImage = null;
-			this.programIcon.Location = new System.Drawing.Point(9, 11);
-			this.programIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.programIcon.Name = "programIcon";
-			this.programIcon.Size = new System.Drawing.Size(24, 25);
-			this.programIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.programIcon.TabIndex = 7;
-			this.programIcon.TabStop = false;
-			// 
-			// maximizebutton
-			// 
-			this.maximizebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.maximizebutton.BackColor = System.Drawing.Color.Black;
-			this.maximizebutton.Location = new System.Drawing.Point(345, 6);
-			this.maximizebutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.maximizebutton.Name = "maximizebutton";
-			this.maximizebutton.Size = new System.Drawing.Size(32, 32);
-			this.maximizebutton.TabIndex = 6;
-			this.maximizebutton.TabStop = false;
-			this.maximizebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseDown);
-			this.maximizebutton.MouseEnter += new System.EventHandler(this.maximizebutton_MouseEnter);
-			this.maximizebutton.MouseLeave += new System.EventHandler(this.maximizebutton_MouseLeave);
-			this.maximizebutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseUp);
-			// 
-			// minimizebutton
-			// 
-			this.minimizebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.minimizebutton.BackColor = System.Drawing.Color.Black;
-			this.minimizebutton.Location = new System.Drawing.Point(310, 6);
-			this.minimizebutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.minimizebutton.Name = "minimizebutton";
-			this.minimizebutton.Size = new System.Drawing.Size(32, 32);
-			this.minimizebutton.TabIndex = 5;
-			this.minimizebutton.TabStop = false;
-			this.minimizebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseDown);
-			this.minimizebutton.MouseEnter += new System.EventHandler(this.minimizebutton_MouseEnter);
-			this.minimizebutton.MouseLeave += new System.EventHandler(this.minimizebutton_MouseLeave);
-			this.minimizebutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseUp);
-			// 
-			// Title
-			// 
-			this.Title.AutoSize = true;
-			this.Title.BackColor = System.Drawing.Color.Transparent;
-			this.Title.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Title.ForeColor = System.Drawing.Color.White;
-			this.Title.Location = new System.Drawing.Point(38, 12);
-			this.Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.Title.Name = "Title";
-			this.Title.Size = new System.Drawing.Size(149, 21);
-			this.Title.TabIndex = 3;
-			this.Title.Text = "Application Title";
-			this.Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Programtopbar_drag);
-			// 
-			// closebutton
-			// 
-			this.closebutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.closebutton.BackColor = System.Drawing.Color.Black;
-			this.closebutton.Location = new System.Drawing.Point(380, 6);
-			this.closebutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.closebutton.Name = "closebutton";
-			this.closebutton.Size = new System.Drawing.Size(32, 32);
-			this.closebutton.TabIndex = 4;
-			this.closebutton.TabStop = false;
-			this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
-			this.closebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseDown);
-			this.closebutton.MouseEnter += new System.EventHandler(this.closebutton_MouseEnter);
-			this.closebutton.MouseLeave += new System.EventHandler(this.closebutton_MouseLeave);
-			this.closebutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseUp);
-			// 
-			// right
-			// 
-			this.right.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.right.Cursor = System.Windows.Forms.Cursors.SizeWE;
-			this.right.Dock = System.Windows.Forms.DockStyle.Right;
-			this.right.Location = new System.Drawing.Point(420, 0);
-			this.right.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.right.Name = "right";
-			this.right.Size = new System.Drawing.Size(6, 402);
-			this.right.TabIndex = 2;
-			// 
-			// left
-			// 
-			this.left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.left.Dock = System.Windows.Forms.DockStyle.Left;
-			this.left.Location = new System.Drawing.Point(0, 0);
-			this.left.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.left.Name = "left";
-			this.left.Size = new System.Drawing.Size(6, 402);
-			this.left.TabIndex = 1;
-			// 
-			// ShiftWindow
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(426, 402);
-			this.Controls.Add(this.program);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.Name = "ShiftWindow";
-			this.Text = "c";
-			this.program.ResumeLayout(false);
-			this.top.ResumeLayout(false);
-			this.top.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.programIcon)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.maximizebutton)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.minimizebutton)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.closebutton)).EndInit();
-			this.ResumeLayout(false);
+            this.program = new System.Windows.Forms.Panel();
+            this.programContent = new System.Windows.Forms.Panel();
+            this.leftBottomCorner = new System.Windows.Forms.Panel();
+            this.rightTopCorner = new System.Windows.Forms.Panel();
+            this.rightBottomCorner = new System.Windows.Forms.Panel();
+            this.leftTopCorner = new System.Windows.Forms.Panel();
+            this.bottomSide = new System.Windows.Forms.Panel();
+            this.titleBar = new System.Windows.Forms.Panel();
+            this.programIcon = new System.Windows.Forms.PictureBox();
+            this.btnMax = new System.Windows.Forms.PictureBox();
+            this.btnMin = new System.Windows.Forms.PictureBox();
+            this.Title = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.rightSide = new System.Windows.Forms.Panel();
+            this.leftSide = new System.Windows.Forms.Panel();
+            this.program.SuspendLayout();
+            this.titleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // program
+            // 
+            this.program.BackColor = System.Drawing.Color.White;
+            this.program.Controls.Add(this.programContent);
+            this.program.Controls.Add(this.leftBottomCorner);
+            this.program.Controls.Add(this.rightTopCorner);
+            this.program.Controls.Add(this.rightBottomCorner);
+            this.program.Controls.Add(this.leftTopCorner);
+            this.program.Controls.Add(this.bottomSide);
+            this.program.Controls.Add(this.titleBar);
+            this.program.Controls.Add(this.rightSide);
+            this.program.Controls.Add(this.leftSide);
+            this.program.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.program.Location = new System.Drawing.Point(0, 0);
+            this.program.Name = "program";
+            this.program.Size = new System.Drawing.Size(284, 261);
+            this.program.TabIndex = 11;
+            // 
+            // programContent
+            // 
+            this.programContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.programContent.Location = new System.Drawing.Point(4, 30);
+            this.programContent.Name = "programContent";
+            this.programContent.Size = new System.Drawing.Size(276, 227);
+            this.programContent.TabIndex = 11;
+            // 
+            // leftBottomCorner
+            // 
+            this.leftBottomCorner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.leftBottomCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftBottomCorner.Location = new System.Drawing.Point(0, 257);
+            this.leftBottomCorner.Name = "leftBottomCorner";
+            this.leftBottomCorner.Size = new System.Drawing.Size(5, 4);
+            this.leftBottomCorner.TabIndex = 10;
+            // 
+            // rightTopCorner
+            // 
+            this.rightTopCorner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rightTopCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rightTopCorner.Location = new System.Drawing.Point(278, 0);
+            this.rightTopCorner.Name = "rightTopCorner";
+            this.rightTopCorner.Size = new System.Drawing.Size(6, 30);
+            this.rightTopCorner.TabIndex = 9;
+            // 
+            // rightBottomCorner
+            // 
+            this.rightBottomCorner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rightBottomCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rightBottomCorner.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.rightBottomCorner.Location = new System.Drawing.Point(280, 257);
+            this.rightBottomCorner.Name = "rightBottomCorner";
+            this.rightBottomCorner.Size = new System.Drawing.Size(4, 4);
+            this.rightBottomCorner.TabIndex = 4;
+            // 
+            // leftTopCorner
+            // 
+            this.leftTopCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftTopCorner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.leftTopCorner.Location = new System.Drawing.Point(0, 0);
+            this.leftTopCorner.Name = "leftTopCorner";
+            this.leftTopCorner.Size = new System.Drawing.Size(7, 30);
+            this.leftTopCorner.TabIndex = 8;
+            // 
+            // bottomSide
+            // 
+            this.bottomSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bottomSide.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.bottomSide.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomSide.Location = new System.Drawing.Point(4, 257);
+            this.bottomSide.Name = "bottomSide";
+            this.bottomSide.Size = new System.Drawing.Size(276, 4);
+            this.bottomSide.TabIndex = 3;
+            // 
+            // titleBar
+            // 
+            this.titleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.titleBar.Controls.Add(this.programIcon);
+            this.titleBar.Controls.Add(this.btnMax);
+            this.titleBar.Controls.Add(this.btnMin);
+            this.titleBar.Controls.Add(this.Title);
+            this.titleBar.Controls.Add(this.btnClose);
+            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleBar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.titleBar.Location = new System.Drawing.Point(4, 0);
+            this.titleBar.Name = "titleBar";
+            this.titleBar.Size = new System.Drawing.Size(276, 30);
+            this.titleBar.TabIndex = 0;
+            this.titleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Programtopbar_drag);
+            // 
+            // programIcon
+            // 
+            this.programIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.programIcon.ErrorImage = null;
+            this.programIcon.InitialImage = null;
+            this.programIcon.Location = new System.Drawing.Point(6, 7);
+            this.programIcon.Name = "programIcon";
+            this.programIcon.Size = new System.Drawing.Size(16, 16);
+            this.programIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.programIcon.TabIndex = 7;
+            this.programIcon.TabStop = false;
+            // 
+            // btnMax
+            // 
+            this.btnMax.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMax.BackColor = System.Drawing.Color.Black;
+            this.btnMax.Location = new System.Drawing.Point(230, 4);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(21, 21);
+            this.btnMax.TabIndex = 6;
+            this.btnMax.TabStop = false;
+            this.btnMax.MouseDown += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseDown);
+            this.btnMax.MouseEnter += new System.EventHandler(this.maximizebutton_MouseEnter);
+            this.btnMax.MouseLeave += new System.EventHandler(this.maximizebutton_MouseLeave);
+            this.btnMax.MouseUp += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseUp);
+            // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMin.BackColor = System.Drawing.Color.Black;
+            this.btnMin.Location = new System.Drawing.Point(207, 4);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(21, 21);
+            this.btnMin.TabIndex = 5;
+            this.btnMin.TabStop = false;
+            this.btnMin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseDown);
+            this.btnMin.MouseEnter += new System.EventHandler(this.minimizebutton_MouseEnter);
+            this.btnMin.MouseLeave += new System.EventHandler(this.minimizebutton_MouseLeave);
+            this.btnMin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseUp);
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.White;
+            this.Title.Location = new System.Drawing.Point(25, 8);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(98, 13);
+            this.Title.TabIndex = 3;
+            this.Title.Text = "Application Title";
+            this.Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Programtopbar_drag);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnClose.BackColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(253, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(21, 21);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.closebutton_Click);
+            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseDown);
+            this.btnClose.MouseEnter += new System.EventHandler(this.closebutton_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.closebutton_MouseLeave);
+            this.btnClose.MouseUp += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseUp);
+            // 
+            // rightSide
+            // 
+            this.rightSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rightSide.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.rightSide.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightSide.Location = new System.Drawing.Point(280, 0);
+            this.rightSide.Name = "rightSide";
+            this.rightSide.Size = new System.Drawing.Size(4, 261);
+            this.rightSide.TabIndex = 2;
+            // 
+            // leftSide
+            // 
+            this.leftSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftSide.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftSide.Location = new System.Drawing.Point(0, 0);
+            this.leftSide.Name = "leftSide";
+            this.leftSide.Size = new System.Drawing.Size(4, 261);
+            this.leftSide.TabIndex = 1;
+            // 
+            // ShiftWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.program);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ShiftWindow";
+            this.Text = "c";
+            this.program.ResumeLayout(false);
+            this.titleBar.ResumeLayout(false);
+            this.titleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            this.ResumeLayout(false);
 
         }
 
@@ -267,17 +251,17 @@
         public System.Windows.Forms.PictureBox programIcon;
         public System.Windows.Forms.Panel programContent;
         public System.Windows.Forms.Panel program;
-        public System.Windows.Forms.Panel bottomleftcorner;
-        public System.Windows.Forms.Panel toprightcorner;
-        public System.Windows.Forms.Panel bottomrightcorner;
-        public System.Windows.Forms.Panel topleftcorner;
-        public System.Windows.Forms.Panel bottom;
-        public System.Windows.Forms.Panel top;
-        public System.Windows.Forms.PictureBox maximizebutton;
-        public System.Windows.Forms.PictureBox minimizebutton;
+        public System.Windows.Forms.Panel leftBottomCorner;
+        public System.Windows.Forms.Panel rightTopCorner;
+        public System.Windows.Forms.Panel rightBottomCorner;
+        public System.Windows.Forms.Panel leftTopCorner;
+        public System.Windows.Forms.Panel bottomSide;
+        public System.Windows.Forms.Panel titleBar;
+        public System.Windows.Forms.PictureBox btnMax;
+        public System.Windows.Forms.PictureBox btnMin;
         public System.Windows.Forms.Label Title;
-        public System.Windows.Forms.PictureBox closebutton;
-        public System.Windows.Forms.Panel right;
-        public System.Windows.Forms.Panel left;
+        public System.Windows.Forms.PictureBox btnClose;
+        public System.Windows.Forms.Panel rightSide;
+        public System.Windows.Forms.Panel leftSide;
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="WindowManager\InfoboxTemplate.Designer.cs">
       <DependentUpon>InfoboxTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowManager\ShiftSkinData.cs" />
     <Compile Include="WindowManager\ShiftWindow.cs">
       <SubType>Form</SubType>
     </Compile>

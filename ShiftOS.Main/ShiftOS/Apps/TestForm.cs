@@ -17,12 +17,8 @@ namespace ShiftOS.Main
 
         private void Button1_Click(object sender, EventArgs e)
         {
-	        ShiftDemo demo = new ShiftDemo {label1 = {Text = textBox2.Text}};
-
-	        var item = typeof(SystemIcons).GetProperties()
-		        .First(p => p.Name == comboBox1.SelectedItem as string);
-
-			ShiftWM.Init(demo, textBox1.Text, (item.GetMethod.Invoke(null, new object[0]) as Icon));
+            ShiftDemo demo = new ShiftDemo();
+			ShiftWM.Init(demo, textBox1.Text, null);
 	        ShiftWM.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.ButtonType.Ok);
         }
 

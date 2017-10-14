@@ -18,7 +18,7 @@ namespace ShiftOS.Engine.WindowManager
 	    }
 
         /// <summary>
-        /// Shows a new Window based on a UserControl.
+        /// Shows a new ShiftWindow based on a UserControl.
         /// </summary>
         /// <param name="content">The UserControl to use</param>
         /// <param name="title">The program's title</param>
@@ -33,13 +33,42 @@ namespace ShiftOS.Engine.WindowManager
 	        {
 		        Text = title,
 		        Title = {Text = title}
-	        };
+            };
 
-	        app.Width = content.Width + app.left.Width + app.right.Width;
-            app.Height = content.Height + app.bottom.Height + app.top.Height;
+	        app.Width = content.Width + app.leftSide.Width + app.rightSide.Width;
+            app.Height = content.Height + app.bottomSide.Height + app.titleBar.Height;
+
+            if (ShiftSkinData.titleBarColor == Color.Empty)
+            {
+                Color borderColor = Color.FromArgb(64, 64, 64);
+                ShiftSkinData.btnCloseColor = Color.Black;
+                ShiftSkinData.btnMaxColor = Color.Black;
+                ShiftSkinData.btnMinColor = Color.Black;
+                ShiftSkinData.leftTopCornerColor = borderColor;
+                ShiftSkinData.titleBarColor = borderColor;
+                ShiftSkinData.rightTopCornerColor = borderColor;
+                ShiftSkinData.leftSideColor = borderColor;
+                ShiftSkinData.rightSideColor = borderColor;
+                ShiftSkinData.leftBottomCornerColor = borderColor;
+                ShiftSkinData.bottomSideColor = borderColor;
+                ShiftSkinData.rightBottomCornerColor = borderColor;
+            }
+
+            app.btnClose.BackColor = ShiftSkinData.btnCloseColor;
+            app.btnMax.BackColor = ShiftSkinData.btnMaxColor;
+            app.btnMin.BackColor = ShiftSkinData.btnMinColor;
+            app.leftTopCorner.BackColor = ShiftSkinData.leftTopCornerColor;
+            app.titleBar.BackColor = ShiftSkinData.titleBarColor;
+            app.rightTopCorner.BackColor = ShiftSkinData.rightTopCornerColor;
+            app.leftSide.BackColor = ShiftSkinData.leftSideColor;
+            app.rightSide.BackColor = ShiftSkinData.rightSideColor;
+            app.leftBottomCorner.BackColor = ShiftSkinData.leftBottomCornerColor;
+            app.bottomSide.BackColor = ShiftSkinData.bottomSideColor;
+            app.rightBottomCorner.BackColor = ShiftSkinData.rightBottomCornerColor;
+            
 
             // Icon Setup
-	        if (icon == null)
+            if (icon == null)
 	        {
 		        app.programIcon.Hide();
 		        app.programIcon.Image = Properties.Resources.nullIcon;
