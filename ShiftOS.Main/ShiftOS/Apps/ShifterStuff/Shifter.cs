@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using ShiftOS.Engine;
 using ShiftOS.Engine.WindowManager;
 using System.Drawing;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
@@ -35,6 +37,9 @@ namespace ShiftOS.Main.ShiftOS.Apps
             ShiftSkinData.btnCloseColor = Color.Red;
             ShiftSkinData.btnMaxColor = Color.Yellow;
             ShiftSkinData.btnMinColor = Color.Green;
+            ShiftSkinData.btnCloseHoverColor = Color.FromArgb(255, 102, 102);
+            ShiftSkinData.btnMaxHoverColor = Color.FromArgb(255, 255, 153);
+            ShiftSkinData.btnMinColor = Color.FromArgb(102, 255, 102);
             button5_Click(sender, e);
         }
 
@@ -45,6 +50,9 @@ namespace ShiftOS.Main.ShiftOS.Apps
             ShiftSkinData.btnCloseColor = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
             ShiftSkinData.btnMaxColor = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
             ShiftSkinData.btnMinColor = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
+            ShiftSkinData.btnCloseHoverColor = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
+            ShiftSkinData.btnMaxHoverColor = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
+            ShiftSkinData.btnMinHoverColor = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
             button5_Click(sender, e);
         }
 
@@ -79,6 +87,27 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 window.Invoke(new Action(() => window.btnMin.BackColor = ShiftSkinData.btnMinColor));
                 
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Color[] shiftColors = new Color[14];
+            shiftColors[0] = ShiftSkinData.leftTopCornerColor;
+            shiftColors[1] = ShiftSkinData.titleBarColor;
+            shiftColors[2] = ShiftSkinData.rightTopCornerColor;
+            shiftColors[3] = ShiftSkinData.leftSideColor;
+            shiftColors[4] = ShiftSkinData.rightSideColor;
+            shiftColors[5] = ShiftSkinData.leftBottomCornerColor;
+            shiftColors[6] = ShiftSkinData.bottomSideColor;
+            shiftColors[7] = ShiftSkinData.rightBottomCornerColor;
+            shiftColors[8] = ShiftSkinData.btnCloseColor;
+            shiftColors[9] = ShiftSkinData.btnMaxColor;
+            shiftColors[10] = ShiftSkinData.btnMinColor;
+            shiftColors[11] = ShiftSkinData.btnCloseHoverColor;
+            shiftColors[12] = ShiftSkinData.btnMaxHoverColor;
+            shiftColors[13] = ShiftSkinData.btnMinHoverColor;
+            File.WriteAllText(@"C:\Users\Public\Documents\Skin.json", JsonConvert.SerializeObject(shiftColors));
+            ShiftWM.StartInfoboxSession("Saved Skin", "Saved Skin to C:\\Users\\Public\\Documents\\Skin.json", InfoboxTemplate.ButtonType.Ok);
         }
     }
 }
