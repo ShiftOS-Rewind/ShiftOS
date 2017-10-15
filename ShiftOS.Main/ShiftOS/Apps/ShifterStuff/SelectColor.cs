@@ -26,12 +26,12 @@ namespace ShiftOS.Main.ShiftOS.Apps
             {
                 _finalColor = Color.FromArgb(_colorType1, _colorType2, _colorType3);
                 
-                /*
+                
                 foreach (var window in ShiftWM.Windows)
 {
-                    window.Invoke(new Action(() => window.top.BackColor = _finalColor));
+                    window.Invoke(new Action(() => window.titleBar.BackColor = _finalColor));
                 }
-                */
+                
                 
                 ShiftWM.StartInfoboxSession("Success!", $"Changed color to:\r\n{_colorType1}, {_colorType2}, {_colorType3}.", InfoboxTemplate.ButtonType.Ok);
             }

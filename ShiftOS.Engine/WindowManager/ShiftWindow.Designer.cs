@@ -161,10 +161,8 @@
             this.btnMax.Size = new System.Drawing.Size(21, 21);
             this.btnMax.TabIndex = 6;
             this.btnMax.TabStop = false;
-            this.btnMax.MouseDown += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseDown);
             this.btnMax.MouseEnter += new System.EventHandler(this.maximizebutton_MouseEnter);
             this.btnMax.MouseLeave += new System.EventHandler(this.maximizebutton_MouseLeave);
-            this.btnMax.MouseUp += new System.Windows.Forms.MouseEventHandler(this.maximizebutton_MouseUp);
             // 
             // btnMin
             // 
@@ -175,10 +173,8 @@
             this.btnMin.Size = new System.Drawing.Size(21, 21);
             this.btnMin.TabIndex = 5;
             this.btnMin.TabStop = false;
-            this.btnMin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseDown);
             this.btnMin.MouseEnter += new System.EventHandler(this.minimizebutton_MouseEnter);
             this.btnMin.MouseLeave += new System.EventHandler(this.minimizebutton_MouseLeave);
-            this.btnMin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.minimizebutton_MouseUp);
             // 
             // Title
             // 
@@ -203,10 +199,8 @@
             this.btnClose.TabIndex = 4;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.closebutton_Click);
-            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseDown);
             this.btnClose.MouseEnter += new System.EventHandler(this.closebutton_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.closebutton_MouseLeave);
-            this.btnClose.MouseUp += new System.Windows.Forms.MouseEventHandler(this.closebutton_MouseUp);
             // 
             // rightSide
             // 

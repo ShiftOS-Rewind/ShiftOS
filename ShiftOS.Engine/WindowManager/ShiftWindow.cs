@@ -50,23 +50,25 @@ namespace ShiftOS.Engine.WindowManager
 			=> this.Close();
 
 	    private void closebutton_MouseEnter(object sender, EventArgs e) 
-			=> btnClose.BackColor = Color.Gray;
+			=> btnClose.BackColor = ShiftSkinData.btnCloseHoverColor;
 
-		private void closebutton_MouseLeave(object sender, EventArgs e) 
-			=> btnClose.BackColor = Color.Black;
+        private void closebutton_MouseLeave(object sender, EventArgs e)
+            => btnClose.BackColor = ShiftSkinData.btnCloseColor;
 
 		private void maximizebutton_MouseEnter(object sender, EventArgs e) 
-			=> btnMax.BackColor = Color.Gray;
+			=> btnMax.BackColor = ShiftSkinData.btnMaxHoverColor;
 
-		private void maximizebutton_MouseLeave(object sender, EventArgs e) 
-			=> btnMax.BackColor = Color.Black;
+        private void maximizebutton_MouseLeave(object sender, EventArgs e)
+            => btnMax.BackColor = ShiftSkinData.btnMaxColor;
 
-		private void minimizebutton_MouseEnter(object sender, EventArgs e) 
-			=> btnMin.BackColor = Color.Gray;
+        private void minimizebutton_MouseEnter(object sender, EventArgs e)
+            => btnMin.BackColor = ShiftSkinData.btnMinHoverColor;
+        
 
-		private void minimizebutton_MouseLeave(object sender, EventArgs e) 
-			=> btnMin.BackColor = Color.Black;
+        private void minimizebutton_MouseLeave(object sender, EventArgs e)
+            => btnMin.BackColor = ShiftSkinData.btnMinColor;
 
+        /*
 		private void closebutton_MouseDown(object sender, MouseEventArgs e) 
 			=> btnClose.BackColor = Color.Black;
 
@@ -75,15 +77,8 @@ namespace ShiftOS.Engine.WindowManager
 
 		private void minimizebutton_MouseDown(object sender, MouseEventArgs e) 
 			=> btnMin.BackColor = Color.Black;
+            */
 
-		private void minimizebutton_MouseUp(object sender, MouseEventArgs e) 
-			=> btnMin.BackColor = Color.Gray;
-
-		private void maximizebutton_MouseUp(object sender, MouseEventArgs e) 
-			=> btnMax.BackColor = Color.Gray;
-
-		private void closebutton_MouseUp(object sender, MouseEventArgs e) 
-			=> btnClose.BackColor = Color.Gray;
 	}
 
 	public interface IShiftWindowExtensions
