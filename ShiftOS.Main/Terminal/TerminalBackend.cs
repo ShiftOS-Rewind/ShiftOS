@@ -4,8 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace ShiftOS.Engine.Terminal
+namespace ShiftOS.Main.Terminal
 {
     public static class TerminalBackend
     {
@@ -15,12 +16,14 @@ namespace ShiftOS.Engine.Terminal
                                  && t.GetConstructor(Type.EmptyTypes) != null
                         select Activator.CreateInstance(t) as TerminalCommand;
 
+        public static List<ShiftOS.Apps.Terminal> trm = new List<ShiftOS.Apps.Terminal>();
+        public static int trmTopID = 0;
         /// <summary>
         /// Runs a terminal command.
         /// </summary>
         /// <param name="command"></param>
-        /// <returns>Returns all the output from that command.</returns>
-        public static string RunCommand(string command)
+        /// <param name="rtb"><summary>The rich text box that the text will be written to.</summary></param>
+        public static void RunCommand(string command, int TermID)
         {
             string name;
             try { name = command.Split(' ')[0]; } catch { name = command; }
@@ -30,17 +33,17 @@ namespace ShiftOS.Engine.Terminal
 
             foreach (TerminalCommand instance in instances)
             {
-                if (instance.GetName() == name)
-                    return instance.Run(theParams);
+                if (instance.Name.ToLower() == name.ToLower())
+                {
+                    instance.TermID = TermID;
+                    // Add a new line!
+                    Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText("\n");
+                    instance.Run(theParams);
+                    return;
+                }
             }
 
-            return "The command cannot be found.";
-        }
-
-        // An extra function ;)
-        private static Type[] GetTypesInNamespace(Assembly assembly, string nameSpace)
-        {
-            return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal)).ToArray();
+            Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.Text += " \n The command cannot be found. \n";
         }
     }
 }

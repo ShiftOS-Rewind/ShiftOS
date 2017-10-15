@@ -61,7 +61,7 @@ namespace ShiftOS.Main.ShiftOS
         private void terminalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Apps.Terminal trm = new Apps.Terminal();
-
+            
             ShiftWM.Init(trm, "Terminal", null, false, true);
         }
     }
