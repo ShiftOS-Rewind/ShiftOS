@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace ShiftOS.Engine.Terminal
 {
-    public abstract class TerminalCommand
+    public class TerminalCommand
     {
-        public abstract string GetName();
+        public string GetName() { return ""; }
 
-        public abstract string Run(params string[] parameters);
+        public void Run(params string[] parameters) { return ""; }
+
+        public void Run(params string[] parameters) {
+
+        }
     }
 }
