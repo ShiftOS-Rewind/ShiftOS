@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using ShiftOS.Engine;
+using ShiftOS.Engine.Misc;
 using ShiftOS.Engine.WindowManager;
-using ShiftOS.Main.ShiftOS.Apps;
+using ShiftOS.Main.Properties;
+using ShiftOS.Main.ShiftOS.Apps.ShifterStuff;
 
-namespace ShiftOS.Main
+namespace ShiftOS.Main.ShiftOS.Apps
 {
-    public partial class TestForm : Form
-    {
-        public TestForm()
-        {
-            InitializeComponent();
-        }
+	public partial class TestForm : Form
+	{
+		public TestForm()
+		{
+			InitializeComponent();
+		}
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            ShiftDemo demo = new ShiftDemo();
-			ShiftWM.Init(demo, textBox1.Text, null);
-	        ShiftWM.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.ButtonType.Ok);
-        }
+		void Button1_Click(object sender, EventArgs e)
+		{
+			var demo = new ShiftDemo();
+			ShiftWm.Init(demo, textBox1.Text, null);
+			ShiftWm.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.ButtonType.Ok);
+		}
 
-        private void button2_Click(object sender, EventArgs e) 
-			=> ShiftWM.Init(new Shifter(), "Shifter", Properties.Resources.iconShifter.ToIcon());
-    }
+		void button2_Click(object sender, EventArgs e)
+			=> ShiftWm.Init(new Shifter(), "Shifter", Resources.iconShifter.ToIcon());
+	}
 }

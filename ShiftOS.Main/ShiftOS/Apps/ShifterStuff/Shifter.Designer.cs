@@ -1,4 +1,4 @@
-﻿namespace ShiftOS.Main.ShiftOS.Apps
+﻿namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 {
     partial class Shifter
     {
@@ -94,7 +94,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Set Random Skin";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.setRandomSkin);
+            this.button4.Click += new System.EventHandler(this.SetRandomSkin);
             // 
             // button3
             // 
@@ -106,7 +106,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Set Default Skin";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.setDefaultSkin);
+            this.button3.Click += new System.EventHandler(this.SetDefaultSkin);
             // 
             // button2
             // 
@@ -118,7 +118,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Set Colorful Skin";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.setColorSkin);
+            this.button2.Click += new System.EventHandler(this.SetColorSkin);
             // 
             // groupBox1
             // 

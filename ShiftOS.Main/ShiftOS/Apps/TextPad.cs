@@ -1,54 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using ShiftOS.Engine;
+using System.Windows.Forms;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
-    public partial class TextPad : UserControl
-    {
-        string editedText;
-        public TextPad()
-        {
-            InitializeComponent();
-            editedText = textBox.Text;
-        }
-        private bool isEdited(string editedString)
-        {
-            editedString = editedText;
-            if(editedString != textBox.Text) 
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+	public partial class TextPad : UserControl
+	{
+		readonly string _editedText;
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                var sr = new StreamReader(openFileDialog1.FileName);
-                textBox.Text = sr.ReadToEnd();
-                sr.Close();
-            }
-        }
+		public TextPad()
+		{
+			InitializeComponent();
+			_editedText = textBox.Text;
+		}
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (isEdited(textBox.Text))
-            {
-                MessageBox.Show("yay it works");
-            }
-        }
-    }
+		bool IsEdited() => _editedText != textBox.Text;
+
+		void openToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
+			
+			var sr = new StreamReader(openFileDialog1.FileName);
+			textBox.Text = sr.ReadToEnd();
+			sr.Close();
+		}
+
+		void newToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (IsEdited())
+			{
+				MessageBox.Show("yay it works");
+			}
+		}
+	}
 }

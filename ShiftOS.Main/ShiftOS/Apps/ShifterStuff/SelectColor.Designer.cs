@@ -1,4 +1,4 @@
-﻿namespace ShiftOS.Main.ShiftOS.Apps
+﻿namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 {
     partial class SelectColor
     {

@@ -1,22 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <grammar version="1.0" xml:lang="en-US"
          xmlns="http://www.w3.org/2001/06/grammar"
          tag-format="semantics/1.0" root="Main">
-  
+
   <!-- Catalyst Grammar File
        
        This file gives Catalyst the ability to recognize
        audio input and give a proper response.
 		
   -->
-  
+
   <rule id="Main">
     <item>
       How much Code Points do I have?
     </item>
-    <item>Can you run <ruleref uri="#programs"/>?</item>
-    <item>Can you minimize <ruleref uri="#programs"/>?</item>
-    <item>Can you close <ruleref uri="#programs"/>?</item>
+    <item>Can you run <ruleref uri="#programs" />?</item>
+    <item>Can you minimize <ruleref uri="#programs" />?</item>
+    <item>Can you close <ruleref uri="#programs" />?</item>
   </rule>
 
   <rule id="programs" scope="public">
