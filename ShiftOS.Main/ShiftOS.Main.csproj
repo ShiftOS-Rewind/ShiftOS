@@ -85,6 +85,12 @@
     <Compile Include="ShiftOS\Apps\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShiftOS\Apps\TextPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftOS\Apps\TextPad.Designer.cs">
+      <DependentUpon>TextPad.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftOS\Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS\Apps\TextPad.resx">
+      <DependentUpon>TextPad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Desktop.resx">
       <DependentUpon>Desktop.cs</DependentUpon>

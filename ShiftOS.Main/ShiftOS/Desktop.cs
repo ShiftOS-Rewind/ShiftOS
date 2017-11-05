@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShiftOS.Engine.WindowManager;
+using ShiftOS.Engine;
 
 namespace ShiftOS.Main.ShiftOS
 {
@@ -63,6 +64,12 @@ namespace ShiftOS.Main.ShiftOS
             Apps.Terminal trm = new Apps.Terminal();
 
             ShiftWM.Init(trm, "Terminal", null, false, true);
+        }
+
+        private void textPadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tp = new Apps.TextPad();
+            ShiftWM.Init(tp, "TextPad", Properties.Resources.iconTextPad.ToIcon());
         }
     }
 }

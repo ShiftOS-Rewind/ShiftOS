@@ -43,12 +43,19 @@ namespace ShiftOS.Engine.WindowManager
             Ok
         }
 
+        public enum DialogResult
+        {
+            Yes,
+            No,
+            Cancel,
+            Ok
+        }
+
         private void btnOpt1_Click(object sender, EventArgs e)
         {
             switch (btnOpt1.Text)
             {
                 case "OK":
-                    _buttonSelected = 1;
                     ParentForm?.Close();
                     break;
                 case "Yes":
@@ -82,10 +89,6 @@ namespace ShiftOS.Engine.WindowManager
         private void InfoboxTemplate_Load(object sender, EventArgs e) 
 			=> Play();
 
-	    private void changeSize_Tick(object sender, EventArgs e)
-        {
-            this.Height += label1.Height;
-            this.Width += label1.Width;
-        }
+	    
     }
 }
