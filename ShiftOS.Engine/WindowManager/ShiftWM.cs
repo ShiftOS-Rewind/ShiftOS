@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,10 +8,10 @@ using static ShiftOS.Engine.WindowManager.InfoboxTemplate;
 
 namespace ShiftOS.Engine.WindowManager
 {
-	public static class ShiftWm
+	public static class ShiftWM
 	{
-		public static ObservableCollection<ShiftWindow> Windows { get; } = new ObservableCollection<ShiftWindow>();
-
+		public static EventList<ShiftWindow> Windows = new EventList<ShiftWindow>();
+		
 		public static ShiftWindow GetShiftWindow(this UserControl control)
 		{
 			return Windows.First(p => (uint) control.Tag == p.Id);
@@ -30,7 +29,7 @@ namespace ShiftOS.Engine.WindowManager
 		public static ShiftWindow Init(
 			UserControl content,
 			string title,
-			Icon icon,
+			Bitmap icon,
 			bool showAsInfobox = false,
 			bool resize = true)
 		{
@@ -77,14 +76,13 @@ namespace ShiftOS.Engine.WindowManager
 			if (icon == null)
 			{
 				app.programIcon.Hide();
-				app.programIcon.Image = Resources.nullIcon;
 				app.Title.Location = new Point(2, 7);
 			}
 
 			else
 			{
-				app.programIcon.Image = icon.ToBitmap();
-				app.Icon = icon;
+				app.programIcon.Image = icon;
+				app.Icon = icon.ToIcon();
 			}
 
 			// Setup UC
@@ -122,7 +120,7 @@ namespace ShiftOS.Engine.WindowManager
 			{
 				label1 = { Text = body }
 			};
-			Init(info, title, Resources.iconInfoBox_fw.ToIcon(), true, false);
+			Init(info, title, Resources.iconInfoBox_fw, true, false);
 			return info;
 		}
 	}

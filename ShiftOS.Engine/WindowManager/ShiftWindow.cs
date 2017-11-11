@@ -25,7 +25,7 @@ namespace ShiftOS.Engine.WindowManager
 			do
 			{
 				Id = (uint) Tools.Rnd.Next(100000, 999999);
-			} while (ShiftWm.Windows.FirstOrDefault(w => w.Id == Id) != null);
+			} while (ShiftWM.Windows.FirstOrDefault(w => w.Id == Id) != null);
 
 			return Id;
 		}

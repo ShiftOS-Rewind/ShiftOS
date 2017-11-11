@@ -20,41 +20,32 @@ namespace ShiftOS.Main.ShiftOS
 
 			#region Disgusting taskbar code
 
-			ShiftWm.Windows.CollectionChanged += (sender, args) =>
+			ShiftWM.Windows.ItemAdded += (sender, e) =>
 			{
-				args.NewItems?.OfType<ShiftWindow>()
-				    .ToList()
-				    .ForEach(
-					    window =>
-					    {
-						    taskbar.Invoke(
-							    new Action(
-								    () =>
-								    {
-									    taskbar.Items.Add(
-										    new ToolStripButton
-										    {
-											    Text = window.Title.Text,
-											    Image = window.Icon.ToBitmap(),
-											    Tag = window.Id
-										    });
-								    }));
-					    });
+				taskbar.Invoke(
+					new Action(
+						() =>
+						{
+							taskbar.Items.Add(
+								new ToolStripButton
+								{
+									Text = e.Item.Title.Text,
+									Image = e.Item.Icon.ToBitmap(),
+									Tag = e.Item.Id
+								});
+						}));
+			};
 
-				args.OldItems?.OfType<ShiftWindow>()
-				    .ToList()
-				    .ForEach(
-					    window =>
-					    {
-						    taskbar.Invoke(
-							    new Action(
-								    () =>
-								    {
-									    var tbRemovalList = taskbar.Items.OfType<ToolStripItem>().Where(i => (uint) i.Tag == window.Id);
+			ShiftWM.Windows.ItemRemoved += (sender, e) =>
+			{
+				taskbar.Invoke(
+					new Action(
+						() =>
+						{
+							var tbRemovalList = taskbar.Items.OfType<ToolStripItem>().Where(i => (uint) i.Tag == e.Item.Id);
 
-									    tbRemovalList.ToList().ForEach(p => taskbar.Items.Remove(p));
-								    }));
-					    });
+							tbRemovalList.ToList().ForEach(p => taskbar.Items.Remove(p));
+						}));
 			};
 
 			#endregion
@@ -66,14 +57,19 @@ namespace ShiftOS.Main.ShiftOS
 		void terminalToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			var trm = new Terminal();
-
-			ShiftWm.Init(trm, "Terminal", null);
+			ShiftWM.Init(trm, "Terminal", null);
 		}
 
 		void textPadToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			var tp = new TextPad();
-			ShiftWm.Init(tp, "TextPad", Resources.iconTextPad.ToIcon());
+			ShiftWM.Init(tp, "TextPad", Resources.iconTextPad);
+		}
+
+		void fileSkimmerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var fs = new FileSkimmer();
+			ShiftWM.Init(fs, "File Skimmer", Resources.iconFileSkimmer);
 		}
 	}
 }

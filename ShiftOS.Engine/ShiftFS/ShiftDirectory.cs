@@ -1,50 +1,89 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Whoa;
 
 namespace ShiftOS.Engine.ShiftFS
 {
-	public class ShiftDirectory : ShiftFsObject
+	[Serializable]
+	public class ShiftDirectory : List<IShiftNode>, IShiftNode
 	{
-		public ShiftDirectory(string path) : base(path)
+		public ShiftDirectory(string name) => Name = name;
+		public ShiftDirectory(string name, ShiftDirectory parent)
 		{
-			path = path.Replace(ShiftFs.SavePath, "");
-			var dir = new DirectoryInfo(Path.Combine(ShiftFs.SavePath, path));
-			Name = dir.Name;
-			FullDiskName = dir.FullName;
-			FullName = path;
-
-			Children.CollectionChanged += (sender, e) => { };
+			Name = name;
+			Parent = parent;
 		}
 
-		public ShiftFsObject this[string name] => Children.First(f => f.Name == name);
-		public ShiftFsObject this[int index] => Children[index];
 
-		public new ShiftDirectory Parent => new ShiftDirectory(new DirectoryInfo(FullDiskName).Parent.FullName);
+		public IShiftNode this[string name] => this.First(n => string.Equals(n.Name, name, StringComparison.Ordinal));
 
-		public ObservableCollection<ShiftFsObject> Children
+		
+		public string Name { get; set; }
+
+		public IEnumerable<ShiftFile> Flatten()
 		{
-			get
+			foreach (var item in this)
 			{
-				var collection = new ObservableCollection<ShiftFsObject>();
-
-				foreach (var dir in new DirectoryInfo(Path.Combine(ShiftFs.SavePath, FullName)).EnumerateDirectories())
+				switch (item)
 				{
-					collection.Add(new ShiftDirectory(dir.FullName));
+					case ShiftFile file:
+						yield return file;
+						break;
+					case ShiftDirectory dir:
+						foreach (var shiftNode in dir.Flatten())
+						{
+							yield return shiftNode;
+						}
+						break;
 				}
-
-				foreach (var file in new DirectoryInfo(Path.Combine(ShiftFs.SavePath, FullName)).EnumerateFiles())
-				{
-					collection.Add(new ShiftFile(file.FullName.Replace(ShiftFs.SavePath, "")));
-				}
-
-				return collection;
 			}
 		}
 
-		public ObservableCollection<ShiftFile> Files => new ObservableCollection<ShiftFile>(Children.OfType<ShiftFile>());
+		public IEnumerable<ShiftDirectory> FlattenFolders()
+		{
+			foreach (var item in this)
+			{
+				if (!(item is ShiftDirectory dir)) continue;
+				yield return dir;
 
-		public ObservableCollection<ShiftDirectory> Directories
-			=> new ObservableCollection<ShiftDirectory>(Children.OfType<ShiftDirectory>());
+				foreach (var subdir in dir.FlattenFolders())
+				{
+					yield return subdir;
+				}
+			}
+		}
+	 
+		public string FullName
+		{
+			get
+			{
+				var list = new List<string> { Name };
+				var currentNode = Parent;
+				while (currentNode?.Parent != null )
+				{
+					list.Add(currentNode.Name);
+					currentNode = currentNode.Parent;
+				}
+				
+				return Path.Combine(list.Reverse<string>().ToArray());
+			}
+		}
+
+		public ShiftDirectory Parent
+		{
+			get => Drive.FlattenFolders().FirstOrDefault(x => x.Contains(this));
+			set
+			{
+				value.Add(this);
+				Parent?.Remove(this);
+			}
+		}
+
+		public ShiftTree Drive => ShiftFS.Drives.First(d => d.FlattenFolders().Contains(this));
+
+		
+		public Guid Guid { get; } = Guid.NewGuid();
 	}
 }

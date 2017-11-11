@@ -21,7 +21,7 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 		void button1_Click(object sender, EventArgs e)
 		{
 			ColorType = 1;
-			ShiftWm.Init(new SelectColor(), "Select a color", Resources.iconColourPicker_fw.ToIcon());
+			ShiftWM.Init(new SelectColor(), "Select a color", Resources.iconColourPicker_fw);
 		}
 
 		void SetDefaultSkin(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 
 		void button5_Click(object sender, EventArgs e)
 		{
-			foreach (var window in ShiftWm.Windows)
+			foreach (var window in ShiftWM.Windows)
 			{
 				window.Invoke(new Action(() => window.titleBar.BackColor = ShiftSkinData.TitleBarColor));
 				window.Invoke(new Action(() => window.leftTopCorner.BackColor = ShiftSkinData.LeftTopCornerColor));
@@ -107,7 +107,7 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 			shiftColors[12] = ShiftSkinData.BtnMaxHoverColor;
 			shiftColors[13] = ShiftSkinData.BtnMinHoverColor;
 			File.WriteAllText(@"C:\Users\Public\Documents\Skin.json", JsonConvert.SerializeObject(shiftColors));
-			ShiftWm.StartInfoboxSession(
+			ShiftWM.StartInfoboxSession(
 				"Saved Skin",
 				"Saved Skin to C:\\Users\\Public\\Documents\\Skin.json",
 				InfoboxTemplate.ButtonType.Ok);

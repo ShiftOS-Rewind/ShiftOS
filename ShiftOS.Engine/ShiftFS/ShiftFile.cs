@@ -1,48 +1,88 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Linq;
+using Whoa;
 
 namespace ShiftOS.Engine.ShiftFS
 {
-	public class ShiftFile : ShiftFsObject
+	[Serializable]
+	public class ShiftFile<T> : ShiftFile
 	{
-		public ShiftFile(string path) : base(path)
+		public ShiftFile(string name) => Name = name;
+		public ShiftFile(string name, ShiftDirectory directory)
 		{
-			path = path.Replace(ShiftFs.SavePath, "");
-
-			using (var fs = new FileStream(Path.Combine(ShiftFs.SavePath, path), FileMode.Open))
-			{
-				Bytes = new MemoryStream();
-				fs.CopyTo(Bytes);
-			}
-
-			var file = new FileInfo(Path.Combine(ShiftFs.SavePath, path));
-
-			Name = file.Name;
-			FullDiskName = file.FullName;
-			FullName = path;
+			Name = name;
+			Parent = directory;
+		}
+		public ShiftFile(string name, T @object, ShiftDirectory directory)
+		{
+			Name = name;
+			Object = @object;
+			Parent = directory;
+		}
+		public ShiftFile(string name, T @object, ShiftDirectory directory, Bitmap icon)
+		{
+			Name = name;
+			Object = @object;
+			Parent = directory;
+			Icon = icon;
+		}
+		public ShiftFile(string name, T @object)
+		{
+			Name = name;
+			Object = @object;
+		}
+		public ShiftFile(string name, T @object, Bitmap icon)
+		{
+			Name = name;
+			Object = @object;
+			Icon = icon;
 		}
 
-		public new ShiftDirectory Parent => new ShiftDirectory(new FileInfo(FullDiskName).Directory.FullName);
 
-		public MemoryStream Bytes { get; set; }
-		public long Length => Bytes.Length;
+
+		public T Object { get; set; }
 	}
 
-	public class ShiftFile<T> : ShiftFile // please C# gods let us constrain to attributes
+	[Serializable]
+	public abstract class ShiftFile : IShiftNode 
 	{
-		public ShiftFile(string path) : base(path)
+		public Bitmap Icon { get; set; }
+
+		public string Name { get; set; }
+
+		public string FullName
 		{
-			if (!typeof(T).IsSerializable)
+			get
 			{
-				throw new InvalidOperationException("Non-serializable types are not supported");
+				var list = new List<string> { Name };
+				var currentNode = Parent;
+				while (currentNode?.Parent != null)
+				{
+					list.Add(currentNode.Name);
+					currentNode = currentNode.Parent;
+				}
+
+				return Path.Combine(list.Reverse<string>().ToArray()) + "\\";
+			}
+		}
+		
+		public ShiftDirectory Parent
+		{
+			get => Drive.FlattenFolders().FirstOrDefault(x => x.Contains(this));
+			set
+			{
+				value.Add(this);
+				Parent?.Remove(this);
 			}
 		}
 
-		public T Object
-		{
-			get => (T) new BinaryFormatter().Deserialize(Bytes);
-			set => new BinaryFormatter().Serialize(Bytes, value);
-		}
+		public ShiftTree Drive => ShiftFS.Drives.First(d => d.FlattenFolders().FirstOrDefault(f => f.Contains(this)) != null);
+
+		
+		public Guid Guid { get; } = Guid.NewGuid();
+		
 	}
 }

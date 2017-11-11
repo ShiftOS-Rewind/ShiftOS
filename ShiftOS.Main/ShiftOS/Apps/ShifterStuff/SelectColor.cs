@@ -28,20 +28,20 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 				_finalColor = Color.FromArgb(_colorType1, _colorType2, _colorType3);
 
 
-				foreach (var window in ShiftWm.Windows)
+				foreach (var window in ShiftWM.Windows)
 				{
 					window.Invoke(new Action(() => window.titleBar.BackColor = _finalColor));
 				}
 
 
-				ShiftWm.StartInfoboxSession(
+				ShiftWM.StartInfoboxSession(
 					"Success!",
 					$"Changed color to:\r\n{_colorType1}, {_colorType2}, {_colorType3}.",
 					InfoboxTemplate.ButtonType.Ok);
 			}
 			catch (Exception)
 			{
-				ShiftWm.StartInfoboxSession("Error!", "An error occured while setting the color.", InfoboxTemplate.ButtonType.Ok);
+				ShiftWM.StartInfoboxSession("Error!", "An error occured while setting the color.", InfoboxTemplate.ButtonType.Ok);
 			}
 			return _finalColor;
 		}

@@ -17,11 +17,11 @@ namespace ShiftOS.Main.ShiftOS.Apps
 		void Button1_Click(object sender, EventArgs e)
 		{
 			var demo = new ShiftDemo();
-			ShiftWm.Init(demo, textBox1.Text, null);
-			ShiftWm.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.ButtonType.Ok);
+			ShiftWM.Init(demo, textBox1.Text, null);
+			ShiftWM.StartInfoboxSession(textBox1.Text, textBox2.Text, InfoboxTemplate.ButtonType.Ok);
 		}
 
 		void button2_Click(object sender, EventArgs e)
-			=> ShiftWm.Init(new Shifter(), "Shifter", Resources.iconShifter.ToIcon());
+			=> ShiftWM.Init(new Shifter(), "Shifter", Resources.iconShifter);
 	}
 }

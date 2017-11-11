@@ -1,34 +1,80 @@
 ﻿using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
+using ShiftOS.Engine.Misc;
 
 namespace ShiftOS.Engine.ShiftFS
 {
-	public static class ShiftFs
+	public static class ShiftFS
 	{
-		internal static readonly string SavePath = Path.Combine(Environment.CurrentDirectory, "Save") + "\\";
+		static readonly string FilePath = Path.Combine(Environment.CurrentDirectory, "save.bin");
 
-		public static ObservableCollection<ShiftDrive> Drives = new ObservableCollection<ShiftDrive>();
+		static readonly FileSystemWatcher _watcher;
+		
+		static readonly BinaryFormatter _formatter = new BinaryFormatter();
+		
+		public static EventList<ShiftTree> Drives { get; private set; } = new EventList<ShiftTree>();
 
-		static ShiftFs()
+		public static void Save()
 		{
-			if (Directory.Exists(SavePath))
+			using (var fs = File.OpenWrite(FilePath))
 			{
-				var info = new DirectoryInfo(SavePath);
-				foreach (var dir in info.EnumerateDirectories())
-				{
-					Drives.Add(new ShiftDrive(dir));
-				}
-			}
-			else
-			{
-				CreateSaveFile();
+				//Whoa.Whoa.SerialiseObject(fs, Drives);
+				_formatter.Serialize(fs, Drives);
 			}
 		}
 
-		public static void CreateSaveFile()
+
+		static ShiftFS()
 		{
-			throw new NotImplementedException();
+			Drives.ItemAdded += (sender, e) => Debug.WriteLine(e.Item.Name + e.Item.Letter);
+			
+			if (!File.Exists(FilePath))
+			{
+				using (File.Create(FilePath))
+				{
+					
+					Drives.Add(new ShiftTree("Local Disk", 'C')
+					{
+						new ShiftDirectory("usr")
+						{
+							//i'll put in extensions later
+							new ShiftFile<string>("stringfile.txt", "THIS IS SECRETEXT")
+						},
+						new ShiftDirectory("libs")
+						{
+							new ShiftFile<string>("thing.dll", "oh no it's not code FACH")
+						}
+
+					});
+				}
+
+				Save();
+
+				MessageBox.Show("Save file created.");
+				Debug.WriteLine("Drives: " + Drives.Count);
+			}
+
+			WatcherOnChanged(null, null);
+			
+			_watcher = new FileSystemWatcher(Environment.CurrentDirectory)
+			{
+				Filter = "save.bin",
+			};
+
+			_watcher.Changed += WatcherOnChanged;
+		}
+
+		static void WatcherOnChanged(object sender, FileSystemEventArgs e)
+		{
+			using (var fs = File.OpenRead(FilePath))
+			{
+				//Drives = Whoa.Whoa.DeserialiseObject<EventList<ShiftTree>>(fs);
+				Drives = (EventList<ShiftTree>) _formatter.Deserialize(fs);
+			}
 		}
 	}
 }
