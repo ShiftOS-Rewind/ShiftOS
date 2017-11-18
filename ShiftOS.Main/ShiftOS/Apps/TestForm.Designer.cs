@@ -1,4 +1,4 @@
-﻿namespace ShiftOS.Main
+﻿namespace ShiftOS.Main.ShiftOS.Apps
 {
     partial class TestForm
     {

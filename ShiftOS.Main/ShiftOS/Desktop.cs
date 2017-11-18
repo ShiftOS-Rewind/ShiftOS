@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShiftOS.Engine.Misc;
 using ShiftOS.Engine.WindowManager;
+using ShiftOS.Main.Properties;
+using ShiftOS.Main.ShiftOS.Apps;
 
 namespace ShiftOS.Main.ShiftOS
 {
@@ -19,50 +16,60 @@ namespace ShiftOS.Main.ShiftOS
 
 			timer1.Start();
 
-			this.Closed += (sender, args) =>
-			{
-				Application.Exit();
-			};
+			Closed += (sender, args) => { Application.Exit(); };
 
 			#region Disgusting taskbar code
 
-			ShiftWM.Windows.CollectionChanged += (sender, args) =>
+			ShiftWM.Windows.ItemAdded += (sender, e) =>
 			{
-				args.NewItems?.OfType<ShiftWindow>().ToList().ForEach(window =>
-				{
-					taskbar.Invoke(new Action(() =>
-					{
-						taskbar.Items.Add(new ToolStripButton
+				taskbar.Invoke(
+					new Action(
+						() =>
 						{
-							Text = window.Title.Text,
-							Image = window.Icon.ToBitmap(),
-							Tag = window.Id
-						});
-					}));
-				});
-				
-				args.OldItems?.OfType<ShiftWindow>().ToList().ForEach(window =>
-				{
-					taskbar.Invoke(new Action(() =>
-					{
-						var tbRemovalList = taskbar.Items.OfType<ToolStripItem>().Where(i => (uint) i.Tag == window.Id);
+							taskbar.Items.Add(
+								new ToolStripButton
+								{
+									Text = e.Item.Title.Text,
+									Image = e.Item.Icon.ToBitmap(),
+									Tag = e.Item.Id
+								});
+						}));
+			};
 
-						tbRemovalList.ToList().ForEach(p => taskbar.Items.Remove(p));
-					}));
-				});
+			ShiftWM.Windows.ItemRemoved += (sender, e) =>
+			{
+				taskbar.Invoke(
+					new Action(
+						() =>
+						{
+							var tbRemovalList = taskbar.Items.OfType<ToolStripItem>().Where(i => (uint) i.Tag == e.Item.Id);
+
+							tbRemovalList.ToList().ForEach(p => taskbar.Items.Remove(p));
+						}));
 			};
 
 			#endregion
 		}
 
-		private void timer1_Tick(object sender, EventArgs e) => 
+		void timer1_Tick(object sender, EventArgs e) =>
 			taskbarClock.Text = $"{DateTime.Now:t}";
 
-        private void terminalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Apps.Terminal trm = new Apps.Terminal();
+		void terminalToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var trm = new Terminal();
+			ShiftWM.Init(trm, "Terminal", null);
+		}
 
-            ShiftWM.Init(trm, "Terminal", null, false, true);
-        }
-    }
+		void textPadToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var tp = new TextPad();
+			ShiftWM.Init(tp, "TextPad", Resources.iconTextPad);
+		}
+
+		void fileSkimmerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var fs = new FileSkimmer();
+			ShiftWM.Init(fs, "File Skimmer", Resources.iconFileSkimmer);
+		}
+	}
 }

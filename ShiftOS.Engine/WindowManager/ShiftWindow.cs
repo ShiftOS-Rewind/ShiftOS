@@ -1,74 +1,76 @@
 ﻿using System;
-using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using ShiftOS.Engine.Misc;
 
 namespace ShiftOS.Engine.WindowManager
 {
-    public partial class ShiftWindow : Form
-    {
+	public partial class ShiftWindow : Form
+	{
+		const int WmNclbuttondown = 0xA1;
+		const int HtCaption = 0x2;
+
+		public ShiftWindow()
+		{
+			InitializeComponent();
+		}
+
 		public uint Id { get; private set; }
 
-	    public UserControl ChildControl { get; set; }
+		public UserControl ChildControl { get; set; }
 
-	    public ShiftWindow()
-        {
-            InitializeComponent();
-        }
-
-	    public uint SetId()
-	    {
+		public uint SetId()
+		{
 			do
 			{
-				Id = (uint)Tools.Rnd.Next(100000, 999999);
-			}
-			while (ShiftWM.Windows.FirstOrDefault(w => w.Id == Id) != null);
+				Id = (uint) Tools.Rnd.Next(100000, 999999);
+			} while (ShiftWM.Windows.FirstOrDefault(w => w.Id == Id) != null);
 
-		    return Id;
-	    }
+			return Id;
+		}
 
-		private const int WM_NCLBUTTONDOWN = 0xA1;
-	    private const int HT_CAPTION = 0x2;
+		[DllImport("user32.dll")]
+		static extern int SendMessage(
+			IntPtr hWnd,
+			int msg,
+			int wParam,
+			int lParam);
 
-        [DllImportAttribute("user32.dll")]
-        private static extern int SendMessage(IntPtr hWnd,
-                        int Msg, int wParam, int lParam);
+		[DllImport("user32.dll")]
+		static extern bool ReleaseCapture();
 
-        [DllImportAttribute("user32.dll")]
-        private static extern bool ReleaseCapture();
+		void Programtopbar_drag(object sender, MouseEventArgs e)
+		{
+			if (e.Button != MouseButtons.Left) return;
 
-        private void Programtopbar_drag(object sender, MouseEventArgs e)
-        {
-	        if (e.Button != MouseButtons.Left) return;
+			ReleaseCapture();
+			SendMessage(Handle, WmNclbuttondown, HtCaption, 0);
+		}
 
-	        ReleaseCapture();
-	        SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-        }
+		void closebutton_Click(object sender, EventArgs e)
+			=> Close();
 
-        private void closebutton_Click(object sender, EventArgs e) 
-			=> this.Close();
+		void closebutton_MouseEnter(object sender, EventArgs e)
+			=> btnClose.BackColor = ShiftSkinData.BtnCloseHoverColor;
 
-	    private void closebutton_MouseEnter(object sender, EventArgs e) 
-			=> btnClose.BackColor = ShiftSkinData.btnCloseHoverColor;
+		void closebutton_MouseLeave(object sender, EventArgs e)
+			=> btnClose.BackColor = ShiftSkinData.BtnCloseColor;
 
-        private void closebutton_MouseLeave(object sender, EventArgs e)
-            => btnClose.BackColor = ShiftSkinData.btnCloseColor;
+		void maximizebutton_MouseEnter(object sender, EventArgs e)
+			=> btnMax.BackColor = ShiftSkinData.BtnMaxHoverColor;
 
-		private void maximizebutton_MouseEnter(object sender, EventArgs e) 
-			=> btnMax.BackColor = ShiftSkinData.btnMaxHoverColor;
+		void maximizebutton_MouseLeave(object sender, EventArgs e)
+			=> btnMax.BackColor = ShiftSkinData.BtnMaxColor;
 
-        private void maximizebutton_MouseLeave(object sender, EventArgs e)
-            => btnMax.BackColor = ShiftSkinData.btnMaxColor;
+		void minimizebutton_MouseEnter(object sender, EventArgs e)
+			=> btnMin.BackColor = ShiftSkinData.BtnMinHoverColor;
 
-        private void minimizebutton_MouseEnter(object sender, EventArgs e)
-            => btnMin.BackColor = ShiftSkinData.btnMinHoverColor;
-        
 
-        private void minimizebutton_MouseLeave(object sender, EventArgs e)
-            => btnMin.BackColor = ShiftSkinData.btnMinColor;
+		void minimizebutton_MouseLeave(object sender, EventArgs e)
+			=> btnMin.BackColor = ShiftSkinData.BtnMinColor;
 
-        /*
+		/*
 		private void closebutton_MouseDown(object sender, MouseEventArgs e) 
 			=> btnClose.BackColor = Color.Black;
 
@@ -77,8 +79,7 @@ namespace ShiftOS.Engine.WindowManager
 
 		private void minimizebutton_MouseDown(object sender, MouseEventArgs e) 
 			=> btnMin.BackColor = Color.Black;
-            */
-
+	        */
 	}
 
 	public interface IShiftWindowExtensions
