@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShiftOS.Engine;
 using ShiftOS.Main.Terminal;
@@ -21,24 +14,37 @@ namespace ShiftOS.Main.ShiftOS.Apps
         public bool RunningCommand = false;
         public bool WaitingResponse = false;
         public string InputReturnText = "";
+using ShiftOS.Engine.Terminal;
 
-        // The below variables makes the terminal... a terminal!
-        public string OldText = "";   
-        public int TrackingPosition = 0;
+namespace ShiftOS.Main.ShiftOS.Apps
+{
+	public partial class Terminal : UserControl
+	{
+		public string DefaulttextBefore = "user> ";
+		string DefaulttextResult = "user@shiftos> "; // NOT YET IMPLEMENTED!!!
+		bool DoClear = false;
 
-        public Terminal()
-        {
-            InitializeComponent();
+		// The below variables makes the terminal... a terminal!
+		string OldText = "";
+
+		int TrackingPosition;
 
             termmain.ContextMenuStrip = new ContextMenuStrip(); // Disables the right click of a richtextbox!
 
             TerminalBackend.trm.Add(this); // Makes the commands run!
         }
+		public Terminal()
+		{
+			InitializeComponent();
 
-        private void termmain_KeyDown(object sender, KeyEventArgs e)
-        {
-            // The below code disables the ability to paste anything other then text...
+			termmain.ContextMenuStrip = new ContextMenuStrip(); // Disables the right click of a richtextbox!
+		}
 
+		void Print(string text)
+		{
+			termmain.AppendText($"\n {text} \n {DefaulttextResult}");
+			TrackingPosition = termmain.Text.Length;
+		}
             if (e.Control && e.KeyCode == Keys.V)
             {
                 //if (Clipboard.ContainsText())
@@ -108,4 +114,54 @@ namespace ShiftOS.Main.ShiftOS.Apps
             DoClear = false;
         }
     }
+}
+		void termmain_KeyDown(object sender, KeyEventArgs e)
+		{
+			// The below code disables the ability to paste anything other then text...
+
+			if (e.Control && e.KeyCode == Keys.V)
+			{
+				//if (Clipboard.ContainsText())
+				//    termmain.Paste(DataFormats.GetFormat(DataFormats.Text));
+				e.Handled = true;
+			}
+			else if (e.KeyCode == Keys.Enter)
+			{
+				Print(
+					TerminalBackend.RunCommand(
+						termmain.Text.Substring(
+							TrackingPosition,
+							termmain.Text.Length - TrackingPosition))); // The most horrific line in the entire application!
+				e.Handled = true;
+			}
+		}
+
+		void termmain_TextChanged(object sender, EventArgs e)
+		{
+			if (termmain.SelectionStart < TrackingPosition)
+			{
+				if (DoClear) return;
+				
+				termmain.Text = OldText;
+				termmain.Select(termmain.Text.Length, 0);
+			}
+			else
+			{
+				OldText = termmain.Text;
+			}
+		}
+
+		void termmain_SelectionChanged(object sender, EventArgs e)
+		{
+			if (termmain.SelectionStart >= TrackingPosition) return;
+			
+			termmain.Text = OldText;
+			termmain.Select(termmain.Text.Length, 0);
+		}
+
+		void Terminal_Load(object sender, EventArgs e)
+		{
+			Print("\n");
+		}
+	}
 }

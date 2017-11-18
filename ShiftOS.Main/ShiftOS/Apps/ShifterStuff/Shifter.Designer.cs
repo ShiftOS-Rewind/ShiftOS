@@ -1,4 +1,4 @@
-﻿namespace ShiftOS.Main.ShiftOS.Apps
+﻿namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 {
     partial class Shifter
     {
@@ -37,6 +37,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSave);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
@@ -74,7 +76,7 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.button5.Location = new System.Drawing.Point(6, 267);
+            this.button5.Location = new System.Drawing.Point(6, 239);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(314, 23);
             this.button5.TabIndex = 5;
@@ -86,37 +88,37 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.button4.Location = new System.Drawing.Point(6, 209);
+            this.button4.Location = new System.Drawing.Point(6, 181);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(314, 23);
             this.button4.TabIndex = 4;
             this.button4.Text = "Set Random Skin";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.setRandomSkin);
+            this.button4.Click += new System.EventHandler(this.SetRandomSkin);
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.button3.Location = new System.Drawing.Point(6, 238);
+            this.button3.Location = new System.Drawing.Point(6, 210);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(155, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Set Default Skin";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.setDefaultSkin);
+            this.button3.Click += new System.EventHandler(this.SetDefaultSkin);
             // 
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.button2.Location = new System.Drawing.Point(171, 238);
+            this.button2.Location = new System.Drawing.Point(171, 210);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Set Colorful Skin";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.setColorSkin);
+            this.button2.Click += new System.EventHandler(this.SetColorSkin);
             // 
             // groupBox1
             // 
@@ -150,6 +152,18 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnSave
+            // 
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.btnSave.Location = new System.Drawing.Point(6, 267);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(314, 23);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save Skin";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Shifter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +189,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSave;
     }
 }

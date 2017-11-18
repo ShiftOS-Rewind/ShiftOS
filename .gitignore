@@ -303,3 +303,5 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+.vs/ShiftOS/v15/sqlite3/storage.ide
+.vs/ShiftOS/v15/sqlite3/storage.ide

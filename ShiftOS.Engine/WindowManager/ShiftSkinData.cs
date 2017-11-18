@@ -2,19 +2,23 @@
 
 namespace ShiftOS.Engine.WindowManager
 {
-    public abstract class ShiftSkinData
-    {
-        // ColorData
-        public static Color leftTopCornerColor = Color.Empty;
-        public static Color titleBarColor = Color.Empty;
-        public static Color rightTopCornerColor = Color.Empty;
-        public static Color btnCloseColor = Color.Empty;
-        public static Color btnMaxColor = Color.Empty;
-        public static Color btnMinColor = Color.Empty;
-        public static Color leftSideColor = Color.Empty;
-        public static Color rightSideColor = Color.Empty;
-        public static Color leftBottomCornerColor = Color.Empty;
-        public static Color bottomSideColor = Color.Empty;
-        public static Color rightBottomCornerColor = Color.Empty;
-    }
+	public abstract class ShiftSkinData
+	{
+		// ColorData
+		public static Color LeftTopCornerColor = Color.Empty;
+
+		public static Color TitleBarColor = Color.Empty;
+		public static Color RightTopCornerColor = Color.Empty;
+		public static Color BtnCloseColor = Color.Empty;
+		public static Color BtnMaxColor = Color.Empty;
+		public static Color BtnMinColor = Color.Empty;
+		public static Color BtnCloseHoverColor = Color.Empty;
+		public static Color BtnMaxHoverColor = Color.Empty;
+		public static Color BtnMinHoverColor = Color.Empty;
+		public static Color LeftSideColor = Color.Empty;
+		public static Color RightSideColor = Color.Empty;
+		public static Color LeftBottomCornerColor = Color.Empty;
+		public static Color BottomSideColor = Color.Empty;
+		public static Color RightBottomCornerColor = Color.Empty;
+	}
 }
