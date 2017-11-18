@@ -91,6 +91,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
         {
             termmain.Text = $"\n {defaulttextResult}";
             TrackingPosition = termmain.Text.Length;
+            termmain.Select(termmain.TextLength, 1);
         }
 
         public void Input(string request)
