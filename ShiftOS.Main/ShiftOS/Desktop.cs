@@ -72,5 +72,11 @@ namespace ShiftOS.Main.ShiftOS
 			var fs = new FileSkimmer();
 			ShiftWM.Init(fs, "File Skimmer", Resources.iconFileSkimmer);
 		}
-	}
+
+        private void shifterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apps.ShifterStuff.Shifter app = new Apps.ShifterStuff.Shifter();
+            ShiftWM.Init(app, "Shifter", null);
+        }
+    }
 }
