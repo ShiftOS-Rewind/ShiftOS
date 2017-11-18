@@ -5,6 +5,7 @@ using ShiftOS.Engine.Misc;
 using ShiftOS.Engine.WindowManager;
 using ShiftOS.Main.Properties;
 using ShiftOS.Main.ShiftOS.Apps;
+using System.Drawing;
 
 namespace ShiftOS.Main.ShiftOS
 {
@@ -14,45 +15,12 @@ namespace ShiftOS.Main.ShiftOS
 		{
 			InitializeComponent();
 
-			timer1.Start();
 
 			Closed += (sender, args) => { Application.Exit(); };
-
-			#region Disgusting taskbar code
-
-			ShiftWM.Windows.ItemAdded += (sender, e) =>
-			{
-				taskbar.Invoke(
-					new Action(
-						() =>
-						{
-							taskbar.Items.Add(
-								new ToolStripButton
-								{
-									Text = e.Item.Title.Text,
-									Image = e.Item.Icon.ToBitmap(),
-									Tag = e.Item.Id
-								});
-						}));
-			};
-
-			ShiftWM.Windows.ItemRemoved += (sender, e) =>
-			{
-				taskbar.Invoke(
-					new Action(
-						() =>
-						{
-							var tbRemovalList = taskbar.Items.OfType<ToolStripItem>().Where(i => (uint) i.Tag == e.Item.Id);
-
-							tbRemovalList.ToList().ForEach(p => taskbar.Items.Remove(p));
-						}));
-			};
-
-			#endregion
 		}
 
 		void timer1_Tick(object sender, EventArgs e) =>
-			taskbarClock.Text = $"{DateTime.Now:t}";
+			lblClock.Text = $"{DateTime.Now:t}";
 
         private void terminalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -77,6 +45,11 @@ namespace ShiftOS.Main.ShiftOS
         {
             Apps.ShifterStuff.Shifter app = new Apps.ShifterStuff.Shifter();
             ShiftWM.Init(app, "Shifter", null);
+        }
+
+        private void Desktop_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
