@@ -69,9 +69,6 @@
     <Compile Include="ShiftFS\ShiftFile.cs" />
     <Compile Include="ShiftFS\ShiftFS.cs" />
     <Compile Include="ShiftFS\IShiftNode.cs" />
-    <Compile Include="Terminal\Commands\Hello.cs" />
-    <Compile Include="Terminal\TerminalBackend.cs" />
-    <Compile Include="Terminal\TerminalCommand.cs" />
     <Compile Include="Misc\Tools.cs" />
     <Compile Include="WindowManager\InfoboxTemplate.cs">
       <SubType>UserControl</SubType>

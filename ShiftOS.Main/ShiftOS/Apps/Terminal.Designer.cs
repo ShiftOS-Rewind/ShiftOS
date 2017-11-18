@@ -60,6 +60,6 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox termmain;
+        public System.Windows.Forms.RichTextBox termmain;
     }
 }
