@@ -54,11 +54,12 @@ namespace ShiftOS.Main.ShiftOS
 		void timer1_Tick(object sender, EventArgs e) =>
 			taskbarClock.Text = $"{DateTime.Now:t}";
 
-		void terminalToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			var trm = new Terminal();
-			ShiftWM.Init(trm, "Terminal", null);
-		}
+        private void terminalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apps.Terminal trm = new Apps.Terminal();
+            
+            ShiftWM.Init(trm, "Terminal", null, false, true);
+        }
 
 		void textPadToolStripMenuItem_Click(object sender, EventArgs e)
 		{

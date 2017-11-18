@@ -99,6 +99,9 @@
     <Compile Include="ShiftOS\Desktop.Designer.cs">
       <DependentUpon>Desktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Terminal\Commands\Hello.cs" />
+    <Compile Include="Terminal\TerminalBackend.cs" />
+    <Compile Include="Terminal\TerminalCommand.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
