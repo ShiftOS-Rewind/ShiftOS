@@ -2,10 +2,10 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 using ShiftOS.Engine.Misc;
 using ShiftOS.Engine.WindowManager;
 using ShiftOS.Main.Properties;
+using Whoa;
 
 namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 {
@@ -106,11 +106,42 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 			shiftColors[11] = ShiftSkinData.BtnCloseHoverColor;
 			shiftColors[12] = ShiftSkinData.BtnMaxHoverColor;
 			shiftColors[13] = ShiftSkinData.BtnMinHoverColor;
-			File.WriteAllText(@"C:\Users\Public\Documents\Skin.json", JsonConvert.SerializeObject(shiftColors));
-			ShiftWM.StartInfoboxSession(
+
+            using (var fobj = File.OpenWrite(@"C:\Users\Public\Documents\Skin.whoa"))
+                Whoa.Whoa.SerialiseObject(fobj, shiftColors);
+
+            ShiftWM.StartInfoboxSession(
 				"Saved Skin",
-				"Saved Skin to C:\\Users\\Public\\Documents\\Skin.json",
+				"Saved Skin to C:\\Users\\Public\\Documents\\Skin.whoa",
 				InfoboxTemplate.ButtonType.Ok);
 		}
-	}
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            var shiftColors = new Color[14];
+            using (var fobj = File.OpenRead(@"C:\Users\Public\Documents\Skin.whoa"))
+                shiftColors = Whoa.Whoa.DeserialiseObject<Color[]>(fobj);
+
+            ShiftSkinData.LeftTopCornerColor = shiftColors[0];
+            ShiftSkinData.TitleBarColor = shiftColors[1];
+            ShiftSkinData.RightTopCornerColor = shiftColors[2];
+            ShiftSkinData.LeftSideColor = shiftColors[3];
+            ShiftSkinData.RightSideColor = shiftColors[4];
+            ShiftSkinData.LeftBottomCornerColor = shiftColors[5];
+            ShiftSkinData.BottomSideColor = shiftColors[6];
+            ShiftSkinData.RightBottomCornerColor = shiftColors[7];
+            ShiftSkinData.BtnCloseColor = shiftColors[8];
+            ShiftSkinData.BtnMaxColor = shiftColors[9];
+            ShiftSkinData.BtnMinColor = shiftColors[10];
+            ShiftSkinData.BtnCloseHoverColor = shiftColors[11];
+            ShiftSkinData.BtnMaxHoverColor = shiftColors[12];
+            ShiftSkinData.BtnMinHoverColor = shiftColors[13];
+
+            button5_Click(sender, e);
+            ShiftWM.StartInfoboxSession(
+    "Loaded Skin",
+    "Loaded Skin from C:\\Users\\Public\\Documents\\Skin.whoa",
+    InfoboxTemplate.ButtonType.Ok);
+        }
+    }
 }

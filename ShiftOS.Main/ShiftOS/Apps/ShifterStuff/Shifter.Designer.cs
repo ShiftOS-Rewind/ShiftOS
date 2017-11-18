@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,7 +38,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnLoad);
             this.tabPage1.Controls.Add(this.btnSave);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button4);
@@ -71,6 +73,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Titlebar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.btnSave.Location = new System.Drawing.Point(6, 267);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(155, 23);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save Skin";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button5
             // 
@@ -112,9 +126,9 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.button2.Location = new System.Drawing.Point(171, 210);
+            this.button2.Location = new System.Drawing.Point(165, 210);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 23);
+            this.button2.Size = new System.Drawing.Size(155, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Set Colorful Skin";
             this.button2.UseVisualStyleBackColor = true;
@@ -152,17 +166,17 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // btnLoad
             // 
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.btnSave.Location = new System.Drawing.Point(6, 267);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(314, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save Skin";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.btnLoad.Location = new System.Drawing.Point(165, 267);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(155, 23);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Load Skin";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // Shifter
             // 
@@ -190,5 +204,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
