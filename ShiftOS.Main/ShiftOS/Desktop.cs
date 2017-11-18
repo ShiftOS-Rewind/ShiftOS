@@ -60,13 +60,6 @@ namespace ShiftOS.Main.ShiftOS
             
             ShiftWM.Init(trm, "Terminal", null, false, true);
         }
-    }
-}
-		void terminalToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			var trm = new Terminal();
-			ShiftWM.Init(trm, "Terminal", null);
-		}
 
 		void textPadToolStripMenuItem_Click(object sender, EventArgs e)
 		{

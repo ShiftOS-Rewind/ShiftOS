@@ -63,7 +63,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Tools.cs" />
     <Compile Include="ShiftFS\ShiftDirectory.cs" />
     <Compile Include="ShiftFS\ShiftFileStream.cs" />
     <Compile Include="ShiftFS\ShiftTree.cs" />

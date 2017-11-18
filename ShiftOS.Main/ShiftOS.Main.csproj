@@ -102,9 +102,6 @@
     <Compile Include="Terminal\Commands\Hello.cs" />
     <Compile Include="Terminal\TerminalBackend.cs" />
     <Compile Include="Terminal\TerminalCommand.cs" />
-    <EmbeddedResource Include="HijackScreen.resx">
-      <DependentUpon>HijackScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
