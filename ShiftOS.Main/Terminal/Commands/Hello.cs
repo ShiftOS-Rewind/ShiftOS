@@ -14,12 +14,10 @@ namespace ShiftOS.Main.Terminal.Commands
         public override string Usage { get; } = "Hello <NAME>.";
         public override bool Unlocked { get; set; } = false;
 
-        public override async void Run(params string[] parameters)
+        public override void Run(params string[] parameters)
         {
             string name = string.Join(" ", parameters);
-            WriteLine($"Oh, hello, {name}.", Color.Red);
-            string age = await Input("Hey, What's your age?");
-            WriteLine($"Ok, so your name is {name} and your age {age}.");
+            WriteLine($"Oh, hello, {name}.");
         }
     }
 }

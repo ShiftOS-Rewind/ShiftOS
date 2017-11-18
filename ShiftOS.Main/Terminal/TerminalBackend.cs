@@ -11,10 +11,9 @@ namespace ShiftOS.Main.Terminal
     public static class TerminalBackend
     {
         // The line below gets all the terminal commands in... well... the entire ShiftOS.Engine
-        public static IEnumerable<TerminalCommand> instances = from t in Assembly.GetExecutingAssembly().GetTypes()
-                        where t.IsSubclassOf(typeof(TerminalCommand))
-                                 && t.GetConstructor(Type.EmptyTypes) != null
-                        select Activator.CreateInstance(t) as TerminalCommand;
+        public static IEnumerable<TerminalCommand> instances = Assembly.GetExecutingAssembly().GetTypes()
+                        .Where(t => t.IsSubclassOf(typeof(TerminalCommand)) && t.GetConstructor(Type.EmptyTypes) != null)
+                        .Select(t => Activator.CreateInstance(t) as TerminalCommand);
 
         public static List<ShiftOS.Apps.Terminal> trm = new List<ShiftOS.Apps.Terminal>();
         public static int trmTopID = 0;

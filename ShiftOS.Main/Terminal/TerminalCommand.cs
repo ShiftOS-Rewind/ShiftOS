@@ -71,22 +71,22 @@ namespace ShiftOS.Main.Terminal
         /// Writes specified text in the terminal.
         /// </summary>
         /// <param name="value"><summary>The text to say before requesting text. </summary></param>
-        public virtual Task<string> Input(string value = "")
-        {
-            ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
-            trm.Input(value);
+        //public virtual Task<string> Input(string value = "")
+        //{
+        //    ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
+        //    trm.Input(value);
 
-            Task<string> Input = new Task<string>(() =>
-            {              
-                while (true)
-                    if (trm.InputReturnText != "") break;
+        //    Task<string> Input = new Task<string>(() =>
+        //    {              
+        //        while (true)
+        //            if (trm.InputReturnText != "") break;
 
-                // The terminal has finally decided!
+        //        // The terminal has finally decided!
 
-                return trm.InputReturnText;
-            });
-            Input.Start();
-            return Input;
-        }
+        //        return trm.InputReturnText;
+        //    });
+        //    Input.Start();
+        //    return Input;
+        //}
     }
 }
