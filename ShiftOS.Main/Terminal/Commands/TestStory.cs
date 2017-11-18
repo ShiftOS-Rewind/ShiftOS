@@ -16,8 +16,9 @@ namespace ShiftOS.Main.Terminal.Commands
 
         public override void Run(params string[] parameters)
         {
-            WriteLine("Incoming connection...");
-            Thread.Sleep(2000);
+            var r = new Random();
+            WriteLine($"Incoming connection from {r.Next(0, 256)}.{r.Next(0, 256)}.{r.Next(0, 256)}.{r.Next(0, 256)}...");
+            Task.Delay(2000);
             WriteLine("User set alias as \"DevX\".");
             Thread.Sleep(2000);
             WriteLine("User <DevX> has connected successfully!");
