@@ -36,6 +36,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textPadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSkimmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.taskbar.SuspendLayout();
             this.clockPanel.SuspendLayout();
@@ -99,7 +102,10 @@
             // applicationsToolStripMenuItem
             // 
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shifterToolStripMenuItem});
+            this.shifterToolStripMenuItem,
+            this.terminalToolStripMenuItem,
+            this.textPadToolStripMenuItem,
+            this.fileSkimmerToolStripMenuItem});
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.applicationsToolStripMenuItem.Text = "Applications";
@@ -107,9 +113,34 @@
             // shifterToolStripMenuItem
             // 
             this.shifterToolStripMenuItem.Name = "shifterToolStripMenuItem";
-            this.shifterToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.shifterToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.shifterToolStripMenuItem.Text = "Shifter";
             this.shifterToolStripMenuItem.Click += new System.EventHandler(this.shifterToolStripMenuItem_Click);
+            // 
+            // terminalToolStripMenuItem
+            // 
+            this.terminalToolStripMenuItem.Name = "terminalToolStripMenuItem";
+            this.terminalToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.terminalToolStripMenuItem.Text = "Terminal";
+            this.terminalToolStripMenuItem.Click += new System.EventHandler(this.terminalToolStripMenuItem_Click);
+            // 
+            // textPadToolStripMenuItem
+            // 
+            this.textPadToolStripMenuItem.Name = "textPadToolStripMenuItem";
+            this.textPadToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.textPadToolStripMenuItem.Text = "TextPad";
+            this.textPadToolStripMenuItem.Click += new System.EventHandler(this.textPadToolStripMenuItem_Click);
+            // 
+            // fileSkimmerToolStripMenuItem
+            // 
+            this.fileSkimmerToolStripMenuItem.Name = "fileSkimmerToolStripMenuItem";
+            this.fileSkimmerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.fileSkimmerToolStripMenuItem.Text = "File Skimmer";
+            this.fileSkimmerToolStripMenuItem.Click += new System.EventHandler(this.fileSkimmerToolStripMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Desktop
             // 
@@ -143,5 +174,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem applicationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shifterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem terminalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textPadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileSkimmerToolStripMenuItem;
     }
 }
