@@ -63,6 +63,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ShiftFS\FileGUI\FileOpener.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftFS\FileGUI\FileOpener.Designer.cs">
+      <DependentUpon>FileOpener.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftFS\ShiftDirectory.cs" />
     <Compile Include="ShiftFS\ShiftFileStream.cs" />
     <Compile Include="ShiftFS\ShiftTree.cs" />
@@ -70,6 +76,12 @@
     <Compile Include="ShiftFS\ShiftFS.cs" />
     <Compile Include="ShiftFS\IShiftNode.cs" />
     <Compile Include="Misc\Tools.cs" />
+    <Compile Include="UI\ShiftButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ShiftButton.Designer.cs">
+      <DependentUpon>ShiftButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowManager\InfoboxTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +102,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftFS\FileGUI\FileOpener.resx">
+      <DependentUpon>FileOpener.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowManager\InfoboxTemplate.resx">
       <DependentUpon>InfoboxTemplate.cs</DependentUpon>

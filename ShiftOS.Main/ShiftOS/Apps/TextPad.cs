@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShiftOS.Engine.ShiftFS.FileGUI;
+using ShiftOS.Engine.WindowManager;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -31,6 +33,8 @@ namespace ShiftOS.Main.ShiftOS.Apps
 			{
 				MessageBox.Show("yay it works");
 			}
+            var f = new FileOpener();
+            ShiftWM.Init(f, "testing", null);
 		}
 	}
 }

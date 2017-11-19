@@ -4,6 +4,7 @@ using System.IO;
 using System.Media;
 using System.Windows.Forms;
 using ShiftOS.Engine.Properties;
+using ShiftOS.Engine.UI;
 
 namespace ShiftOS.Engine.WindowManager
 {
@@ -31,7 +32,7 @@ namespace ShiftOS.Engine.WindowManager
 		public InfoboxTemplate(ButtonType type)
 		{
 			InitializeComponent();
-
+ 
 			switch (type)
 			{
 				case ButtonType.Ok:
