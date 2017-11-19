@@ -11,7 +11,7 @@ namespace ShiftOS.Main.Terminal.Commands
     {
         public override string Name { get; } = "teststory";
         public override string Summary { get; } = "Debug Command - Test the intro";
-        public override string Usage { get; } = "n/a";
+        public override string Usage { get; } = "teststory";
         public override bool Unlocked { get; set; } = false;
 
         public override void Run(params string[] parameters)

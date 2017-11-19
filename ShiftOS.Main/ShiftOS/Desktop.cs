@@ -40,7 +40,7 @@ namespace ShiftOS.Main.ShiftOS
         private void textPadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = new TextPad();
-            ShiftWM.Init(t, "Untitled - TextPad", Resources.iconTextPad);
+            ShiftWM.Init(t, "TextPad", Resources.iconTextPad);
         }
 
         private void fileSkimmerToolStripMenuItem_Click(object sender, EventArgs e)
