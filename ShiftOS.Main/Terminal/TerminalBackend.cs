@@ -17,6 +17,7 @@ namespace ShiftOS.Main.Terminal
 
         public static List<ShiftOS.Apps.Terminal> trm = new List<ShiftOS.Apps.Terminal>();
         public static int trmTopID = 0;
+        public static List<string> commandBuffer = new List<string>();
         /// <summary>
         /// Runs a terminal command.
         /// </summary>
@@ -40,6 +41,7 @@ namespace ShiftOS.Main.Terminal
                     Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText("\n");
                     instance.Run(theParams);
                     complete = true;
+                    commandBuffer.Add(command);
                     return;
                 }
             }
@@ -48,9 +50,6 @@ namespace ShiftOS.Main.Terminal
                   Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\n sbash: invalid command: {command.Split(' ').First()}");
                   return;
               }
-
-
-
             Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.Text += " \n The command cannot be found. \n";
         }
     }
