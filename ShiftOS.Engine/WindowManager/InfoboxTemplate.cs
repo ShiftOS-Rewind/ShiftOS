@@ -4,7 +4,6 @@ using System.IO;
 using System.Media;
 using System.Windows.Forms;
 using ShiftOS.Engine.Properties;
-using ShiftOS.Engine.UI;
 
 namespace ShiftOS.Engine.WindowManager
 {
