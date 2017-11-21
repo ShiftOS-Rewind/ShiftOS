@@ -26,11 +26,15 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 
 		void SetDefaultSkin(object sender, EventArgs e)
 		{
+            int offset = 30;
 			SetBorderColor(Color.FromArgb(64, 64, 64));
-			ShiftSkinData.BtnCloseColor = Color.Black;
-			ShiftSkinData.BtnMaxColor = Color.Black;
-			ShiftSkinData.BtnMinColor = Color.Black;
-			button5_Click(sender, e);
+            ShiftSkinData.BtnCloseColor = Color.Black;
+            ShiftSkinData.BtnCloseHoverColor = Color.FromArgb(40, 40, 40);
+            ShiftSkinData.BtnMaxColor = Color.Black;
+            ShiftSkinData.BtnMaxHoverColor = Color.FromArgb(40, 40, 40);
+            ShiftSkinData.BtnMinColor = Color.Black;
+            ShiftSkinData.BtnMinHoverColor = Color.FromArgb(40, 40, 40);
+            button5_Click(sender, e);
 		}
 
 		void SetColorSkin(object sender, EventArgs e)
