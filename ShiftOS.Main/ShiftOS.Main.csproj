@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Terminal\Commands\Hello.cs" />
     <Compile Include="Terminal\Commands\Help.cs" />
+    <Compile Include="Terminal\Commands\sftp.cs" />
     <Compile Include="Terminal\Commands\TestStory.cs" />
     <Compile Include="Terminal\TerminalBackend.cs" />
     <Compile Include="Terminal\TerminalCommand.cs" />

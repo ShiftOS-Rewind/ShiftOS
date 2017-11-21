@@ -6,7 +6,6 @@ namespace ShiftOS.Engine.WindowManager
 	{
 		// ColorData
 		public static Color LeftTopCornerColor = Color.Empty;
-
 		public static Color TitleBarColor = Color.Empty;
 		public static Color RightTopCornerColor = Color.Empty;
 		public static Color BtnCloseColor = Color.Empty;
