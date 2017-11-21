@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using ShiftOS.Engine;
 using ShiftOS.Main.Terminal;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
@@ -14,6 +16,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
         public bool RunningCommand = false;
         public bool WaitingResponse = false;
         public string InputReturnText = "";
+        public List<string> c = TerminalBackend.commandBuffer;
 
 		// The below variables makes the terminal... a terminal!
 		string OldText = "";
@@ -127,6 +130,11 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 Print();
 				e.Handled = true;
 			}
-		}
+            else if (e.KeyCode == Keys.Up)
+            {
+                if (c.Count == 0) return;
+                termmain.AppendText(c.Last());
+            }
+        }
 	}
 }
