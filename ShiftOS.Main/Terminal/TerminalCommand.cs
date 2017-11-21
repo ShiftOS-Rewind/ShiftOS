@@ -33,7 +33,7 @@ namespace ShiftOS.Main.Terminal
         /// <param name="value"><summary>The text to write before the new line is made.</summary></param>
         public virtual void WriteLine(string value)
         {
-            Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"{value} \n");
+            Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($" {value} \n");
         }
 
         /// <summary>
@@ -46,8 +46,8 @@ namespace ShiftOS.Main.Terminal
             ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
 
             int startPoint = trm.termmain.Text.Length;
-            trm.termmain.AppendText($"{value} \n");
-            trm.termmain.Select(startPoint, $"{value} \n".Length);
+            trm.termmain.AppendText($" {value} \n");
+            trm.termmain.Select(startPoint, $" {value} \n".Length);
             trm.termmain.SelectionColor = textClr;
         }
 
@@ -62,8 +62,8 @@ namespace ShiftOS.Main.Terminal
             ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
 
             int startPoint = trm.termmain.Text.Length;
-            trm.termmain.AppendText($"{value}");
-            trm.termmain.Select(startPoint, $"{value}".Length);
+            trm.termmain.AppendText($" {value}");
+            trm.termmain.Select(startPoint, $" {value}".Length);
             trm.termmain.SelectionColor = textClr;
         }
 

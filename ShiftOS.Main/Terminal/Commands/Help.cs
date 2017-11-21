@@ -37,7 +37,7 @@ namespace ShiftOS.Main.Terminal.Commands
             }
             else
             {
-                WriteLine("List of valid commands for ShiftOS. \nTo get help for a specific command, type \"help <command>\".\r\n");
+                WriteLine("List of valid commands for ShiftOS. \n To get help for a specific command, type \"help <command>\".\r\n");
                 foreach (var t in TerminalBackend.instances)
                 {
                     WriteLine($"{t.Name}: {t.Summary}");
