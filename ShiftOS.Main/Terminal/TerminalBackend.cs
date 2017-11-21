@@ -30,6 +30,7 @@ namespace ShiftOS.Main.Terminal
             var theParams = new string[command.Split(' ').Length - 1];
             Array.Copy(command.Split(' '), 1, theParams, 0, command.Split(' ').Length - 1);
 
+            bool complete = false;
             foreach (TerminalCommand instance in instances)
             {
                 if (instance.Name.ToLower() == name.ToLower())
@@ -38,14 +39,17 @@ namespace ShiftOS.Main.Terminal
                     // Add a new line!
                     Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText("\n");
                     instance.Run(theParams);
-                    return;
-                }
-                else
-                {
-                    Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\nsbash: {command.Split(' ').First()}: invalid command");
+                    complete = true;
                     return;
                 }
             }
+              if(!complete)
+              {
+                  Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\nsbash: {command.Split(' ').First()}: invalid command");
+                  return;
+              }
+
+
 
             Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.Text += " \n The command cannot be found. \n";
         }
