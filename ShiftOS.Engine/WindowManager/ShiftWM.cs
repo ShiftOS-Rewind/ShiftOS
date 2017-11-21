@@ -46,10 +46,13 @@ namespace ShiftOS.Engine.WindowManager
 			if (ShiftSkinData.TitleBarColor == Color.Empty)
 			{
 				var borderColor = Color.FromArgb(64, 64, 64);
-				ShiftSkinData.BtnCloseColor = Color.Black;
-				ShiftSkinData.BtnMaxColor = Color.Black;
-				ShiftSkinData.BtnMinColor = Color.Black;
-				ShiftSkinData.LeftTopCornerColor = borderColor;
+                ShiftSkinData.BtnCloseColor = Color.Black;
+                ShiftSkinData.BtnCloseHoverColor = Color.FromArgb(40, 40, 40);
+                ShiftSkinData.BtnMaxColor = Color.Black;
+                ShiftSkinData.BtnMaxHoverColor = Color.FromArgb(40, 40, 40);
+                ShiftSkinData.BtnMinColor = Color.Black;
+                ShiftSkinData.BtnMinHoverColor = Color.FromArgb(40, 40, 40);
+                ShiftSkinData.LeftTopCornerColor = borderColor;
 				ShiftSkinData.TitleBarColor = borderColor;
 				ShiftSkinData.RightTopCornerColor = borderColor;
 				ShiftSkinData.LeftSideColor = borderColor;

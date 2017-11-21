@@ -2,9 +2,9 @@
 
 namespace ShiftOS.Engine.WindowManager
 {
-	public abstract class ShiftSkinData
-	{
-		// ColorData
+    public abstract class ShiftSkinData
+    {
+        // ColorData
 		public static Color LeftTopCornerColor = Color.Empty;
 		public static Color TitleBarColor = Color.Empty;
 		public static Color RightTopCornerColor = Color.Empty;
