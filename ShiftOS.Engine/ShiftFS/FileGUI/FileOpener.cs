@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShiftOS.Engine.WindowManager;
 
 namespace ShiftOS.Engine.ShiftFS.FileGUI
 {
@@ -15,12 +16,11 @@ namespace ShiftOS.Engine.ShiftFS.FileGUI
         public FileOpener()
         {
             InitializeComponent();
-           
         }
 
         private void shiftButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("yay");
+            ShiftWM.StartInfoboxSession("Test", "lol", InfoboxTemplate.ButtonType.Ok);
         }
     }
 }

@@ -28,21 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
+            this.shiftButton1 = new ShiftOS.Engine.UI.ShiftButton();
             this.SuspendLayout();
+            // 
+            // shiftButton1
+            // 
+            this.shiftButton1.Location = new System.Drawing.Point(133, 66);
+            this.shiftButton1.Name = "shiftButton1";
+            this.shiftButton1.Size = new System.Drawing.Size(75, 22);
+            this.shiftButton1.TabIndex = 0;
             // 
             // FileOpener
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.shiftButton1);
             this.Name = "FileOpener";
             this.Size = new System.Drawing.Size(368, 283);
             this.ResumeLayout(false);
 
         }
 
+
         #endregion
 
-        
+        private UI.ShiftButton shiftButton1;
     }
 }

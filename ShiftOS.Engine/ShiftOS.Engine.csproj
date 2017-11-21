@@ -76,12 +76,6 @@
     <Compile Include="ShiftFS\ShiftFS.cs" />
     <Compile Include="ShiftFS\IShiftNode.cs" />
     <Compile Include="Misc\Tools.cs" />
-    <Compile Include="UI\ShiftButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\ShiftButton.Designer.cs">
-      <DependentUpon>ShiftButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="WindowManager\InfoboxTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1107,6 +1101,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\zoombuttonpressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,6 +40,11 @@ namespace ShiftOS.Main.Terminal
                     instance.Run(theParams);
                     return;
                 }
+                else
+                {
+                    Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\nsbash: {command.Split(' ').First()}: invalid command");
+                    return;
+                }
             }
 
             Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.Text += " \n The command cannot be found. \n";
