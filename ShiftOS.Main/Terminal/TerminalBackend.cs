@@ -45,7 +45,7 @@ namespace ShiftOS.Main.Terminal
             }
               if(!complete)
               {
-                  Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\nsbash: {command.Split(' ').First()}: invalid command");
+                  Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\n sbash: invalid command: {command.Split(' ').First()}");
                   return;
               }
 
