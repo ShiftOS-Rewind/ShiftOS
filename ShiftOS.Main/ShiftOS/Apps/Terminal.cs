@@ -11,7 +11,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
     {
         public int TerminalID = TerminalBackend.trmTopID++; // Used so that we can have multiple instances of the terminal whilst the command begin run knowing what terminal to send the text to - very complicated ;)
         public string defaulttextBefore = "user> ";
-        public string defaulttextResult = "[user@shiftos~]$> "; // NOT YET IMPLEMENTED!!!
+        public string defaulttextResult = "[user@shiftos ~]$ "; // NOT YET IMPLEMENTED!!!
         public bool DoClear = false;
         public bool RunningCommand = false;
         public bool WaitingResponse = false;
