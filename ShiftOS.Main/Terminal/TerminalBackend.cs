@@ -45,7 +45,8 @@ namespace ShiftOS.Main.Terminal
                     return;
                 }
             }
-              if(!complete)
+            if (command.Length == 0) return;
+            if (!complete)
               {
                   Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\n sbash: invalid command: {command.Split(' ').First()}");
                   return;
