@@ -18,7 +18,7 @@ namespace ShiftOS.Main.ShiftOS
 
 			Closed += (sender, args) => { Application.Exit(); };
 		}
-		
+
         private void shifterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Apps.ShifterStuff.Shifter app = new Apps.ShifterStuff.Shifter();

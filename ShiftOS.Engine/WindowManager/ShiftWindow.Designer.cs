@@ -229,7 +229,7 @@
             this.Controls.Add(this.program);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShiftWindow";
-            this.Text = "c";
+            this.Text = "Application Title";
             this.program.ResumeLayout(false);
             this.titleBar.ResumeLayout(false);
             this.titleBar.PerformLayout();
