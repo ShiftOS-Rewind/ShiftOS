@@ -107,6 +107,8 @@ namespace ShiftOS.Engine.WindowManager
 				extensions.OnLoaded(app);
 			}
 
+            app.TopMost = true;
+
 			return app;
 		}
 
