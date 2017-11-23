@@ -88,12 +88,12 @@ namespace ShiftOS.Main.Terminal
         //    Input.Start();
         //    return Input;
         //}
+
         /// <summary>
         /// Clears all text from the terminal.
         /// </summary>
         public virtual void Clear()
         {
-
             ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
 
             trm.Clear();

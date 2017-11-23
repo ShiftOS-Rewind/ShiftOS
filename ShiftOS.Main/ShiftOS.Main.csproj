@@ -99,7 +99,7 @@
     <Compile Include="ShiftOS\Desktop.Designer.cs">
       <DependentUpon>Desktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Terminal\Commands\clear.cs" />
+    <Compile Include="Terminal\Commands\Clear.cs" />
     <Compile Include="Terminal\Commands\Hello.cs" />
     <Compile Include="Terminal\Commands\Help.cs" />
     <Compile Include="Terminal\Commands\sftp.cs" />
