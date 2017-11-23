@@ -17,7 +17,7 @@ namespace ShiftOS.Main.Terminal
 
         public static List<ShiftOS.Apps.Terminal> trm = new List<ShiftOS.Apps.Terminal>();
         public static int trmTopID = 0;
-        public static List<string> commandBuffer = new List<string>();
+        public static Stack<string> commandBuffer = new Stack<string>();
         /// <summary>
         /// Runs a terminal command.
         /// </summary>
@@ -41,7 +41,7 @@ namespace ShiftOS.Main.Terminal
                     Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText("\n");
                     instance.Run(theParams);
                     complete = true;
-                    commandBuffer.Add(command);
+                    commandBuffer.Push(command);
                     return;
                 }
             }
