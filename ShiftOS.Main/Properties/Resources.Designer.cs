@@ -730,24 +730,25 @@ namespace ShiftOS.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///
         ///&lt;grammar version=&quot;1.0&quot; xml:lang=&quot;en-US&quot;
         ///         xmlns=&quot;http://www.w3.org/2001/06/grammar&quot;
         ///         tag-format=&quot;semantics/1.0&quot; root=&quot;Main&quot;&gt;
-        ///  
+        ///
         ///  &lt;!-- Catalyst Grammar File
         ///       
         ///       This file gives Catalyst the ability to recognize
         ///       audio input and give a proper response.
         ///		
         ///  --&gt;
-        ///  
+        ///
         ///  &lt;rule id=&quot;Main&quot;&gt;
         ///    &lt;item&gt;
         ///      How much Code Points do I have?
         ///    &lt;/item&gt;
-        ///    &lt;item&gt;Can you run &lt;ruleref uri=&quot;#programs&quot;/&gt;?&lt;/item&gt;
-        ///    &lt;item&gt;Can you mini [rest of string was truncated]&quot;;.
+        ///    &lt;item&gt;Can you run &lt;ruleref uri=&quot;#programs&quot; /&gt;?&lt;/item&gt;
+        ///    &lt;item&gt;Can you minimi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CatalystGrammar {
             get {
@@ -1793,6 +1794,16 @@ namespace ShiftOS.Main.Properties {
         internal static System.IO.UnmanagedMemoryStream typesound {
             get {
                 return ResourceManager.GetStream("typesound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] UbuntuMono_R {
+            get {
+                object obj = ResourceManager.GetObject("UbuntuMono_R", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

@@ -1114,4 +1114,7 @@
   <data name="_3beepvirus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3beepvirus.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="UbuntuMono_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UbuntuMono-R.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -10,8 +10,8 @@ namespace ShiftOS.Main.Terminal.Commands
     public class tcpip : TerminalCommand
     {
         public override string Name { get; } = "tcpip";
-        public override string Summary { get; } = "Shows a list of incoming or outgoing commands.";
-        public override string Usage { get; } = "tcpip <incoming/outcoming>";
+        public override string Summary { get; } = "Shows a list of incoming or outgoing connections.";
+        public override string Usage { get; } = "tcpip <incoming/outgoing>";
         public override bool Unlocked { get; set; } = false;
 
         public override void Run(params string[] args)
@@ -29,9 +29,15 @@ namespace ShiftOS.Main.Terminal.Commands
                     WriteLine("tcpip: syntax error");
                     break;
                 case "incoming":
-                    WriteLine($"Incoming connections from localhost:");
+                    WriteLine("Incoming connections from localhost:");
                     WriteLine($"IP ADDRESS v4                                COMPUTER NAME");
                     WriteLine($"{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(255)}                               {gen}");
+                    break;
+                case "outgoing":
+                    WriteLine("Outgoing connections from localhost:");
+                    WriteLine($"IP ADDRESS v4                                COMPUTER NAME");
+                    WriteLine($"{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(255)}                               {gen}");
+                    WriteLine($"[1] outgoing connection(s) is using {r.Next(0, 16)} MiBs of bandwith.");
                     break;
             }
         }

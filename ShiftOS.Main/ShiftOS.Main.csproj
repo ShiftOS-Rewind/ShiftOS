@@ -99,6 +99,7 @@
     <Compile Include="ShiftOS\Desktop.Designer.cs">
       <DependentUpon>Desktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Terminal\Commands\clear.cs" />
     <Compile Include="Terminal\Commands\Hello.cs" />
     <Compile Include="Terminal\Commands\Help.cs" />
     <Compile Include="Terminal\Commands\sftp.cs" />
@@ -592,6 +593,7 @@
     <None Include="Resources\typesound.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UbuntuMono-R.ttf" />
     <None Include="Resources\uparrow.png" />
   </ItemGroup>
   <ItemGroup>

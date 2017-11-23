@@ -25,13 +25,13 @@ namespace ShiftOS.Main.Terminal.Commands
                         if (t.Name == args[0])
                         {
                             solved = true;
-                            WriteLine($"{t.Name}: {t.Summary} \nusage: {t.Usage}");
+                            WriteLine($"{t.Name}: {t.Summary} \n usage: {t.Usage}");
                             break;
                         }
                     }
                     if (!solved)
                     {
-                        WriteLine("The command \"" + args[0] + "\" could not be found.");
+                        WriteLine($"sbash: invalid token: {args[0]}");
                     }
                 }
             }

@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
-using ShiftOS.Engine.Misc;
 using ShiftOS.Engine.WindowManager;
 using ShiftOS.Main.Properties;
 using ShiftOS.Main.ShiftOS.Apps;
-using System.Drawing;
+using System.IO;
+using ShiftOS.Engine;
 
 namespace ShiftOS.Main.ShiftOS
 {
     // testing github because git hates me
-	public partial class Desktop : Form
+    public partial class Desktop : Form
 	{
 		public Desktop()
 		{
 			InitializeComponent();
             timer1.Start();
-
+            Setup();
 			Closed += (sender, args) => { Application.Exit(); };
 		}
 
@@ -53,6 +52,12 @@ namespace ShiftOS.Main.ShiftOS
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblClock.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+        public void Setup()
+        {
+            if (!Directory.Exists(SaveSystem.gameDir)) Directory.CreateDirectory(SaveSystem.gameDir);
+            if (!Directory.Exists(SaveSystem.fontDir)) Directory.CreateDirectory(SaveSystem.fontDir);
+            if (!File.Exists(SaveSystem.fontDir + "\\termFont.ttf")) File.WriteAllBytes(SaveSystem.fontDir + "\\termFont.ttf", Resources.UbuntuMono_R);
         }
     }
 }

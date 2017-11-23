@@ -4,6 +4,7 @@ using ShiftOS.Engine;
 using ShiftOS.Main.Terminal;
 using System.Linq;
 using System.Collections.Generic;
+using System.Drawing.Text;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
@@ -17,6 +18,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
         public bool WaitingResponse = false;
         public string InputReturnText = "";
         public Stack<string> c = TerminalBackend.commandBuffer;
+        private PrivateFontCollection fontCollection = new PrivateFontCollection();
 
 		// The below variables makes the terminal... a terminal!
 		string OldText = "";
@@ -30,6 +32,11 @@ namespace ShiftOS.Main.ShiftOS.Apps
 			termmain.ContextMenuStrip = new ContextMenuStrip(); // Disables the right click of a richtextbox!
 
             TerminalBackend.trm.Add(this);
+
+            fontCollection.AddFontFile(SaveSystem.fontDir + "\\termFont.ttf");
+
+            termmain.Font = new System.Drawing.Font(fontCollection.Families[0], 12F, System.Drawing.FontStyle.Regular);
+
         }
 
         void Print()
