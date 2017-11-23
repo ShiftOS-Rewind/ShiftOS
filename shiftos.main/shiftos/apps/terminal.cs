@@ -16,7 +16,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
         public bool RunningCommand = false;
         public bool WaitingResponse = false;
         public string InputReturnText = "";
-        public List<string> c = TerminalBackend.commandBuffer;
+        public Stack<string> c = TerminalBackend.commandBuffer;
 
 		// The below variables makes the terminal... a terminal!
 		string OldText = "";
@@ -133,7 +133,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
             else if (e.KeyCode == Keys.Up)
             {
                 if (c.Count == 0) return;
-                termmain.AppendText(c.Last());
+                termmain.AppendText(c.Pop());
             }
         }
 	}
