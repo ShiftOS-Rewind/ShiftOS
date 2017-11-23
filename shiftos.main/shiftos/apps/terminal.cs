@@ -116,7 +116,8 @@ namespace ShiftOS.Main.ShiftOS.Apps
         public void Clear()
         {
             DoClear = true;
-            termmain.Text = $"\n {defaulttextResult}";
+            OldText = "";
+            termmain.Text = "";
             TrackingPosition = termmain.Text.Length;
             DoClear = false;
         }
