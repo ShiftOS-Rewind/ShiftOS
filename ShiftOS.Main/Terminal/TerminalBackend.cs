@@ -44,14 +44,18 @@ namespace ShiftOS.Main.Terminal
                     commandBuffer.Push(command);
                     return;
                 }
+                if (instance.Name.ToLower() == name.ToLower() && instance.Unlocked == false)
+                {
+                    Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\n sbash: invalid command: {command.Split(' ').First()}");
+                    return;
+                }
             }
             if (command.Length == 0) return;
             if (!complete)
-              {
+            {
                   Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.AppendText($"\n sbash: invalid command: {command.Split(' ').First()}");
                   return;
-              }
-            Array.Find(trm.ToArray(), w => w.TerminalID == TermID).termmain.Text += " \n The command cannot be found. \n";
+            }
         }
     }
 }

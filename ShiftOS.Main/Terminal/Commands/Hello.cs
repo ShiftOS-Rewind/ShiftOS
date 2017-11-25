@@ -12,7 +12,7 @@ namespace ShiftOS.Main.Terminal.Commands
         public override string Name { get; } = "Hello";
         public override string Summary { get; } = "Just an example command.";
         public override string Usage { get; } = "Hello <NAME>.";
-        public override bool Unlocked { get; set; } = false;
+        public override bool Unlocked { get; set; } = true;
 
         public override void Run(params string[] parameters)
         {

@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -38,7 +40,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnLoad = new System.Windows.Forms.Button();
+            this.shiftButton1 = new Engine.UI.ShiftButton();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -59,6 +62,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.shiftButton1);
+            this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.btnLoad);
             this.tabPage1.Controls.Add(this.btnSave);
             this.tabPage1.Controls.Add(this.button5);
@@ -73,6 +79,30 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Titlebar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.button6.Location = new System.Drawing.Point(6, 152);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(314, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "Set Midnight Skin";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.btnLoad.Location = new System.Drawing.Point(165, 267);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(155, 23);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Load Skin";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
@@ -96,7 +126,6 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Apply";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -166,17 +195,33 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnLoad
+            // shiftButton1
             // 
-            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoad.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.btnLoad.Location = new System.Drawing.Point(165, 267);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(155, 23);
-            this.btnLoad.TabIndex = 7;
-            this.btnLoad.Text = "Load Skin";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.shiftButton1.BackColor = System.Drawing.Color.White;
+            this.shiftButton1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.shiftButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.shiftButton1.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shiftButton1.ForeColor = System.Drawing.Color.Black;
+            this.shiftButton1.Location = new System.Drawing.Point(205, 25);
+            this.shiftButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.shiftButton1.MinimumSize = new System.Drawing.Size(75, 23);
+            this.shiftButton1.Name = "shiftButton1";
+            this.shiftButton1.Padding = new System.Windows.Forms.Padding(3);
+            this.shiftButton1.Size = new System.Drawing.Size(100, 23);
+            this.shiftButton1.TabIndex = 9;
+            this.shiftButton1.Text = "ShiftButton";
+            this.shiftButton1.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.button7.Location = new System.Drawing.Point(205, 51);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 23);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "NormalBtn";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // Shifter
             // 
@@ -205,5 +250,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private Engine.UI.ShiftButton shiftButton1;
     }
 }

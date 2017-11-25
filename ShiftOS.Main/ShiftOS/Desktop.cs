@@ -5,24 +5,28 @@ using ShiftOS.Main.Properties;
 using ShiftOS.Main.ShiftOS.Apps;
 using System.IO;
 using ShiftOS.Engine;
+using System.Drawing;
+using ShiftOS.Engine.UI;
 
 namespace ShiftOS.Main.ShiftOS
 {
     // testing github because git hates me
     public partial class Desktop : Form
 	{
-		public Desktop()
+        Graphics g;
+        public Desktop()
 		{
 			InitializeComponent();
             timer1.Start();
-            Setup();
 			Closed += (sender, args) => { Application.Exit(); };
-		}
+            var s = new ShiftStripRenderer();
+  
+        }
 
         private void shifterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Apps.ShifterStuff.Shifter app = new Apps.ShifterStuff.Shifter();
-            ShiftWM.Init(app, "Shifter", null);
+            ShiftWM.Init(app, "Shifter", Resources.iconShifter);
         }
 
         private void Desktop_Load(object sender, EventArgs e)
@@ -53,11 +57,11 @@ namespace ShiftOS.Main.ShiftOS
         {
             lblClock.Text = DateTime.Now.ToString("hh:mm:ss");
         }
-        public void Setup()
+        
+        private void SetupToolStrip(ToolStripRenderEventArgs e, Graphics g)
         {
-            if (!Directory.Exists(SaveSystem.gameDir)) Directory.CreateDirectory(SaveSystem.gameDir);
-            if (!Directory.Exists(SaveSystem.fontDir)) Directory.CreateDirectory(SaveSystem.fontDir);
-            if (!File.Exists(SaveSystem.fontDir + "\\termFont.ttf")) File.WriteAllBytes(SaveSystem.fontDir + "\\termFont.ttf", Resources.UbuntuMono_R);
+            var s = new ShiftStripRenderer();
+            s.DrawToolStripBackground(e);
         }
     }
 }

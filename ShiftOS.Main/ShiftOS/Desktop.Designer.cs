@@ -95,7 +95,8 @@
             this.applicationsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(93, 24);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(185, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "Applications";
             // 
@@ -113,28 +114,28 @@
             // shifterToolStripMenuItem
             // 
             this.shifterToolStripMenuItem.Name = "shifterToolStripMenuItem";
-            this.shifterToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.shifterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.shifterToolStripMenuItem.Text = "Shifter";
             this.shifterToolStripMenuItem.Click += new System.EventHandler(this.shifterToolStripMenuItem_Click);
             // 
             // terminalToolStripMenuItem
             // 
             this.terminalToolStripMenuItem.Name = "terminalToolStripMenuItem";
-            this.terminalToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.terminalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.terminalToolStripMenuItem.Text = "Terminal";
             this.terminalToolStripMenuItem.Click += new System.EventHandler(this.terminalToolStripMenuItem_Click);
             // 
             // textPadToolStripMenuItem
             // 
             this.textPadToolStripMenuItem.Name = "textPadToolStripMenuItem";
-            this.textPadToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.textPadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.textPadToolStripMenuItem.Text = "TextPad";
             this.textPadToolStripMenuItem.Click += new System.EventHandler(this.textPadToolStripMenuItem_Click);
             // 
             // fileSkimmerToolStripMenuItem
             // 
             this.fileSkimmerToolStripMenuItem.Name = "fileSkimmerToolStripMenuItem";
-            this.fileSkimmerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.fileSkimmerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fileSkimmerToolStripMenuItem.Text = "File Skimmer";
             this.fileSkimmerToolStripMenuItem.Click += new System.EventHandler(this.fileSkimmerToolStripMenuItem_Click);
             // 

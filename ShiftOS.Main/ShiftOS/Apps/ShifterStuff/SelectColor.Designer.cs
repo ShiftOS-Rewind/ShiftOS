@@ -128,6 +128,7 @@
             this.Font = new System.Drawing.Font("Lucida Console", 9.25F);
             this.Name = "SelectColor";
             this.Size = new System.Drawing.Size(317, 158);
+            this.Load += new System.EventHandler(this.SelectColor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.redUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueUpDown)).EndInit();

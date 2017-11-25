@@ -23,32 +23,25 @@ namespace ShiftOS.Engine.WindowManager
 			Cancel,
 			Ok
 		}
-
-		int _buttonChoice;
-		int _buttonSelected;
 		Stream _str;
 
 		public InfoboxTemplate(ButtonType type)
 		{
 			InitializeComponent();
- 
 			switch (type)
 			{
 				case ButtonType.Ok:
 					btnOpt1.Text = "OK";
 					btnOpt2.Hide();
-					btnOpt1.Location = new Point(109, 134);
-					_buttonChoice = 1;
+					btnOpt1.Location = new Point(156, 163);
 					break;
 				case ButtonType.OkCancel:
 					btnOpt1.Text = "OK";
 					btnOpt2.Text = "Cancel";
-					_buttonChoice = 2;
 					break;
 				case ButtonType.YesNo:
 					btnOpt1.Text = "Yes";
 					btnOpt2.Text = "No";
-					_buttonChoice = 3;
 					break;
 			}
 		}
@@ -58,11 +51,12 @@ namespace ShiftOS.Engine.WindowManager
 			switch (btnOpt1.Text)
 			{
 				case "OK":
-					ParentForm?.Close();
+                    btnOpt1.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    ParentForm?.Close();
 					break;
 				case "Yes":
-					_buttonSelected = 2;
-					ParentForm?.Close();
+                    btnOpt1.DialogResult = System.Windows.Forms.DialogResult.Yes;
+                    ParentForm?.Close();
 					break;
 			}
 		}
@@ -72,11 +66,12 @@ namespace ShiftOS.Engine.WindowManager
 			switch (btnOpt2.Text)
 			{
 				case "No":
-					_buttonSelected = 3;
-					break;
+                    btnOpt2.DialogResult = System.Windows.Forms.DialogResult.No;
+                    ParentForm?.Close();
+                    break;
 				case "Cancel":
-					_buttonSelected = 4;
-					break;
+                    btnOpt2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                    break;
 			}
 		}
 
@@ -89,6 +84,16 @@ namespace ShiftOS.Engine.WindowManager
 		}
 
 		void InfoboxTemplate_Load(object sender, EventArgs e)
-			=> Play();
-	}
+        {
+            Play();
+            SizeAndLoad(label1.Size.Width, label1.Size.Width);
+        }
+        private Size SizeAndLoad(int x, int y)
+        {
+            this.Size = new Size(x, y);
+            Left = (Screen.PrimaryScreen.Bounds.Width - Width) / 2;
+            Top = (Screen.PrimaryScreen.Bounds.Top - Height) / 2;
+            return Size;
+        }
+    }
 }

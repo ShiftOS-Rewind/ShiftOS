@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,10 +19,19 @@ namespace ShiftOS.Main.Terminal.Commands
         {
             var r = new Random();
             WriteLine($"Incoming connection from {r.Next(0, 256)}.{r.Next(0, 256)}.{r.Next(0, 256)}.{r.Next(0, 256)}...");
-            Task.Delay(2000);
+            WriteLine(); //The various Task.Delay functions are to make the Thread.Sleep function work.
+            Thread.Sleep(r.Next(2000, 4500));
             WriteLine("User set alias as \"DevX\".");
-            Thread.Sleep(2000);
+            Task.Delay(1);
+            Thread.Sleep(4000);
             WriteLine("User <DevX> has connected successfully!");
+            Task.Delay(1);
+            Thread.Sleep(3400);
+            StoryWriteLine("Well, it seems ShiftOS has installed. Congrats.... err... whatever your name is.");
+        }
+        private void StoryWriteLine(string value)
+        {
+            WriteLine($"[devx@master ~]$ {value}");
         }
     }
 }

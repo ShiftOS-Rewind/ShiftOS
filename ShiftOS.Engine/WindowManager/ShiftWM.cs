@@ -43,36 +43,36 @@ namespace ShiftOS.Engine.WindowManager
 			app.Width = content.Width + app.leftSide.Width + app.rightSide.Width;
 			app.Height = content.Height + app.bottomSide.Height + app.titleBar.Height;
 
-			if (ShiftSkinData.TitleBarColor == Color.Empty)
+			if (ShiftSkinData.Colors.TitleBarColor == Color.Empty)
 			{
-				var borderColor = Color.FromArgb(64, 64, 64);
-                ShiftSkinData.BtnCloseColor = Color.Black;
-                ShiftSkinData.BtnCloseHoverColor = Color.FromArgb(40, 40, 40);
-                ShiftSkinData.BtnMaxColor = Color.Black;
-                ShiftSkinData.BtnMaxHoverColor = Color.FromArgb(40, 40, 40);
-                ShiftSkinData.BtnMinColor = Color.Black;
-                ShiftSkinData.BtnMinHoverColor = Color.FromArgb(40, 40, 40);
-                ShiftSkinData.LeftTopCornerColor = borderColor;
-				ShiftSkinData.TitleBarColor = borderColor;
-				ShiftSkinData.RightTopCornerColor = borderColor;
-				ShiftSkinData.LeftSideColor = borderColor;
-				ShiftSkinData.RightSideColor = borderColor;
-				ShiftSkinData.LeftBottomCornerColor = borderColor;
-				ShiftSkinData.BottomSideColor = borderColor;
-				ShiftSkinData.RightBottomCornerColor = borderColor;
+				Color borderColor = Color.FromArgb(64, 64, 64);
+                ShiftSkinData.Colors.BtnCloseColor = Color.Black;
+                ShiftSkinData.Colors.BtnCloseHoverColor = Color.FromArgb(40, 40, 40);
+                ShiftSkinData.Colors.BtnMaxColor = Color.Black;
+                ShiftSkinData.Colors.BtnMaxHoverColor = Color.FromArgb(40, 40, 40);
+                ShiftSkinData.Colors.BtnMinColor = Color.Black;
+                ShiftSkinData.Colors.BtnMinHoverColor = Color.FromArgb(40, 40, 40);
+                ShiftSkinData.Colors.LeftTopCornerColor = borderColor;
+				ShiftSkinData.Colors.TitleBarColor = borderColor;
+				ShiftSkinData.Colors.RightTopCornerColor = borderColor;
+				ShiftSkinData.Colors.LeftSideColor = borderColor;
+				ShiftSkinData.Colors.RightSideColor = borderColor;
+				ShiftSkinData.Colors.LeftBottomCornerColor = borderColor;
+				ShiftSkinData.Colors.BottomSideColor = borderColor;
+				ShiftSkinData.Colors.RightBottomCornerColor = borderColor;
 			}
 
-			app.btnClose.BackColor = ShiftSkinData.BtnCloseColor;
-			app.btnMax.BackColor = ShiftSkinData.BtnMaxColor;
-			app.btnMin.BackColor = ShiftSkinData.BtnMinColor;
-			app.leftTopCorner.BackColor = ShiftSkinData.LeftTopCornerColor;
-			app.titleBar.BackColor = ShiftSkinData.TitleBarColor;
-			app.rightTopCorner.BackColor = ShiftSkinData.RightTopCornerColor;
-			app.leftSide.BackColor = ShiftSkinData.LeftSideColor;
-			app.rightSide.BackColor = ShiftSkinData.RightSideColor;
-			app.leftBottomCorner.BackColor = ShiftSkinData.LeftBottomCornerColor;
-			app.bottomSide.BackColor = ShiftSkinData.BottomSideColor;
-			app.rightBottomCorner.BackColor = ShiftSkinData.RightBottomCornerColor;
+			app.btnClose.BackColor = ShiftSkinData.Colors.BtnCloseColor;
+			app.btnMax.BackColor = ShiftSkinData.Colors.BtnMaxColor;
+			app.btnMin.BackColor = ShiftSkinData.Colors.BtnMinColor;
+			app.leftTopCorner.BackColor = ShiftSkinData.Colors.LeftTopCornerColor;
+			app.titleBar.BackColor = ShiftSkinData.Colors.TitleBarColor;
+			app.rightTopCorner.BackColor = ShiftSkinData.Colors.RightTopCornerColor;
+			app.leftSide.BackColor = ShiftSkinData.Colors.LeftSideColor;
+			app.rightSide.BackColor = ShiftSkinData.Colors.RightSideColor;
+			app.leftBottomCorner.BackColor = ShiftSkinData.Colors.LeftBottomCornerColor;
+			app.bottomSide.BackColor = ShiftSkinData.Colors.BottomSideColor;
+			app.rightBottomCorner.BackColor = ShiftSkinData.Colors.RightBottomCornerColor;
 
 
 			// Icon Setup

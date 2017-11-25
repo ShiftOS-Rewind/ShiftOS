@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using ShiftOS.Engine.WindowManager;
+using ShiftOS.Engine.UI;
 
 namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 {
@@ -50,5 +51,13 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 		{
 			SetColor();
 		}
-	}
+
+        private void SelectColor_Load(object sender, EventArgs e)
+        {
+            var s = new ShiftButton();
+            s.Location = new System.Drawing.Point(211, 48);
+            s.Text = "test";
+            Controls.Add(s);
+        }
+    }
 }

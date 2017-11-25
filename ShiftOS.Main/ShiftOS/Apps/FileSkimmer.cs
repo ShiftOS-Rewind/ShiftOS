@@ -6,6 +6,7 @@ using ShiftOS.Engine.Misc;
 using ShiftOS.Engine.ShiftFS;
 using ShiftOS.Engine.WindowManager;
 using System.Linq;
+using ShiftOS.Engine.UI;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
@@ -16,6 +17,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
 		public FileSkimmer()
 		{
 			InitializeComponent();
+            
 		}
 
 		public void OnLoaded(ShiftWindow window)

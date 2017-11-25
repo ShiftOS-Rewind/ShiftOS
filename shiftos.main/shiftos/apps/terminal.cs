@@ -5,6 +5,8 @@ using ShiftOS.Main.Terminal;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.IO;
+using ShiftOS.Main.Properties;
 
 namespace ShiftOS.Main.ShiftOS.Apps
 {
@@ -19,7 +21,7 @@ namespace ShiftOS.Main.ShiftOS.Apps
         public string InputReturnText = "";
         public Stack<string> c = TerminalBackend.commandBuffer;
         private PrivateFontCollection fontCollection = new PrivateFontCollection();
-
+        
 		// The below variables makes the terminal... a terminal!
 		string OldText = "";
 
@@ -33,10 +35,8 @@ namespace ShiftOS.Main.ShiftOS.Apps
 
             TerminalBackend.trm.Add(this);
 
-            fontCollection.AddFontFile(SaveSystem.fontDir + "\\termFont.ttf");
 
-            termmain.Font = new System.Drawing.Font(fontCollection.Families[0], 12F, System.Drawing.FontStyle.Regular);
-
+            Setup();
         }
 
         void Print()
@@ -144,5 +144,27 @@ namespace ShiftOS.Main.ShiftOS.Apps
                 termmain.AppendText(c.Pop());
             }
         }
-	}
+        public void Setup()
+        {
+            if (!Directory.Exists(SaveSystem.gameDir)) Directory.CreateDirectory(SaveSystem.gameDir);
+            if (!Directory.Exists(SaveSystem.fontDir)) Directory.CreateDirectory(SaveSystem.fontDir);
+            if (!Directory.Exists(SaveSystem.dataDir)) Directory.CreateDirectory(SaveSystem.dataDir);
+            if (!File.Exists(SaveSystem.fontDir + "\\termFont.ttf")) File.WriteAllBytes(SaveSystem.fontDir + "\\termFont.ttf", Resources.UbuntuMono_R);
+            if (!File.Exists(SaveSystem.dataDir + "\\userCodePoints.whoa"))
+            {
+                using (var fobj = File.OpenWrite(SaveSystem.dataDir + "\\userCodePoints.whoa"))
+                {
+                    Whoa.Whoa.SerialiseObject(fobj, SaveSystem.User.codePoints);
+                }
+            }
+            if (!Directory.Exists(SaveSystem.baseGameDir)) Directory.CreateDirectory(SaveSystem.baseGameDir);
+            if (!Directory.Exists(SaveSystem.desktopDir)) Directory.CreateDirectory(SaveSystem.desktopDir);
+            if (!Directory.Exists(SaveSystem.docDir)) Directory.CreateDirectory(SaveSystem.docDir);
+            if (!Directory.Exists(SaveSystem.downloadsDir)) Directory.CreateDirectory(SaveSystem.downloadsDir);
+            if (!Directory.Exists(SaveSystem.musicDir)) Directory.CreateDirectory(SaveSystem.musicDir);
+            if (!Directory.Exists(SaveSystem.picDir)) Directory.CreateDirectory(SaveSystem.picDir);
+            fontCollection.AddFontFile(SaveSystem.fontDir + "\\termFont.ttf");
+            termmain.Font = new System.Drawing.Font(fontCollection.Families[0], 12F, System.Drawing.FontStyle.Regular);
+        }
+    }
 }

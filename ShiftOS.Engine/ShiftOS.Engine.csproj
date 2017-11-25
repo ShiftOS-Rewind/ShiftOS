@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodepointUpgrade.cs" />
     <Compile Include="Misc\EventList.cs" />
     <Compile Include="Misc\IniFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,11 +79,12 @@
     <Compile Include="ShiftFS\IShiftNode.cs" />
     <Compile Include="Misc\Tools.cs" />
     <Compile Include="UI\ShiftButton.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ShiftButton.Designer.cs">
       <DependentUpon>ShiftButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ShiftStripRenderer.cs" />
     <Compile Include="WindowManager\InfoboxTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftFS\FileGUI\FileOpener.resx">
       <DependentUpon>FileOpener.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShiftButton.resx">
+      <DependentUpon>ShiftButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowManager\InfoboxTemplate.resx">
       <DependentUpon>InfoboxTemplate.cs</DependentUpon>

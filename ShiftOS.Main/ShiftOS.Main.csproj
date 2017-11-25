@@ -63,12 +63,6 @@
     <Compile Include="ShiftOS\Apps\ShifterStuff\SelectColor.Designer.cs">
       <DependentUpon>SelectColor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftOS\Apps\ShiftDemo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ShiftOS\Apps\ShiftDemo.Designer.cs">
-      <DependentUpon>ShiftDemo.cs</DependentUpon>
-    </Compile>
     <Compile Include="ShiftOS\Apps\ShifterStuff\Shifter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,12 +74,6 @@
     </Compile>
     <Compile Include="ShiftOS\Apps\Terminal.Designer.cs">
       <DependentUpon>Terminal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShiftOS\Apps\TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShiftOS\Apps\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShiftOS\Apps\TextPad.cs">
       <SubType>UserControl</SubType>
@@ -99,10 +87,14 @@
     <Compile Include="ShiftOS\Desktop.Designer.cs">
       <DependentUpon>Desktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Terminal\Commands\codepoints.cs" />
+    <Compile Include="Terminal\Commands\startx.cs" />
     <Compile Include="Terminal\Commands\Clear.cs" />
+    <Compile Include="Terminal\Commands\Echo.cs" />
     <Compile Include="Terminal\Commands\Hello.cs" />
     <Compile Include="Terminal\Commands\Help.cs" />
     <Compile Include="Terminal\Commands\sftp.cs" />
+    <Compile Include="Terminal\Commands\shutdown.cs" />
     <Compile Include="Terminal\Commands\tcpip.cs" />
     <Compile Include="Terminal\Commands\TestStory.cs" />
     <Compile Include="Terminal\TerminalBackend.cs" />
@@ -123,17 +115,11 @@
     <EmbeddedResource Include="ShiftOS\Apps\ShifterStuff\SelectColor.resx">
       <DependentUpon>SelectColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShiftOS\Apps\ShiftDemo.resx">
-      <DependentUpon>ShiftDemo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\ShifterStuff\Shifter.resx">
       <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\Terminal.resx">
       <DependentUpon>Terminal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShiftOS\Apps\TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS\Apps\TextPad.resx">
       <DependentUpon>TextPad.cs</DependentUpon>

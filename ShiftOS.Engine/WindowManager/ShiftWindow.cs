@@ -52,23 +52,23 @@ namespace ShiftOS.Engine.WindowManager
 			=> Close();
 
 		void closebutton_MouseEnter(object sender, EventArgs e)
-			=> btnClose.BackColor = ShiftSkinData.BtnCloseHoverColor;
+			=> btnClose.BackColor = ShiftSkinData.Colors.BtnCloseHoverColor;
 
 		void closebutton_MouseLeave(object sender, EventArgs e)
-			=> btnClose.BackColor = ShiftSkinData.BtnCloseColor;
+			=> btnClose.BackColor = ShiftSkinData.Colors.BtnCloseColor;
 
 		void maximizebutton_MouseEnter(object sender, EventArgs e)
-			=> btnMax.BackColor = ShiftSkinData.BtnMaxHoverColor;
+			=> btnMax.BackColor = ShiftSkinData.Colors.BtnMaxHoverColor;
 
 		void maximizebutton_MouseLeave(object sender, EventArgs e)
-			=> btnMax.BackColor = ShiftSkinData.BtnMaxColor;
+			=> btnMax.BackColor = ShiftSkinData.Colors.BtnMaxColor;
 
 		void minimizebutton_MouseEnter(object sender, EventArgs e)
-			=> btnMin.BackColor = ShiftSkinData.BtnMinHoverColor;
+			=> btnMin.BackColor = ShiftSkinData.Colors.BtnMinHoverColor;
 
 
 		void minimizebutton_MouseLeave(object sender, EventArgs e)
-			=> btnMin.BackColor = ShiftSkinData.BtnMinColor;
+			=> btnMin.BackColor = ShiftSkinData.Colors.BtnMinColor;
 
 		/*
 		private void closebutton_MouseDown(object sender, MouseEventArgs e) 
