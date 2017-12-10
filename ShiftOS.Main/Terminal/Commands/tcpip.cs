@@ -30,12 +30,12 @@ namespace ShiftOS.Main.Terminal.Commands
                     break;
                 case "incoming":
                     WriteLine("Incoming connections from localhost:");
-                    WriteLine($"IP ADDRESS v4                                COMPUTER NAME");
+                    WriteLine($"IP ADDRESS IPv4                              COMPUTER NAME");
                     WriteLine($"{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(255)}                               {gen}");
                     break;
                 case "outgoing":
                     WriteLine("Outgoing connections from localhost:");
-                    WriteLine($"IP ADDRESS v4                                COMPUTER NAME");
+                    WriteLine($"IP ADDRESS IPv4                              COMPUTER NAME");
                     WriteLine($"{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(0, 255)}.{r.Next(255)}                               {gen}");
                     WriteLine($"[1] outgoing connection(s) is using {r.Next(0, 16)} MiBs of bandwith.");
                     break;
