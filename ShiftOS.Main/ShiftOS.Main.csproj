@@ -139,6 +139,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Fonts\UbuntuMono.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -153,6 +154,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ShiftOS\Upgrades\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Apps\Artpad\ArtPadsave.png" />
+    <Content Include="Resources\Audio\infobox.wav" />
+    <Content Include="Resources\Icons\iconColourPicker.fw.png" />
+    <Content Include="Resources\Icons\iconFileOpener.fw.png" />
+    <Content Include="Resources\Icons\iconFileSkimmer.png" />
+    <Content Include="Resources\Icons\iconInfoBox.fw.png" />
+    <Content Include="Resources\Icons\iconShifter.png" />
+    <Content Include="Resources\Icons\iconTerminal.png" />
+    <Content Include="Resources\Icons\iconTextPad.png" />
+    <Content Include="Resources\Icons\Symbolinfo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
