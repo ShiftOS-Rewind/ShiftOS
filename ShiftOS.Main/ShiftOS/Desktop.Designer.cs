@@ -33,13 +33,13 @@
             this.clockPanel = new System.Windows.Forms.Panel();
             this.lblClock = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textPadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSkimmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.taskbar.SuspendLayout();
             this.clockPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,15 +88,21 @@
             this.panel2.Size = new System.Drawing.Size(102, 24);
             this.panel2.TabIndex = 0;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImage = global::ShiftOS.Main.Properties.Resources.pixel;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(185, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(93, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "Applications";
             // 
@@ -107,6 +113,7 @@
             this.terminalToolStripMenuItem,
             this.textPadToolStripMenuItem,
             this.fileSkimmerToolStripMenuItem});
+            this.applicationsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.applicationsToolStripMenuItem.Text = "Applications";
@@ -138,10 +145,6 @@
             this.fileSkimmerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fileSkimmerToolStripMenuItem.Text = "File Skimmer";
             this.fileSkimmerToolStripMenuItem.Click += new System.EventHandler(this.fileSkimmerToolStripMenuItem_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Desktop
             // 

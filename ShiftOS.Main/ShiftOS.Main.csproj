@@ -166,6 +166,7 @@
     <Content Include="Resources\Icons\iconTerminal.png" />
     <Content Include="Resources\Icons\iconTextPad.png" />
     <Content Include="Resources\Icons\Symbolinfo.png" />
+    <Content Include="Resources\pixel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
