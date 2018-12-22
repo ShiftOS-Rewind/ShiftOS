@@ -32,8 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.changeSize = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.TextBox();
-            this.btnOpt2 = new ShiftOS.Engine.UI.ShiftButton();
             this.btnOpt1 = new ShiftOS.Engine.UI.ShiftButton();
+            this.btnOpt2 = new ShiftOS.Engine.UI.ShiftButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +64,26 @@
             this.label1.Size = new System.Drawing.Size(256, 125);
             this.label1.TabIndex = 6;
             // 
+            // btnOpt1
+            // 
+            this.btnOpt1.BackColor = System.Drawing.Color.White;
+            this.btnOpt1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnOpt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpt1.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpt1.ForeColor = System.Drawing.Color.Black;
+            this.btnOpt1.Location = new System.Drawing.Point(105, 163);
+            this.btnOpt1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOpt1.MinimumSize = new System.Drawing.Size(75, 23);
+            this.btnOpt1.Name = "btnOpt1";
+            this.btnOpt1.Padding = new System.Windows.Forms.Padding(3);
+            this.btnOpt1.Size = new System.Drawing.Size(105, 26);
+            this.btnOpt1.TabIndex = 7;
+            this.btnOpt1.Text = "shiftButton1";
+            this.btnOpt1.UseVisualStyleBackColor = false;
+            // 
             // btnOpt2
             // 
-            this.btnOpt2.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOpt2.BackColor = System.Drawing.Color.White;
             this.btnOpt2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnOpt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpt2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,35 +93,18 @@
             this.btnOpt2.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnOpt2.Name = "btnOpt2";
             this.btnOpt2.Padding = new System.Windows.Forms.Padding(3);
-            this.btnOpt2.Size = new System.Drawing.Size(117, 31);
-            this.btnOpt2.TabIndex = 5;
+            this.btnOpt2.Size = new System.Drawing.Size(105, 26);
+            this.btnOpt2.TabIndex = 8;
             this.btnOpt2.Text = "shiftButton2";
             this.btnOpt2.UseVisualStyleBackColor = false;
-            // 
-            // btnOpt1
-            // 
-            this.btnOpt1.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOpt1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnOpt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpt1.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpt1.ForeColor = System.Drawing.Color.Black;
-            this.btnOpt1.Location = new System.Drawing.Point(90, 163);
-            this.btnOpt1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOpt1.MinimumSize = new System.Drawing.Size(75, 23);
-            this.btnOpt1.Name = "btnOpt1";
-            this.btnOpt1.Padding = new System.Windows.Forms.Padding(3);
-            this.btnOpt1.Size = new System.Drawing.Size(117, 31);
-            this.btnOpt1.TabIndex = 4;
-            this.btnOpt1.Text = "shiftButton1";
-            this.btnOpt1.UseVisualStyleBackColor = false;
             // 
             // InfoboxTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "InfoboxTemplate";
             this.Size = new System.Drawing.Size(438, 210);
@@ -118,8 +118,8 @@
         #endregion
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer changeSize;
+        public System.Windows.Forms.TextBox label1;
         private UI.ShiftButton btnOpt1;
         private UI.ShiftButton btnOpt2;
-        public System.Windows.Forms.TextBox label1;
     }
 }

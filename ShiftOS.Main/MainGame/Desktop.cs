@@ -13,14 +13,20 @@ namespace ShiftOS.Main.ShiftOS
     // testing github because git hates me
     public partial class Desktop : Form
 	{
-        Graphics g;
+
         public Desktop()
 		{
-			InitializeComponent();
+            InitializeComponent();
+            foreach (object t in applicationsToolStripMenuItem.DropDownItems)
+            {
+                var appList = t as ToolStripItem;
+                if (t == null) continue;
+                appList.BackColor = Color.FromArgb(64, 64, 64);
+                appList.ForeColor = Color.White;
+            }
             timer1.Start();
 			Closed += (sender, args) => { Application.Exit(); };
-            var s = new ShiftStripRenderer();
-  
+    
         }
 
         private void shifterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,11 +63,10 @@ namespace ShiftOS.Main.ShiftOS
         {
             lblClock.Text = DateTime.Now.ToString("hh:mm:ss");
         }
-        
-        private void SetupToolStrip(ToolStripRenderEventArgs e, Graphics g)
+
+        private void menuStrip1_MenuActivate(object sender, EventArgs e)
         {
-            var s = new ShiftStripRenderer();
-            s.DrawToolStripBackground(e);
+            menuStrip1.BackColor = Color.FromArgb(64, 64, 64);
         }
     }
 }

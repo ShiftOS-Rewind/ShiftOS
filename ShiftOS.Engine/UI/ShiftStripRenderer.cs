@@ -8,13 +8,22 @@ using System.Windows.Forms;
 
 namespace ShiftOS.Engine.UI
 {
-    public class ShiftStripRenderer : ToolStripProfessionalRenderer
+    public class ShiftStripRenderer : ToolStripRenderer
     {
-        protected override void OnRenderLabelBackground(ToolStripItemRenderEventArgs e)
+        SolidBrush sb;
+
+        protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
-            using (var b = new SolidBrush(e.Item.BackColor))
+            if (!e.Item.Selected)
             {
-                e.Graphics.FillRectangle(b, new Rectangle(Point.Empty, e.Item.Size));
+                base.OnRenderButtonBackground(e);
+            }
+            else
+            {
+                sb = new SolidBrush(Color.FromArgb(64, 64, 64));
+                Rectangle rectangle = new Rectangle(0, 0, e.Item.Size.Width - 1, e.Item.Size.Height - 1);
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(64,64,64)), rectangle);
+                e.Graphics.DrawRectangle(new Pen(sb, 1F), rectangle);
             }
         }
     }

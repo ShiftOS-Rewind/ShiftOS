@@ -8,8 +8,10 @@ using ShiftOS.Engine.Properties;
 namespace ShiftOS.Engine.WindowManager
 {
 	public partial class InfoboxTemplate : UserControl
-	{
-		public enum ButtonType
+    {
+        public bool isOK = false;
+        public bool isNo = false;
+        public enum ButtonType
 		{
 			YesNo,
 			OkCancel,
@@ -48,17 +50,9 @@ namespace ShiftOS.Engine.WindowManager
 
 		void btnOpt1_Click(object sender, EventArgs e)
 		{
-			switch (btnOpt1.Text)
-			{
-				case "OK":
-                    btnOpt1.DialogResult = System.Windows.Forms.DialogResult.OK;
-                    ParentForm?.Close();
-					break;
-				case "Yes":
-                    btnOpt1.DialogResult = System.Windows.Forms.DialogResult.Yes;
-                    ParentForm?.Close();
-					break;
-			}
+            isOK = true;
+            MessageBox.Show("button was clicked");
+            ParentForm?.Close();
 		}
 
 		void btnOpt2_Click(object sender, EventArgs e)
@@ -66,11 +60,11 @@ namespace ShiftOS.Engine.WindowManager
 			switch (btnOpt2.Text)
 			{
 				case "No":
-                    btnOpt2.DialogResult = System.Windows.Forms.DialogResult.No;
+                    isNo = true;
                     ParentForm?.Close();
                     break;
 				case "Cancel":
-                    btnOpt2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                    isNo = true;
                     break;
 			}
 		}

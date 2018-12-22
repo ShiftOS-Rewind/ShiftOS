@@ -11,10 +11,20 @@ namespace ShiftOS.Engine.WindowManager
 
     public class skinTextures
     {
-        public skinTextures()
-        {
-
-        }
+        public Image LeftTopCornerImage;
+        public Image TitleBarImage;
+        public Image RightTopCornerImage;
+        public Image BtnCloseImage;
+        public Image BtnMaxImage;
+        public Image BtnMinImage;
+        public Image BtnCloseHoverImage;
+        public Image BtnMaxHoverImage;
+        public Image BtnMinHoverImage;
+        public Image LeftSideImage;
+        public Image RightSideImage;
+        public Image LeftBottomCornerImage;
+        public Image BottomSideImage;
+        public Image RightBottomCornerImage;
     }
 }
 

@@ -11,7 +11,8 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 {
 	public partial class Shifter : UserControl
 	{
-		public int ColorType; //This is a check to see what option was chosen.
+        public static readonly ImageConverter imageConverter = new ImageConverter();
+        public int ColorType; //This is a check to see what option was chosen.
 		public Shifter()
 		{
 			InitializeComponent();
@@ -100,11 +101,40 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
 				window.Invoke(new Action(() => window.btnMin.BackColor = ShiftSkinData.Colors.BtnMinColor));
 			}
 		}
+        void ApplyTexturedSkin() //not implemented
+        {
+            throw new NotImplementedException("Not implemented.");
+
+            /*foreach (var window in ShiftWM.Windows)
+            {
+                window.Invoke(new Action(() => window.titleBar.Height = ShiftSkinData.Images.TitleBarImage.Height));
+                window.Invoke(new Action(() => window.leftTopCorner.Width = ShiftSkinData.Images.LeftTopCornerImage.Width));
+                window.Invoke(new Action(() => window.rightTopCorner.Width = ShiftSkinData.Images.RightTopCornerImage.Width));
+                window.Invoke(new Action(() => window.leftSide.Width = ShiftSkinData.Images.LeftSideImage.Width));
+                window.Invoke(new Action(() => window.rightSide.Width = ShiftSkinData.Images.RightSideImage.Width));
+                window.Invoke(new Action(() => window.leftBottomCorner.Width = ShiftSkinData.Images.LeftBottomCornerImage.Width));
+                window.Invoke(new Action(() => window.bottomSide.Width = ShiftSkinData.Images.BottomSideImage.Width));
+                window.Invoke(new Action(() => window.rightBottomCorner.Width = ShiftSkinData.Images.RightBottomCornerImage.Width));
+                window.Invoke(new Action(() => window.btnClose.Width = ShiftSkinData.Images.BtnCloseImage.Width));
+                window.Invoke(new Action(() => window.btnMax.Width = ShiftSkinData.Images.BtnMaxImage.Width));
+                window.Invoke(new Action(() => window.btnMin.Width = ShiftSkinData.Images.BtnMinImage.Width));
+                window.Invoke(new Action(() => window.titleBar.BackgroundImage = ShiftSkinData.Images.TitleBarImage));
+                window.Invoke(new Action(() => window.leftTopCorner.BackgroundImage = ShiftSkinData.Images.LeftTopCornerImage));
+                window.Invoke(new Action(() => window.rightTopCorner.BackgroundImage = ShiftSkinData.Images.RightTopCornerImage));
+                window.Invoke(new Action(() => window.leftSide.BackgroundImage = ShiftSkinData.Images.LeftSideImage));
+                window.Invoke(new Action(() => window.rightSide.BackgroundImage = ShiftSkinData.Images.RightSideImage));
+                window.Invoke(new Action(() => window.leftBottomCorner.BackgroundImage = ShiftSkinData.Images.LeftBottomCornerImage));
+                window.Invoke(new Action(() => window.bottomSide.BackgroundImage = ShiftSkinData.Images.BottomSideImage));
+                window.Invoke(new Action(() => window.rightBottomCorner.BackgroundImage = ShiftSkinData.Images.RightBottomCornerImage));
+                window.Invoke(new Action(() => window.btnClose.BackgroundImage = ShiftSkinData.Images.BtnCloseImage));
+                window.Invoke(new Action(() => window.btnMax.BackgroundImage = ShiftSkinData.Images.BtnMaxImage));
+                window.Invoke(new Action(() => window.btnMin.BackgroundImage = ShiftSkinData.Images.BtnMinImage));
+            }*/
+        }
 
 		void btnSave_Click(object sender, EventArgs e)
 		{
             Color[] shiftSkinColors = new Color[14];
-            int i = 0;
             
             shiftSkinColors[0] = ShiftSkinData.Colors.LeftTopCornerColor;
             shiftSkinColors[1] = ShiftSkinData.Colors.TitleBarColor;
@@ -124,10 +154,11 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
             using (var fobj = File.OpenWrite(@"C:\Users\Public\Documents\Skin.whoa"))
                 Whoa.Whoa.SerialiseObject(fobj, shiftSkinColors);
 
-            ShiftWM.StartInfoboxSession(
+            InfoboxTemplate shiftWindow = ShiftWM.StartInfoboxSession(
 				"Saved Skin",
 				"Saved Skin to C:\\Users\\Public\\Documents\\Skin.whoa",
 				InfoboxTemplate.ButtonType.Ok);
+    
 		}
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -169,6 +200,28 @@ namespace ShiftOS.Main.ShiftOS.Apps.ShifterStuff
                 Color.FromArgb(15, 29, 130),
                 Color.FromArgb(15, 29, 160));
             ApplySkin();
+        }
+
+        private void shiftButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This was clicked.");
+        }
+
+        private void shiftButton2_Click(object sender, EventArgs e)
+        {
+           
+        }
+        public static Bitmap LoadImage(byte[] byteArray)
+        {
+            var bm = (Bitmap)imageConverter.ConvertFrom(byteArray);
+            
+            if (bm != null && (bm.HorizontalResolution != (int)bm.HorizontalResolution ||
+                               bm.VerticalResolution != (int)bm.VerticalResolution))
+            {
+                bm.SetResolution((int)(bm.HorizontalResolution + 0.5f),
+                                 (int)(bm.VerticalResolution + 0.5f));
+            }
+            return bm;
         }
     }
 }
