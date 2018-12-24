@@ -47,16 +47,27 @@ namespace ShiftOS.Main.Apps
             ball.Top -= (int)ballY;
             ball.Left -= (int)ballX;
 
-            cpuPaddle.Top += speed;
+            
 
-            if (cpuPaddle.Top < 0 || cpuPaddle.Top > this.Height) speed = -speed;
+            //CPU
+            if (ballX < 0)
+            {
+                if (ball.Top < cpuPaddle.Top + 51)
+                {
+                    cpuPaddle.Top -= 5;
+                }
+                if(ball.Top > cpuPaddle.Top + 51)
+                {
+                    cpuPaddle.Top += 5;
+                }
+            }
 
             if (ball.Left < 0)
             {
                 ResetToRest();
                 ballX = -ballX;
             }
-            if (ball.Left + ball.Width > this.Height)
+            if (ball.Left + ball.Width > this.Width)
             {
                 ResetToRest();
                 ballX = -ballX;
