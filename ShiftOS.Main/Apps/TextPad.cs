@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShiftOS.Main.ShiftOS.Apps
+namespace ShiftOS.Main.Apps
 {
 	public partial class TextPad : UserControl
 	{

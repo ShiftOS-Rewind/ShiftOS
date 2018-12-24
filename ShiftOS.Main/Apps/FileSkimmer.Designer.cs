@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ShiftOS.Main.ShiftOS.Apps
+namespace ShiftOS.Main.Apps
 {
 	partial class FileSkimmer
 	{

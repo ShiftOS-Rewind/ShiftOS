@@ -84,7 +84,7 @@
     <Compile Include="UI\ShiftButton.Designer.cs">
       <DependentUpon>ShiftButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ShiftStripRenderer.cs" />
+    <Compile Include="UI\ShiftToolStrip.cs" />
     <Compile Include="WindowManager\InfoboxTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>

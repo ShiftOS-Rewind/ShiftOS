@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShiftOS.Main.Apps;
 
 namespace ShiftOS.Main.Terminal
 {
@@ -15,7 +16,7 @@ namespace ShiftOS.Main.Terminal
                         .Where(t => t.IsSubclassOf(typeof(TerminalCommand)) && t.GetConstructor(Type.EmptyTypes) != null)
                         .Select(t => Activator.CreateInstance(t) as TerminalCommand);
 
-        public static List<ShiftOS.Apps.Terminal> trm = new List<ShiftOS.Apps.Terminal>();
+        public static List<Main.Apps.Terminal> trm = new List<Main.Apps.Terminal>();
         public static int trmTopID = 0;
         public static Stack<string> commandBuffer = new Stack<string>();
         /// <summary>

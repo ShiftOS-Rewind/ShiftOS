@@ -9,7 +9,7 @@ using System.IO;
 using ShiftOS.Main.Properties;
 using Whoa;
 
-namespace ShiftOS.Main.ShiftOS.Apps
+namespace ShiftOS.Main.Apps
 {
     public partial class Terminal : UserControl
     {

@@ -43,7 +43,7 @@ namespace ShiftOS.Main.Terminal
         /// <param name="textClr"><summary>The color the text is written in.</summary></param>
         public virtual void WriteLine(string value, Color textClr)
         {
-            ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
+            Main.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
 
             int startPoint = trm.termmain.Text.Length;
             trm.termmain.AppendText($" {value} \n");
@@ -59,7 +59,7 @@ namespace ShiftOS.Main.Terminal
         public virtual void Write(string value, Color textClr)
         {
 
-            ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
+            Main.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
 
             int startPoint = trm.termmain.Text.Length;
             trm.termmain.AppendText($" {value}");
@@ -94,7 +94,7 @@ namespace ShiftOS.Main.Terminal
         /// </summary>
         public virtual void Clear()
         {
-            ShiftOS.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
+            Main.Apps.Terminal trm = Array.Find(TerminalBackend.trm.ToArray(), w => w.TerminalID == TermID);
 
             trm.Clear();
         }

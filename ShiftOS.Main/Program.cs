@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using ShiftOS.Main.ShiftOS;
 
 namespace ShiftOS.Main
 {
@@ -21,7 +20,7 @@ namespace ShiftOS.Main
             if (terminalMode)
             {
                 Form terminalForm = new Form();
-                ShiftOS.Apps.Terminal term = new ShiftOS.Apps.Terminal();
+                Main.Apps.Terminal term = new Main.Apps.Terminal();
                 terminalForm.Controls.Add(term);
                 terminalForm.FormBorderStyle = FormBorderStyle.None;
                 terminalForm.WindowState = FormWindowState.Maximized;

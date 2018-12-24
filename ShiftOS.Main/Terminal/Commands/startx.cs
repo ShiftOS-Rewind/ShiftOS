@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using ShiftOS.Engine;
 using static ShiftOS.Engine.CodepointUpgrade;
 using static ShiftOS.Engine.SaveSystem;
-
+using ShiftOS.Main;
+using System.Windows.Forms;
 
 namespace ShiftOS.Main.Terminal.Commands
 {
@@ -15,12 +16,12 @@ namespace ShiftOS.Main.Terminal.Commands
     {
         private bool hasGUI = false;
         private bool autostart = false;
+        private Timer timer = new Timer();
         public override string Name { get; } = "startx";
         public override string Summary { get; } = "Starts the ShiftX driver.";
         public override string Usage { get; } = "startx";
         public override bool Unlocked { get; set; } = false;
         public int codePoints { get; set; } = 150;
-
         public override void Run(params string[] args)
         {
             if (args.Length > 0)
@@ -43,13 +44,16 @@ namespace ShiftOS.Main.Terminal.Commands
             }
             if (!hasGUI)
             {
-                var d = new Desktop();
-                d.Show();
+                WriteLine("[startx] starting driver...");
+                new System.Threading.ManualResetEvent(false).WaitOne(1500);
+
+                new Desktop().Show();
                 hasGUI = true;
+                return;
             }
-           if (hasGUI == true)
+            if (hasGUI)
             {
-                WriteLine("The ShiftX driver has already been intialized.");
+                WriteLine("startx: the ShiftX driver has already been intialized.");
                 return;
             } 
         }

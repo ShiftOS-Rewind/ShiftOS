@@ -1,4 +1,4 @@
-﻿namespace ShiftOS.Main.ShiftOS.Apps
+﻿namespace ShiftOS.Main.Apps
 {
     partial class TextPad
     {

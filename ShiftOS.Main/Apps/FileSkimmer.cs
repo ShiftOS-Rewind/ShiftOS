@@ -8,7 +8,7 @@ using ShiftOS.Engine.WindowManager;
 using System.Linq;
 using ShiftOS.Engine.UI;
 
-namespace ShiftOS.Main.ShiftOS.Apps
+namespace ShiftOS.Main.Apps
 {
 	public partial class FileSkimmer : UserControl, IShiftWindowExtensions
 	{

@@ -52,43 +52,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MainGame\Apps\FileSkimmer.cs">
+    <Compile Include="Apps\Pong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainGame\Apps\FileSkimmer.Designer.cs">
-      <DependentUpon>FileSkimmer.cs</DependentUpon>
+    <Compile Include="Apps\Pong.Designer.cs">
+      <DependentUpon>Pong.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainGame\Apps\ShifterStuff\SelectColor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MainGame\Apps\ShifterStuff\SelectColor.Designer.cs">
-      <DependentUpon>SelectColor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainGame\Apps\ShifterStuff\Shifter.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MainGame\Apps\ShifterStuff\Shifter.Designer.cs">
-      <DependentUpon>Shifter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainGame\Apps\Terminal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MainGame\Apps\Terminal.Designer.cs">
-      <DependentUpon>Terminal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainGame\Apps\TextPad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MainGame\Apps\TextPad.Designer.cs">
-      <DependentUpon>TextPad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainGame\Desktop.cs">
+    <Compile Include="Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainGame\Desktop.Designer.cs">
+    <Compile Include="Desktop.Designer.cs">
       <DependentUpon>Desktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Apps\FileSkimmer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Apps\FileSkimmer.Designer.cs">
+      <DependentUpon>FileSkimmer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ShifterStuff\SelectColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Apps\ShifterStuff\SelectColor.Designer.cs">
+      <DependentUpon>SelectColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ShifterStuff\Shifter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Apps\ShifterStuff\Shifter.Designer.cs">
+      <DependentUpon>Shifter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Terminal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Apps\Terminal.Designer.cs">
+      <DependentUpon>Terminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\TextPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Apps\TextPad.Designer.cs">
+      <DependentUpon>TextPad.cs</DependentUpon>
     </Compile>
     <Compile Include="Terminal\Commands\codepoints.cs" />
     <Compile Include="Terminal\Commands\startx.cs" />
@@ -101,6 +107,12 @@
     <Compile Include="Terminal\Commands\upgrade.cs" />
     <Compile Include="Terminal\TerminalBackend.cs" />
     <Compile Include="Terminal\TerminalCommand.cs" />
+    <EmbeddedResource Include="Apps\Pong.resx">
+      <DependentUpon>Pong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desktop.resx">
+      <DependentUpon>Desktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,23 +123,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="MainGame\Apps\FileSkimmer.resx">
+    <EmbeddedResource Include="Apps\FileSkimmer.resx">
       <DependentUpon>FileSkimmer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainGame\Apps\ShifterStuff\SelectColor.resx">
+    <EmbeddedResource Include="Apps\ShifterStuff\SelectColor.resx">
       <DependentUpon>SelectColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainGame\Apps\ShifterStuff\Shifter.resx">
+    <EmbeddedResource Include="Apps\ShifterStuff\Shifter.resx">
       <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainGame\Apps\Terminal.resx">
+    <EmbeddedResource Include="Apps\Terminal.resx">
       <DependentUpon>Terminal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainGame\Apps\TextPad.resx">
+    <EmbeddedResource Include="Apps\TextPad.resx">
       <DependentUpon>TextPad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainGame\Desktop.resx">
-      <DependentUpon>Desktop.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -152,9 +161,7 @@
       <Name>ShiftOS.Engine</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MainGame\Upgrades\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\Apps\Artpad\ArtPadsave.png" />
     <Content Include="Resources\Audio\infobox.wav" />
