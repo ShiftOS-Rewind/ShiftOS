@@ -35,7 +35,7 @@
             this.terminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSkimmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textPadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.breakOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.terminalToolStripMenuItem,
             this.fileSkimmerToolStripMenuItem,
             this.textPadToolStripMenuItem,
-            this.pongToolStripMenuItem,
+            this.breakOutToolStripMenuItem,
             this.shifterToolStripMenuItem});
             this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9F);
             this.applicationsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -91,12 +91,12 @@
             this.textPadToolStripMenuItem.Text = "TextPad";
             this.textPadToolStripMenuItem.Click += new System.EventHandler(this.textPadToolStripMenuItem_Click);
             // 
-            // pongToolStripMenuItem
+            // breakOutToolStripMenuItem
             // 
-            this.pongToolStripMenuItem.Name = "pongToolStripMenuItem";
-            this.pongToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pongToolStripMenuItem.Text = "Pong";
-            this.pongToolStripMenuItem.Click += new System.EventHandler(this.pongToolStripMenuItem_Click);
+            this.breakOutToolStripMenuItem.Name = "breakOutToolStripMenuItem";
+            this.breakOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.breakOutToolStripMenuItem.Text = "Breakout";
+            this.breakOutToolStripMenuItem.Click += new System.EventHandler(this.breakOutToolStripMenuItem_Click);
             // 
             // shifterToolStripMenuItem
             // 
@@ -132,7 +132,7 @@
         private System.Windows.Forms.ToolStripMenuItem terminalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileSkimmerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem textPadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pongToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem breakOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shifterToolStripMenuItem;
     }
 }

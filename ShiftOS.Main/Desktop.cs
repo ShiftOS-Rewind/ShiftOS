@@ -42,9 +42,9 @@ namespace ShiftOS.Main
             ShiftWM.Init(new Apps.TextPad(), "TextPad", Properties.Resources.iconTextPad);
         }
 
-        private void pongToolStripMenuItem_Click(object sender, EventArgs e)
+        private void breakOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShiftWM.Init(new Apps.Pong(), "Pong", null);
+            ShiftWM.Init(new Apps.Breakout(), "Breakout", null);
         }
 
     }

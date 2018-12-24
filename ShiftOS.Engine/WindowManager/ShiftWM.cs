@@ -40,6 +40,12 @@ namespace ShiftOS.Engine.WindowManager
 				Title = { Text = title }
 			};
 
+            if (showAsInfobox)
+            {
+                app.btnMin.Visible = false;
+                app.btnMax.Visible = false;
+            }
+
 			app.Width = content.Width + app.leftSide.Width + app.rightSide.Width;
 			app.Height = content.Height + app.bottomSide.Height + app.titleBar.Height;
 

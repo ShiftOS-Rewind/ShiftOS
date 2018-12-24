@@ -51,22 +51,18 @@ namespace ShiftOS.Engine.WindowManager
 		void btnOpt1_Click(object sender, EventArgs e)
 		{
             isOK = true;
-            MessageBox.Show("button was clicked");
             ParentForm?.Close();
 		}
 
 		void btnOpt2_Click(object sender, EventArgs e)
 		{
-			switch (btnOpt2.Text)
-			{
-				case "No":
+            switch (btnOpt2.Text)
+            {
+                case "No":
                     isNo = true;
                     ParentForm?.Close();
                     break;
-				case "Cancel":
-                    isNo = true;
-                    break;
-			}
+            }
 		}
 
 		public void Play()

@@ -52,11 +52,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apps\Pong.cs">
+    <Compile Include="Apps\Breakout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Apps\Pong.Designer.cs">
-      <DependentUpon>Pong.cs</DependentUpon>
+    <Compile Include="Apps\Breakout.Designer.cs">
+      <DependentUpon>Breakout.cs</DependentUpon>
     </Compile>
     <Compile Include="Desktop.cs">
       <SubType>Form</SubType>
@@ -107,8 +107,8 @@
     <Compile Include="Terminal\Commands\upgrade.cs" />
     <Compile Include="Terminal\TerminalBackend.cs" />
     <Compile Include="Terminal\TerminalCommand.cs" />
-    <EmbeddedResource Include="Apps\Pong.resx">
-      <DependentUpon>Pong.cs</DependentUpon>
+    <EmbeddedResource Include="Apps\Breakout.resx">
+      <DependentUpon>Breakout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Desktop.resx">
       <DependentUpon>Desktop.cs</DependentUpon>
