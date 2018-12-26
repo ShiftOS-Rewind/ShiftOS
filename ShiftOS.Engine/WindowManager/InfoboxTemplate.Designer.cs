@@ -85,7 +85,6 @@
             this.btnOpt2.TabIndex = 5;
             this.btnOpt2.Text = "button2";
             this.btnOpt2.UseVisualStyleBackColor = false;
-            this.btnOpt1.Click += new System.EventHandler(this.btnOpt1_Click);
             // 
             // InfoboxTemplate
             // 
@@ -108,8 +107,8 @@
         #endregion
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer changeSize;
-        private System.Windows.Forms.Button btnOpt1;
-        private System.Windows.Forms.Button btnOpt2;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnOpt1;
+        public System.Windows.Forms.Button btnOpt2;
     }
 }

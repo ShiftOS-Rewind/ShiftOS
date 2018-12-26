@@ -75,14 +75,22 @@ namespace ShiftOS.Main.Apps
                 gameTimer.Stop();
                 var infoBox = ShiftWM.StartInfoboxSession("Breakout - You Lose! ", "It appears that you have lost the game, meaning\nall codepoints won were lost. Would you\nlike to try again?", InfoboxTemplate.ButtonType.YesNo);
                 ShiftWM.StartInfoboxSession(null, infoBox.isOK.ToString(), InfoboxTemplate.ButtonType.Ok);
-                if (infoBox.isOK)
-                {
-                    DrawBlocks();
-                    ResetToRest();
-                    gameTimer.Start();
-                }
+                infoBox.btnOpt1.Click += InfoboxYes;
+                infoBox.btnOpt2.Click += InfoboxYes;
             }
         }
+
+        private void InfoboxYes(object sender, EventArgs e)
+        {
+            DrawBlocks();
+            ResetToRest();
+            gameTimer.Start();
+        }
+        private void InfoboxNo(object sender, EventArgs e)
+        {
+            // When user clicks No
+        }
+
         private void DrawBlocks()
         {
             int h = 20;
